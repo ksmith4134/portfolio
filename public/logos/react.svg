@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="61.218" height="65.465" viewBox="0 0 61.218 65.465">
+  <g id="react" transform="translate(1.5 2.049)" style="isolation: isolate">
+    <g id="Group_35" data-name="Group 35" transform="translate(0 0)">
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="5.636" cy="5.636" rx="5.636" ry="5.636" transform="translate(23.473 25.047)" fill="#212121" stroke="#212121" stroke-width="3"/>
+      <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="29.109" cy="11.547" rx="29.109" ry="11.547" transform="translate(0 19.136)" fill="none" stroke="#212121" stroke-width="3"/>
+      <path id="Path_22" data-name="Path 22" d="M29.013,0C45.057.056,58.081,5.047,58.1,11.149s-12.968,11-29.013,10.948S.021,17.05,0,10.948,12.968-.055,29.013,0Z" transform="translate(24.152 0) rotate(60)" fill="none" stroke="#212121" stroke-width="3"/>
+      <path id="Path_23" data-name="Path 23" d="M29.089,0C45.134-.055,58.123,4.847,58.1,10.948S45.057,22.041,29.013,22.1-.021,17.25,0,11.149,13.045.056,29.089,0Z" transform="translate(53.203 11.049) rotate(120)" fill="none" stroke="#212121" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
