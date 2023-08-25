@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient {
+    width: 100vh;
+    height: 100vh;
+    background-color: #00000000;
+    background-image: radial-gradient(circle 50vh at 50% 100%, #4f4f4f31, #00000000);
+}

@@ -3,16 +3,16 @@ import { nav } from "@/data/nav";
 
 export default function Header() {
     return (
-        <div className="max-w-4xl mx-auto px-8">
-            <nav className="py-10 bg-neutral-950">
+        <div className="relative z-20 max-w-screen bg-neutral-950">
+            <nav className="max-w-4xl mx-auto px-8 py-10">
                 <div className="flex items-end justify-between">
-                    <Link href={'/'} className="text-2xl font-semibold text-neutral-200 tracking-wider">Kevin Smith</Link>
-                    <div className="flex gap-12">
+                    <Link href={'/'}></Link>
+                    <div className="flex gap-6">
                         { nav.map((link) => (
                             <Link 
                                 key={link.id}
                                 href={link.path}
-                                className="text-neutral-200 font-extralight hover:underline hover:underline-offset-8 hover:decoration-1 hover:decoration-neutral-400"
+                                className="text-neutral-400 font-medium hover:text-white"
                             >
                                 {link.label}
                             </Link>
@@ -22,9 +22,9 @@ export default function Header() {
             </nav>
             <div 
                 className="
-                    w-full h-px bg-gradient-to-tr 
+                    max-w-4xl mx-auto w-full h-px bg-gradient-to-tr 
                     from-neutral-950 from-25%
-                    via-neutral-600 via-50%
+                    via-neutral-700 via-50%
                     to-neutral-950 to-75%
                 "
             >
