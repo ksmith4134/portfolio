@@ -32,7 +32,7 @@ export const COLORS = {
         red: '',
     },
     STATUS: {
-        'Done': 'bg-green-500', 
+        'Live': 'bg-green-500 animate-pulse', 
         'In Development': 'bg-blue-500', 
         'Discontinued': 'bg-red-500'
     }

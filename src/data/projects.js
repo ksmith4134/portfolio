@@ -1,7 +1,7 @@
 export const projects = [
     {
         id: 0,
-        status: 'Done', // Done, In Development, Discontinued
+        status: 'Live', // Live, In Development, Discontinued
         thumbnail: '',
         title: 'Arnot Health Orthopedics',
         type: 'Patient Resources Website',
@@ -19,7 +19,7 @@ export const projects = [
     },
     {
         id: 3,
-        status: 'Done',
+        status: 'Live',
         thumbnail: '',
         title: 'Kodak Moments',
         type: 'Various Web Apps and Components',
@@ -28,7 +28,7 @@ export const projects = [
     },
     {
         id: 4,
-        status: 'Done',
+        status: 'Live',
         thumbnail: '',
         title: 'NYS Education Department',
         type: 'Training & Certification App',

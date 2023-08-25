@@ -52,7 +52,7 @@ export default function Home() {
                 <section className="mt-16">
                     <div className="flex place-items-center justify-between">
                         {SVG_LOGOS.map((logo) => (
-                            <Image key={logo.id} src={logo.svg} width={logo.width/1.5} height={logo.height/1.5} alt="logo" className="opacity-80" />
+                            <Image key={logo.id} src={logo.svg} width={logo.width/1.5} height={logo.height/1.5} alt="logo" className="opacity-60" />
                         ))}
                     </div>
                 </section>
