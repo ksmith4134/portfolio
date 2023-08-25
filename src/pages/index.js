@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { projects } from "@/data/projects";
-import LogoButton from "@/components/ui/logoButton";
-import { SVG_LOGOS, COLORS, ICONS } from "@/components/Theme";
+import { COLORS, SVG_LOGOS } from "@/components/Theme";
 import IconRender from "@/components/media/iconRender";
 import Image from "next/image";
 import nextIcon from '../../public/logos/nextjs-logotype-dark-background.svg'
-import NEXT from '../../public/logos/NEXT.svg'
 import { FaReact } from 'react-icons/fa'
+import { BiLogoTailwindCss } from 'react-icons/bi'
 
 export default function Home() {
 
@@ -19,47 +18,50 @@ export default function Home() {
             <div className="max-w-3xl mx-auto px-8">
 
                 <section className="relative z-30 pt-20">
-                    <h1 className="font-bold text-4xl text-neutral-200">Kevin Smith</h1>
+
+                    <h1 className="font-bold text-5xl text-neutral-200">Kevin Smith</h1>
                     <p className="mt-1 font-extralight text-lg text-neutral-400">Web Developer, UI / UX Designer</p>
+
                     <div className="mt-12">
-
-                        {/* <div className="text-neutral-400 inline-flex">
-                            <p>Expecting a different&nbsp;</p>
-                            <a href="https://en.wikipedia.org/wiki/Kevin_Smith" className="text-white font-medium">Kevin Smith</a>
-                            <p>? Don&apos;t worry, it happens all the time.</p>
-                        </div> */}
-
                         <p className="text-neutral-400">
                             Expecting a different&nbsp;
-                            <a href="https://en.wikipedia.org/wiki/Kevin_Smith" className="text-white font-medium">Kevin Smith</a>
+                            <a href="https://en.wikipedia.org/wiki/Kevin_Smith" className="text-white font-medium underline underline-offset-8 decoration-neutral-700 hover:decoration-white decoration-1">Kevin Smith</a>
                             ? Don&apos;t worry, it happens all the time...
                         </p>
-
                         <p className="mt-6 text-neutral-400">While I may not be the Kevin Smith of acclaimed acting, directing, and podcasting fame — I&apos;m still glad you&apos;re here!</p>
-                        
-                        <p className="mt-6 text-neutral-400">I am a Software Program Manager by day, and a web developer by night (and weekends) where you&apos;ll find me most commonly using&nbsp;
+                        <p className="mt-6 text-neutral-400">I am a Software Program Manager by day, and a web developer by night (and weekends) where you&apos;ll find me most commonly using&nbsp;&nbsp;
                             <span className="inline-flex items-baeline">
                                 <Image src={nextIcon} width={72} height={72} alt="logo" />
                             </span>
-                            <span> and </span>
+                            <span>&nbsp;&nbsp;</span>
                             <span className="inline-flex items-baseline">
                                 <FaReact className="w-5 h-5 fill-white" />
-                                <span className="text-white font-medium">&nbsp;React.</span>
+                                <span className="text-white font-medium">&nbsp;React&nbsp;&nbsp;</span>
+                            </span>
+                            <span className="inline-flex">
+                                and&nbsp;&nbsp;
+                                <BiLogoTailwindCss className="w-5 h-5 fill-white" />
+                                <span className="text-white font-medium">&nbsp;Tailwind</span>.
                             </span>
                         </p>
-
-
-                        
-                        <p className="mt-6 text-neutral-400">Most of all I love taking projects from the initial, conceptual stage all the way to deployment. That means thinking through architectural puzzles, modelling content, creating UI designs, and writing solid code.</p>
+                        <p className="mt-6 text-neutral-400">Most of all I love taking projects from the initial, conceptual stage all the way to deployment. That means thinking through architectural puzzles, modeling content, creating UI designs, and writing solid code.</p>
                     </div>
                     
                 </section>
+
+                <section className="mt-16">
+                    <div className="flex place-items-center justify-between">
+                        {SVG_LOGOS.map((logo) => (
+                            <Image key={logo.id} src={logo.svg} width={logo.width/1.5} height={logo.height/1.5} alt="logo" className="opacity-80" />
+                        ))}
+                    </div>
+                </section>
                 
                 <section className="pt-12 pb-20">
-                    {/* <h2 className="text-neutral-200 text-center font-semibold text-xl">Projects</h2> */}
+                    {/* <h2 className="text-neutral-200 font-semibold text-xl">Projects</h2> */}
                     <div className="mt-8 grid grid-cols-1 gap-8">
                         { projects.map((project) => (
-                            <div key={project.id} className="border border-neutral-800 p-8 rounded-md bg-neutral-800/30 hover:bg-neutral-800/40">
+                            <div key={project.id} className="border border-neutral-800 p-8 rounded-md bg-neutral-800/20 hover:bg-neutral-800/30">
                                 <div className="flex items-center justify-between">
                                     <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
                                         <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[project.status]}`}></div>
