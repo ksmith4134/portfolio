@@ -8,3 +8,67 @@
     background-color: #00000000;
     background-image: radial-gradient(circle 50vh at 50% 100%, #4f4f4f31, #00000000);
 }
+
+svg {
+    pointer-events: none;
+}
+
+.bar {
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 12px;
+    border-radius: 2px;
+ }
+
+.bar-animation {
+animation: sound 0ms -800ms linear infinite alternate;
+}
+ 
+@keyframes sound {
+    0% {
+        opacity: .25;
+        height: 3px; 
+    }
+    100% {
+        opacity: .9;       
+        height: 30px;        
+    }
+}
+ 
+.bar:nth-child(1)  { 
+    left: 0px; animation-duration: 774ms; animation-delay: 0ms; background: #ff2828; opacity: .25; 
+}
+.bar:nth-child(2)  { 
+    left: 6px; animation-duration: 733ms; animation-delay: 400ms; background: #ff4128; opacity: .30; 
+}
+.bar:nth-child(3)  { 
+    left: 12px; animation-duration: 707ms; animation-delay: 100ms; background: #ff821c; opacity: .4; 
+}
+.bar:nth-child(4)  { 
+    left: 18px; animation-duration: 758ms; animation-delay: 500ms; background: #ffb71c; opacity: .6; 
+}
+.bar:nth-child(5)  { 
+    left: 24px; animation-duration: 700ms; animation-delay: 200ms; background: #ffc421; opacity: .8; 
+}
+.bar:nth-child(6)  { 
+    left: 30px; animation-duration: 727ms; animation-delay: 600ms; background: #ffe921; opacity: .9; 
+}
+.bar:nth-child(7)  { 
+    left: 36px; animation-duration: 741ms; animation-delay: 300ms; background: #89ff45; opacity: .9; 
+}
+.bar:nth-child(8)  { 
+    left: 42px; animation-duration: 719ms; animation-delay: 700ms; background: #21df4a; opacity: .8; 
+}
+.bar:nth-child(9)  { 
+    left: 48px; animation-duration: 787ms; animation-delay: 400ms; background: #1a98ff; opacity: .6; 
+}
+.bar:nth-child(10) { 
+    left: 54px; animation-duration: 742ms; animation-delay: 800ms; background: #1a6aff; opacity: .4; 
+}
+.bar:nth-child(11) { 
+    left: 60px; animation-duration: 770ms; animation-delay: 650ms; background: #bb38a5; opacity: .3; 
+}
+.bar:nth-child(12) { 
+    left: 66px; animation-duration: 739ms; animation-delay: 900ms; background: #7e0f59; opacity: .25; 
+}

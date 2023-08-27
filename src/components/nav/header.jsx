@@ -7,11 +7,11 @@ export default function Header() {
     return (
         <div className="relative z-20 max-w-screen bg-neutral-950">
             <nav className="max-w-4xl mx-auto px-8 py-8">
-                <div className="max-w-3xl mx-auto px-8 flex items-center justify-center">
+                <div className="max-w-3xl mx-auto px-8 flex items-center justify-between">
                     <Link href={'/'}>
                         <Image src={Initials} width={48} height={48} alt="initials logo" />
                     </Link>
-                    {/* <div className="flex gap-6">
+                    <div className="flex gap-6">
                         { nav.map((link) => (
                             <Link 
                                 key={link.id}
@@ -21,7 +21,7 @@ export default function Header() {
                                 {link.label}
                             </Link>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
             </nav>
             <div 
