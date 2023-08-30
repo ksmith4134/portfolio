@@ -8,15 +8,16 @@ import redux from '../../public/logos/redux.svg'
 import tailwind from '../../public/logos/tailwind.svg'
 
 import { MdWeb, MdDraw, MdCode } from 'react-icons/md'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 import { 
-    WiSolarEclipse, WiCloudy, WiRainMix, WiSprinkle, WiSleet, WiSnow, WiSnowWind, WiFog, WiStormShowers, WiThunderstorm
+    WiSolarEclipse, WiCloudy, WiCloud, WiRainMix, WiSprinkle, WiSleet, WiSnow, WiSnowWind, WiFog, WiStormShowers, WiThunderstorm
 } from 'react-icons/wi'
 
 
 export const WEATHER_CONDITIONS = {
     1000: { description: 'Sunny', icon: WiSolarEclipse, },
-    1003: { description: 'Partly cloudy', icon: WiCloudy },
+    1003: { description: 'Partly cloudy', icon: WiCloud },
     1006: { description: 'Cloudy', icon: WiCloudy },
     1009: { description: 'Overcast', icon: WiCloudy },
     1030: { description: 'Mist', icon: WiRainMix },
@@ -80,6 +81,9 @@ export const ICONS = {
     code: MdCode,
     design: MdWeb,
     copy: MdDraw,
+    github: FaGithub,
+    linkedin: FaLinkedin,
+
 }
 
 export const COLORS = {

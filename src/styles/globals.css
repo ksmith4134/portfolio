@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}
+
 .gradient {
     width: 100vh;
     height: 100vh;
@@ -13,6 +19,45 @@ svg {
     pointer-events: none;
 }
 
+/* PLANET */
+.word-animation {
+    animation: 4s ease-in-out 12000ms 1 forwards wordsFadeIn;
+}
+
+@keyframes wordsFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.earth-animation {
+    animation: 12s ease-in-out 0ms 1 forwards orbit;
+}
+     
+@keyframes orbit {
+    0% {
+        scale: 0;
+        right: 0%;
+        bottom: 0%;
+    }
+    75% {
+        scale: 1;
+        right: 0%;
+        bottom: 0%;
+    }
+    100% {
+        scale: 1;
+        right: 0%;
+        bottom: 0%;
+        transform: translate(-40%, -40%);
+    }
+}
+
+
+/* SOUND BARS */
 .bar {
     position: absolute;
     bottom: 0px;
@@ -46,22 +91,22 @@ animation: sound 0ms -800ms linear infinite alternate;
     left: 12px; animation-duration: 707ms; animation-delay: 100ms; background: #ff821c; opacity: .4; 
 }
 .bar:nth-child(4)  { 
-    left: 18px; animation-duration: 758ms; animation-delay: 500ms; background: #ffb71c; opacity: .6; 
+    left: 18px; animation-duration: 758ms; animation-delay: 500ms; background: #ffb71c; opacity: .5; 
 }
 .bar:nth-child(5)  { 
-    left: 24px; animation-duration: 700ms; animation-delay: 200ms; background: #ffc421; opacity: .8; 
+    left: 24px; animation-duration: 700ms; animation-delay: 200ms; background: #ffc421; opacity: .6; 
 }
 .bar:nth-child(6)  { 
-    left: 30px; animation-duration: 727ms; animation-delay: 600ms; background: #ffe921; opacity: .9; 
+    left: 30px; animation-duration: 727ms; animation-delay: 600ms; background: #ffe921; opacity: .7; 
 }
 .bar:nth-child(7)  { 
-    left: 36px; animation-duration: 741ms; animation-delay: 300ms; background: #89ff45; opacity: .9; 
+    left: 36px; animation-duration: 741ms; animation-delay: 300ms; background: #89ff45; opacity: .7; 
 }
 .bar:nth-child(8)  { 
-    left: 42px; animation-duration: 719ms; animation-delay: 700ms; background: #21df4a; opacity: .8; 
+    left: 42px; animation-duration: 719ms; animation-delay: 700ms; background: #21df4a; opacity: .6; 
 }
 .bar:nth-child(9)  { 
-    left: 48px; animation-duration: 787ms; animation-delay: 400ms; background: #1a98ff; opacity: .6; 
+    left: 48px; animation-duration: 787ms; animation-delay: 400ms; background: #1a98ff; opacity: .5; 
 }
 .bar:nth-child(10) { 
     left: 54px; animation-duration: 742ms; animation-delay: 800ms; background: #1a6aff; opacity: .4; 
