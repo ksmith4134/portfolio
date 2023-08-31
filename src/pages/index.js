@@ -48,7 +48,7 @@ export default function Home(props) {
 
 
     return (
-        <main className="relative z-30 max-w-screen min-h-screen bg-neutral-950">
+        <main className="relative z-30 max-w-screen min-h-screen">
             <div className="max-w-3xl mx-auto px-8">
 
                 {/* SECTION: About Me Text */}
