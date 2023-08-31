@@ -115,7 +115,7 @@ export default function Home(props) {
                         <p className="mt-4 text-neutral-500 text-xs">Favorite movie</p>
                         <p className="mt-2 text-neutral-500 font-semibold">Interstellar</p>
                     </div>
-                    <div className="border border-neutral-800 p-4 rounded-md relative overflow-hidden group group-hover:bg-neutral-800/30 md:group-hover:bg-black md:group-hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
+                    <div className="border border-neutral-800 p-4 rounded-md relative overflow-hidden group hover:bg-neutral-800/30 md:hover:bg-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
                         <div className="block opacity-1 md:group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full">
                             <div className="w-16 h-16 flex place-items-start">
                                 <BiBook className="w-10 h-10 text-neutral-600" />
