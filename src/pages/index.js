@@ -18,18 +18,18 @@ import IconRender from "@/components/media/iconRender";
 export default function Home(props) {
 
     const {
-        bitcoin,
-        weather,
-        spotify
+        bitcoin = null,
+        weather = null,
+        spotify = null,
     } = props
 
     const [ toolTip, setToolTip ] = useState({label: '', id: 0})
+
 
     // #region Spotify
     // console.log('spotify', spotify)
     // const spotifyToken = spotify.access_token
     // #endregion
-
 
     // #region Convert Bitcoin price into USD
     let USDollar = new Intl.NumberFormat('en-US', {
@@ -48,11 +48,11 @@ export default function Home(props) {
 
 
     return (
-        <main className="max-w-screen min-h-screen bg-neutral-950">
+        <main className="relative z-30 max-w-screen min-h-screen bg-neutral-950">
             <div className="max-w-3xl mx-auto px-8">
 
                 {/* SECTION: About Me Text */}
-                <section className="relative z-30 pt-20">
+                <section className="pt-20">
 
                     <h1 className="font-bold text-5xl text-neutral-300">Kevin Smith</h1>
                     <p className="mt-1 font-extralight text-lg text-neutral-400">Web Developer, UI / UX Designer</p>
@@ -86,9 +86,9 @@ export default function Home(props) {
                     
                 </section>
 
-                { spotify?.access_token && 
+                {/* { spotify?.access_token && 
                     <WebPlayer token={spotifyToken} />
-                }
+                } */}
 
                 <MusicPlayer />
 
@@ -115,7 +115,7 @@ export default function Home(props) {
                         <p className="mt-4 text-neutral-500 text-xs">Favorite movie</p>
                         <p className="mt-2 text-neutral-500 font-semibold">Interstellar</p>
                     </div>
-                    <div className="border border-neutral-800 p-4 rounded-md relative overflow-hidden group hover:bg-neutral-800/30 md:hover:bg-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
+                    <div className="border border-neutral-800 p-4 rounded-md relative overflow-hidden group group-hover:bg-neutral-800/30 md:group-hover:bg-black md:group-hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
                         <div className="block opacity-1 md:group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full">
                             <div className="w-16 h-16 flex place-items-start">
                                 <BiBook className="w-10 h-10 text-neutral-600" />
@@ -169,6 +169,7 @@ export default function Home(props) {
                     </div>
                 </section>
 
+                {/* FOOTER */}
                 <footer className="pt-10 flex flex-col items-center justify-center gap-4 pb-4">
                     <div className="w-12 border-b border-neutral-800"></div>
                     <p className="text-neutral-600 text-sm">&copy; 2023 Kevin Smith</p>
