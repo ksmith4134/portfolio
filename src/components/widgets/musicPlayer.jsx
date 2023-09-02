@@ -25,7 +25,7 @@ export default function MusicPlayer() {
                         <p className="text-neutral-400 font-semibold">Dark Side of the Moon</p>
                     </div>
                 </div>
-                <div className="relative w-36">
+                <div className="hidden md:block relative w-36">
                     <div className="absolute left-[25%] top-[75%]">
                         <div className={`bar ${animate && 'bar-animation'}`}></div>
                         <div className={`bar ${animate && 'bar-animation'}`}></div>

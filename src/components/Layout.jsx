@@ -7,7 +7,7 @@ const robotoMono = Roboto_Mono({ weight: '400', subsets: ['latin'], variable: '-
 export default function Layout({ children }) {
 
     return (
-        <div className={`${inter.variable} ${robotoMono.variable} font-sans relative z-0 bg-neutral-950`}>
+        <div className={`${inter.variable} ${robotoMono.variable} font-sans relative z-0 bg-neutral-950 overflow-hidden`}>
             <div className="absolute z-10 -top-10 left-[25%] right-[25%] gradient rotate-180"></div>
             <Header />
             { children }

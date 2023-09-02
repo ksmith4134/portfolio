@@ -60,26 +60,26 @@ export default function Home(props) {
 
                     <div className="mt-12">
                         <p className="text-neutral-400 inline-flex items-center">
-                            Expecting a different&nbsp;
+                            <span>Expecting a different&nbsp;
                             <span className="inline-flex items-center">
-                                <a href="https://en.wikipedia.org/wiki/Kevin_Smith" className="text-neutral-300 font-medium underline underline-offset-8 decoration-neutral-700 hover:decoration-white decoration-1">Kevin Smith</a>
+                                <a href="https://en.wikipedia.org/wiki/Kevin_Smith" className="text-neutral-300 font-medium underline underline-offset-4 decoration-neutral-700 hover:decoration-white decoration-1">Kevin Smith</a>
                             </span>
-                            ? Don&apos;t worry, it happens all the time...
+                            <span>? Don&apos;t worry, it happens all the time...</span></span>
                         </p>
                         <p className="mt-6 text-neutral-400">While I may not be the Kevin Smith of acclaimed acting, directing, and podcasting fame — I&apos;m still glad you&apos;re here!</p>
                         <p className="mt-6 text-neutral-400">I am a Software Program Manager by day, and a web developer by night (and weekends) where you&apos;ll find me most commonly using&nbsp;&nbsp;
-                            <span className="inline-flex items-baeline">
+                            <span className="inline-flex items-baseline">
                                 <Image src={nextIcon} width={72} height={72} alt="logo" />
                             </span>
                             <span>&nbsp;&nbsp;</span>
                             <span className="inline-flex items-baseline">
-                                <FaReact className="w-5 h-5 fill-neutral-300" />
-                                <span className="text-neutral-300 font-medium">&nbsp;React&nbsp;&nbsp;</span>
+                                <FaReact className="w-5 h-5 fill-[#61dbfb]" />
+                                <span className="text-[#61dbfb] font-normal">&nbsp;React&nbsp;&nbsp;</span>
                             </span>
                             <span className="inline-flex">
                                 and&nbsp;&nbsp;
-                                <BiLogoTailwindCss className="w-5 h-5 fill-neutral-300" />
-                                <span className="text-neutral-300 font-medium">&nbsp;Tailwind</span>.
+                                <BiLogoTailwindCss className="w-5 h-5 fill-[#38BDF8]" />
+                                <span className="text-[#38BDF8] font-normal">&nbsp;Tailwind</span>.
                             </span>
                         </p>
                         <p className="mt-6 text-neutral-400">Most of all I love taking projects from the initial, conceptual stage all the way to deployment. That means thinking through architectural puzzles, modeling content, creating UI designs, and writing solid code.</p>
@@ -168,7 +168,7 @@ export default function Home(props) {
 
                 {/* SECTION: Tech Logos */}
                 <section className="pt-20">
-                    <div className="flex place-items-center justify-between">
+                    <div className="flex flex-wrap gap-6 md:gap-2 place-items-center justify-between">
                         {SVG_LOGOS.map((logo) => (
                             <Image key={logo.id} src={logo.svg} width={logo.width/1.5} height={logo.height/1.5} alt="logo" className="opacity-80" />
                         ))}
