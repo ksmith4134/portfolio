@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { COLORS, SVG_LOGOS, WEATHER_CONDITIONS } from "@/components/Theme";
 import Image from "next/image";
 import nextIcon from '../../public/logos/nextjs-logotype-dark-background.svg'
@@ -19,12 +19,12 @@ export default function Home(props) {
 
     const {
         bitcoin = null,
+        bitcoinData,
         weather = null,
         spotify = null,
     } = props
 
     const [ toolTip, setToolTip ] = useState({label: '', id: 0})
-
 
     // #region Spotify
     // console.log('spotify', spotify)
@@ -32,6 +32,7 @@ export default function Home(props) {
     // #endregion
 
     // #region Convert Bitcoin price into USD
+    console.log('bitcoin', bitcoinData)
     let USDollar = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -54,7 +55,7 @@ export default function Home(props) {
                 {/* SECTION: About Me Text */}
                 <section className="pt-20">
 
-                    <h1 className="font-bold text-5xl text-neutral-300">Kevin Smith</h1>
+                    <h1 className="font-semibold text-5xl text-neutral-200">Kevin Smith</h1>
                     <p className="mt-1 font-extralight text-lg text-neutral-400">Web Developer, UI / UX Designer</p>
 
                     <div className="mt-12">
@@ -94,34 +95,42 @@ export default function Home(props) {
 
                 {/* SECTION: About Me Interest Cards */}
                 <section className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="border border-neutral-800 p-4 rounded-md hover:bg-neutral-800/30 transition-all duration-100 ease-in-out">
-                        <div className="w-16 h-16 flex place-items-start">
-                            <MdOutlineCurrencyBitcoin className="w-10 h-10 text-neutral-600" />
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-amber-600/5 rounded-xl hover:bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between">
+                        <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
+                            <MdOutlineCurrencyBitcoin className="text-2xl text-white" />
                         </div>
-                        <p className="mt-4 text-neutral-500 text-xs">Recent interest</p>
-                        <p className="mt-2 text-neutral-500 font-semibold">{bitcoinPrice}</p>
-                    </div>
-                    <div className="border border-neutral-800 p-4 rounded-md hover:bg-neutral-800/30 transition-all duration-100 ease-in-out">
-                        <div className="w-16 h-16 flex place-items-start">
-                            <WeatherIcon className="w-14 h-14 text-neutral-600 -mt-1" />
+                        <div className="mt-6">
+                            <p className="mt-4 text-neutral-600 text-xs">Recent interest</p>
+                            <p className="mt-1 text-neutral-300 font-semibold">{bitcoinPrice}</p>
                         </div>
-                        <p className="mt-4 text-neutral-500 text-xs">Local weather</p>
-                        <p className="mt-2 text-neutral-500 font-semibold">{tempF}&deg; F</p>
                     </div>
-                    <div className="border border-neutral-800 p-4 rounded-md hover:bg-neutral-800/30 transition-all duration-100 ease-in-out">
-                        <div className="w-16 h-16 flex place-items-start">
-                            <BiCameraMovie className="w-10 h-10 text-neutral-600" />
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-600/5 rounded-xl hover:bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between">
+                        <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-emerald-400/80 to-emerald-600/60">
+                            <WeatherIcon className="text-2xl text-white" />
                         </div>
-                        <p className="mt-4 text-neutral-500 text-xs">Favorite movie</p>
-                        <p className="mt-2 text-neutral-500 font-semibold">Interstellar</p>
+                        <div className="mt-6">
+                            <p className="mt-4 text-neutral-600 text-xs">Local weather</p>
+                            <p className="mt-1 text-neutral-300 font-semibold">{tempF}&deg; F</p>
+                        </div>
                     </div>
-                    <div className="border border-neutral-800 p-4 rounded-md relative overflow-hidden group hover:bg-neutral-800/30 md:hover:bg-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
-                        <div className="block opacity-1 md:group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full">
-                            <div className="w-16 h-16 flex place-items-start">
-                                <BiBook className="w-10 h-10 text-neutral-600" />
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-sky-600/5 rounded-xl hover:bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between">
+                        <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-sky-400/80 to-sky-600/60">
+                            <BiCameraMovie className="text-2xl text-white" />
+                        </div>
+                        <div className="mt-6">
+                            <p className="mt-4 text-neutral-600 text-xs">Favorite movie</p>
+                            <p className="mt-1 text-neutral-300 font-semibold">Interstellar</p>
+                        </div>
+                    </div>
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-purple-600/5 rounded-xl relative overflow-hidden group hover:bg-neutral-800/10 md:hover:bg-gradient-to-bl md:hover:from-neutral-900/30 md:hover:to-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
+                        <div className="opacity-1 md:group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
+                            <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-purple-400/80 to-purple-600/60">
+                                <BiBook className="text-2xl text-white" />
                             </div>
-                            <p className="mt-4 text-neutral-500 text-xs">Favorite author</p>
-                            <p className="mt-2 text-neutral-500 font-semibold">Bill Bryson</p>
+                            <div className="mt-6">
+                                <p className="mt-4 text-neutral-600 text-xs">Favorite author</p>
+                                <p className="mt-1 text-neutral-300 font-semibold">Bill Bryson</p>
+                            </div>
                         </div>
                         <div className="hidden md:group-hover:flex md:group-hover:justify-end md:group-hover:items-end">
                             <Image src={earth} alt="earth" className="absolute earth-animation object-contain transform-gpu brightness-200" />
@@ -131,30 +140,27 @@ export default function Home(props) {
                 </section>
                 
                 {/* SECTION: Projects */}
-                <section id="projects" className="pt-20">
-                    <p className="text-neutral-300">Click on a project below to learn about my individual contributions, coding challenges, and important design considerations.</p>
-                    <div className="mt-8 grid grid-cols-1 gap-8">
+                <section className="pt-16">
+                    <h2 id="projects" className="pt-8 font-semibold text-5xl text-neutral-200 text-center">Projects</h2>
+                    <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto">Click on a project below to learn about individual contributions, coding challenges, and important design considerations.</p>
+                    <div className="mt-12 grid grid-cols-1 gap-8">
                         { projects.map((project) => (
-                            <div key={project.id} className="border border-neutral-800 p-8 rounded-md bg-transparent hover:bg-neutral-800/30">
-                                <div className="flex items-center justify-between">
-                                    <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
-                                        <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[project.status]}`}></div>
-                                        <p>{project.status}</p>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        {project.contributions.map((item) => (
-                                            <div key={item} className="relative z-20" onMouseOver={() => setToolTip({label: item, id: project.id})} onMouseOut={() => setToolTip()}>
-                                                <IconRender icon={item} />
-                                                {toolTip?.label === item && toolTip?.id === project.id &&
-                                                    <div className="absolute z-30 block bg-neutral-950 border border-neutral-800 rounded-md p-2 text-xs text-neutral-300">{item}</div>
-                                                }
-                                            </div>
-                                        ))}
-                                    </div>
+                            <div key={project.id} className="border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10">
+                                <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
+                                    <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[project.status]}`}></div>
+                                    <p>{project.status}</p>
                                 </div>
-                                <h2 className="mt-6 text-xl font-semibold text-neutral-300">{project.title}</h2>
+                                <h2 className="mt-6 text-2xl font-semibold text-neutral-300">{project.title}</h2>
                                 <h3 className="mt-1 font-light text-sm text-neutral-400">{project.type}</h3>
                                 <p className="mt-6 text-sm text-neutral-400 line-clamp-3">{project.description}</p>
+                                <div className="mt-8 flex gap-2">
+                                    { project.contributions.map((item) => (
+                                        <div key={item} className="rounded-md flex place-items-center gap-2 px-3 py-2 bg-gradient-to-t from-neutral-400/5 border border-neutral-600/10 text-white text-xs">
+                                            <IconRender icon={item} size={'small'} color={'white'} />
+                                            <p>{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -233,6 +239,7 @@ export async function getStaticProps(){
     return {
         props: {
             bitcoin,
+            bitcoinData, // temp, for testing
             weather,
             spotify: null
         }

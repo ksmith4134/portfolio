@@ -7,8 +7,9 @@ import react from '../../public/logos/react.svg'
 import redux from '../../public/logos/redux.svg'
 import tailwind from '../../public/logos/tailwind.svg'
 
-import { MdWeb, MdDraw, MdCode } from 'react-icons/md'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { BsPencil } from 'react-icons/bs'
+import { FaCode,FaGithub, FaLinkedin } from 'react-icons/fa'
+import { PiCompassToolBold } from 'react-icons/pi'
 
 import { 
     WiSolarEclipse, WiCloudy, WiCloud, WiRainMix, WiSprinkle, WiSleet, WiSnow, WiSnowWind, WiFog, WiStormShowers, WiThunderstorm
@@ -78,9 +79,9 @@ export const SVG_LOGOS = [
 ]
 
 export const ICONS = {
-    code: MdCode,
-    design: MdWeb,
-    copy: MdDraw,
+    code: FaCode,
+    design: PiCompassToolBold,
+    copy: BsPencil,
     github: FaGithub,
     linkedin: FaLinkedin,
 

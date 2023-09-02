@@ -5,7 +5,7 @@ export const projects = [
         thumbnail: '',
         title: 'Arnot Health Orthopedics',
         type: 'Patient Resources Website',
-        description: 'A medical resources website that allows patients to easily learn about their condition (and pre-/post-operative care) using an interactive skeleton diagram. A headless CMS allows doctors to easily create dynamic content on the fly.',
+        description: 'A medical resources website that allows patients to easily learn about their condition and available treatments by using an interactive skeleton diagram. A headless CMS allows doctors to easily create dynamic content on the fly.',
         contributions: ["code", "design", "copy"], // code, design, copy
     },
     {

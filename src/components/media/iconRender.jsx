@@ -4,11 +4,16 @@ import { ICONS } from '../Theme'
 export default function IconRender(props) {
     const {
         icon,
+        size="normal",
+        color="gray"
     } = props
 
     const Icon = ICONS[icon]
 
     return (
-        <Icon className="text-neutral-700 text-2xl" />
+        <Icon className={`
+            ${size === "normal" ? "text-2xl": "text-md"}
+            ${color === "gray" ? "text-neutral-700" : "text-neutral-200"}
+        `} />
     )
 }
