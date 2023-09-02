@@ -95,7 +95,7 @@ export default function Home(props) {
 
                 {/* SECTION: About Me Interest Cards */}
                 <section className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-amber-600/5 rounded-xl hover:bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-amber-500/5 rounded-xl bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
                             <MdOutlineCurrencyBitcoin className="text-2xl text-white" />
                         </div>
@@ -104,7 +104,7 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">{bitcoinPrice}</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-600/5 rounded-xl hover:bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-500/5 rounded-xl bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-emerald-400/80 to-emerald-600/60">
                             <WeatherIcon className="text-2xl text-white" />
                         </div>
@@ -113,7 +113,7 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">{tempF}&deg; F</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-sky-600/5 rounded-xl hover:bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-sky-500/5 rounded-xl bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-sky-400/80 to-sky-600/60">
                             <BiCameraMovie className="text-2xl text-white" />
                         </div>
@@ -122,7 +122,7 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">Interstellar</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-purple-600/5 rounded-xl relative overflow-hidden group hover:bg-neutral-800/10 md:hover:bg-gradient-to-bl md:hover:from-neutral-900/30 md:hover:to-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-purple-500/5 rounded-xl relative overflow-hidden group bg-neutral-800/10 md:hover:bg-gradient-to-bl md:hover:from-neutral-900/30 md:hover:to-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
                         <div className="opacity-1 md:group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-purple-400/80 to-purple-600/60">
                                 <BiBook className="text-2xl text-white" />
@@ -145,7 +145,7 @@ export default function Home(props) {
                     <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto">Click on a project below to learn about individual contributions, coding challenges, and important design considerations.</p>
                     <div className="mt-12 grid grid-cols-1 gap-8">
                         { projects.map((project) => (
-                            <div key={project.id} className="border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10">
+                            <div key={project.id} className="border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10 shadow-inner shadow-neutral-600/5">
                                 <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
                                     <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[project.status]}`}></div>
                                     <p>{project.status}</p>

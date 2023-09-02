@@ -11,7 +11,7 @@ export default function MusicPlayer() {
     }
     return (
         <a href="https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv?si=nba9ShSoSxGqgMd7MsqANA" target="blank">
-            <div className="relative w-full mt-16 border border-neutral-800/60 bg-neutral-800/10 p-6 rounded-xl flex justify-between group-hover:cursor-pointer group" onMouseEnter={() => handleClick(true)} onMouseLeave={() => handleClick(false)}>
+            <div className="relative w-full mt-16 border border-neutral-800/60 bg-neutral-800/10 p-6 rounded-xl flex justify-between group-hover:cursor-pointer group shadow-inner shadow-neutral-400/5" onMouseEnter={() => handleClick(true)} onMouseLeave={() => handleClick(false)}>
                 <div className="flex gap-6 items-center">
                     <button type="button" className="opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 ease-in-out">
                         <Image 
