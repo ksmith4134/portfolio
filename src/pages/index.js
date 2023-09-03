@@ -19,7 +19,6 @@ export default function Home(props) {
 
     const {
         bitcoin = null,
-        bitcoinData,
         weather = null,
         spotify = null,
     } = props
@@ -32,13 +31,33 @@ export default function Home(props) {
     // #endregion
 
     // #region Convert Bitcoin price into USD
-    console.log('bitcoin', bitcoinData)
+    // console.log('bitcoin', bitcoin)
     let USDollar = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
     });
 
-    let bitcoinPrice = bitcoin ? USDollar.format(bitcoin) : "Not Available"
+    let bitcoinCurrentPrice;
+    let bitcoinPriceChange;
+    let bitcoinChangeSymbol;
+    let bitcoinChangeColor;
+    
+    if(bitcoin){
+        bitcoinCurrentPrice = bitcoin.current_price ? USDollar.format(bitcoin.current_price) : "Not available"
+        bitcoinPriceChange = bitcoin.price_change_24h ? USDollar.format(bitcoin.price_change_24h) : 0
+        if(bitcoin.price_change_24h >= 0){
+            bitcoinChangeSymbol = 'up'
+            bitcoinChangeColor = 'green'
+        } else {
+            bitcoinChangeSymbol = 'down'
+            bitcoinChangeColor = 'red'
+        }
+    } else {
+        bitcoinCurrentPrice = "Not available"
+        bitcoinPriceChange = 0
+        bitcoinChangeSymbol = 'up'
+        bitcoinChangeColor = 'green'
+    }
     // #endregion
 
     // #region Weather
@@ -87,24 +106,47 @@ export default function Home(props) {
                     
                 </section>
 
-                {/* { spotify?.access_token && 
+                {/* SECTION: TEST SPOTIFY PLAYER */}
+                { spotify?.access_token && 
                     <WebPlayer token={spotifyToken} />
-                } */}
+                }
 
+                {/* SECTION: Spotify Music Player */}
                 <MusicPlayer />
 
                 {/* SECTION: About Me Interest Cards */}
                 <section className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-amber-500/5 rounded-xl bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
-                        <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
-                            <MdOutlineCurrencyBitcoin className="text-2xl text-white" />
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-amber-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
+                        <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
+                            <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
+                                <MdOutlineCurrencyBitcoin className="text-2xl text-white" />
+                            </div>
+                            <div className="mt-6">
+                                <p className="mt-4 text-neutral-600 text-xs">Recent interest</p>
+                                <p className="mt-1 text-neutral-300 font-semibold">{bitcoinCurrentPrice}</p>
+                            </div>
                         </div>
-                        <div className="mt-6">
-                            <p className="mt-4 text-neutral-600 text-xs">Recent interest</p>
-                            <p className="mt-1 text-neutral-300 font-semibold">{bitcoinPrice}</p>
+                        <div className="opacity-0 group-hover:opacity-100 flex flex-col justify-between items-center w-full h-full absolute top-0 left-0 p-3 transition-opacity duration-1000 ease-in-out overflow-y-scroll no-scrollbar bg-gradient-radial from-amber-500/0">
+                            <div className="w-full flex justify-between items-end">
+                                <p className="text-white font-semibold text-sm">Bitcoin</p>
+                                <div className="px-3 py-1 bg-amber-500/70 rounded-md text-white text-xs font-bold">
+                                    btc
+                                </div>
+                            </div>
+                            <div className="mt-4 w-full flex flex-row gap-2 items-center">
+                                <p className="text-[10px] text font-light text-white w-16">Current</p>
+                                <div className="w-full text-xs rounded border border-white/10 p-2 text-white bg-white/10">{bitcoinCurrentPrice}</div>
+                            </div>
+                            <div className="mt-2 w-full flex flex-row gap-2 items-center">
+                                <p className="text-[10px] text font-light text-white w-16">24 hr</p>
+                                <div className="w-full text-xs rounded border border-white/10 p-2 text-white bg-white/10 flex justify-between items-center">
+                                    <p>{bitcoinPriceChange}</p>
+                                    <IconRender icon={bitcoinChangeSymbol} color={bitcoinChangeColor} size={'small'} />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-500/5 rounded-xl bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-emerald-400/80 to-emerald-600/60">
                             <WeatherIcon className="text-2xl text-white" />
                         </div>
@@ -113,7 +155,7 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">{tempF}&deg; F</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-sky-500/5 rounded-xl bg-neutral-800/10 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-sky-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-sky-400/80 to-sky-600/60">
                             <BiCameraMovie className="text-2xl text-white" />
                         </div>
@@ -122,8 +164,8 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">Interstellar</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-purple-500/5 rounded-xl relative overflow-hidden group bg-neutral-800/10 md:hover:bg-gradient-to-bl md:hover:from-neutral-900/30 md:hover:to-black md:hover:border-neutral-900 transition-colors duration-100 md:duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
-                        <div className="opacity-1 md:group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
+                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-purple-500/5 rounded-xl relative overflow-hidden group bg-neutral-800/10 hover:bg-gradient-to-bl hover:from-neutral-900/30 hover:to-black hover:border-neutral-900 transition-colors duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
+                        <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-purple-400/80 to-purple-600/60">
                                 <BiBook className="text-2xl text-white" />
                             </div>
@@ -132,7 +174,7 @@ export default function Home(props) {
                                 <p className="mt-1 text-neutral-300 font-semibold">Bill Bryson</p>
                             </div>
                         </div>
-                        <div className="hidden md:group-hover:flex md:group-hover:justify-end md:group-hover:items-end">
+                        <div className="hidden group-hover:flex group-hover:justify-end group-hover:items-end">
                             <Image src={earth} alt="earth" className="absolute earth-animation object-contain transform-gpu brightness-200" />
                             <p className={`font-mono text-neutral-300 text-[14px] leading-[18px] text-right absolute word-animation opacity-0`}>A<br></br>Short<br></br>History<br></br>Of Nearly<br></br>Everything</p>
                         </div>
@@ -191,7 +233,7 @@ export async function getStaticProps(){
     // #region Bitcoin API
     const bitcoinResponse = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin')
     const bitcoinData = await bitcoinResponse.json()
-    const bitcoin = bitcoinData[0].current_price
+    const bitcoin = bitcoinData[0]
     // #endregion
 
     // #region Weather API
@@ -239,9 +281,9 @@ export async function getStaticProps(){
     return {
         props: {
             bitcoin,
-            bitcoinData, // temp, for testing
             weather,
             spotify: null
-        }
+        },
+        revalidate: 14400,
     }
 }

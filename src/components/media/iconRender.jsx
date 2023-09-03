@@ -1,5 +1,5 @@
 import React from 'react'
-import { ICONS } from '../Theme'
+import { ICONS, COLORS } from '../Theme'
 
 export default function IconRender(props) {
     const {
@@ -9,11 +9,12 @@ export default function IconRender(props) {
     } = props
 
     const Icon = ICONS[icon]
+    const iconColor = COLORS.ICON_RENDER[color]
 
     return (
         <Icon className={`
             ${size === "normal" ? "text-2xl": "text-md"}
-            ${color === "gray" ? "text-neutral-700" : "text-neutral-200"}
+            ${iconColor}
         `} />
     )
 }

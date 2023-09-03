@@ -7,7 +7,7 @@ import react from '../../public/logos/react.svg'
 import redux from '../../public/logos/redux.svg'
 import tailwind from '../../public/logos/tailwind.svg'
 
-import { BsPencil } from 'react-icons/bs'
+import { BsPencil, BsFillCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
 import { FaCode,FaGithub, FaLinkedin } from 'react-icons/fa'
 import { PiCompassToolBold } from 'react-icons/pi'
 
@@ -84,6 +84,8 @@ export const ICONS = {
     copy: BsPencil,
     github: FaGithub,
     linkedin: FaLinkedin,
+    up: BsFillCaretUpFill,
+    down: BsCaretDownFill,
 
 }
 
@@ -96,5 +98,11 @@ export const COLORS = {
         'Live': 'bg-green-500 animate-pulse', 
         'In Development': 'bg-blue-500', 
         'Discontinued': 'bg-red-500'
+    },
+    ICON_RENDER: {
+        'white': 'text-neutral-200',
+        'gray': 'text-neutral-700',
+        'red': 'text-red-600',
+        'green': 'text-emerald-600',
     }
 }
