@@ -24,6 +24,8 @@ export default function Home(props) {
     } = props
 
     const [ toolTip, setToolTip ] = useState({label: '', id: 0})
+    const [ displayProject, setDisplayProject ] = useState(false)
+    const [ projectID, setProjectID ] = useState(null)
 
     // #region Spotify
     // console.log('spotify', spotify)
@@ -66,6 +68,10 @@ export default function Home(props) {
     const WeatherIcon = WEATHER_CONDITIONS[weather.condition.code].icon
     // #endregion
 
+    const handleClick = (id) => {
+        setProjectID(id)
+        projectID === id ? setDisplayProject(!displayProject) : setDisplayProject(true)
+    }
 
     return (
         <main className="relative z-30 max-w-screen min-h-screen">
@@ -184,25 +190,42 @@ export default function Home(props) {
                 {/* SECTION: Projects */}
                 <section className="pt-16">
                     <h2 id="projects" className="pt-8 font-semibold text-5xl text-neutral-200 text-center">Projects</h2>
-                    <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto">Click on a project below to learn about individual contributions, coding challenges, and important design considerations.</p>
+                    <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto"><span className="font-extrabold">Click on a project</span> below to learn about individual contributions, coding challenges, and important design considerations.</p>
                     <div className="mt-12 grid grid-cols-1 gap-8">
                         { projects.map((project) => (
-                            <div key={project.id} className="border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10 shadow-inner shadow-neutral-600/5">
-                                <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
-                                    <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[project.status]}`}></div>
-                                    <p>{project.status}</p>
+                            <div key={project.id} className="border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10 shadow-inner shadow-neutral-600/5 hover:cursor-pointer" onClick={() => handleClick(project.id)}>
+                                <div className="flex justify-between items-center gap-4">
+                                    <div>
+                                        <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
+                                            <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[project.status]}`}></div>
+                                            <p>{project.status}</p>
+                                        </div>
+                                    </div>
+                                    {/*  */}
                                 </div>
                                 <h2 className="mt-6 text-2xl font-semibold text-neutral-300">{project.title}</h2>
                                 <h3 className="mt-1 font-light text-sm text-neutral-400">{project.type}</h3>
                                 <p className="mt-6 text-sm text-neutral-400 line-clamp-3">{project.description}</p>
                                 <div className="mt-8 flex gap-2">
                                     { project.contributions.map((item) => (
-                                        <div key={item} className="rounded-md flex place-items-center gap-2 px-3 py-2 bg-gradient-to-t from-neutral-400/5 border border-neutral-600/10 text-white text-xs">
-                                            <IconRender icon={item} size={'small'} color={'white'} />
-                                            <p>{item}</p>
+                                        <div key={item} className="rounded-md flex place-items-center gap-2 px-2 py-2 bg-gradient-to-t from-neutral-400/5 border border-neutral-600/10 text-neutral-300 group">
+                                            <div className="group-hover:hidden text-sm">
+                                                <IconRender icon={item} size={'small'} color={'white'} />
+                                            </div>
+                                            <p className="hidden group-hover:block text-xs leading-3">{item}</p>
                                         </div>
                                     ))}
                                 </div>
+                                {projectID === project.id && displayProject &&
+                                    <div className="mt-8">
+                                        {project.website && 
+                                            <div className="flex items-center gap-2">
+                                                <IconRender icon={"earth"} color={"white"} />
+                                                <a href={project.website} target="_blank" className="text-neutral-400 text-sm hover:underline hover:underline-offset-4">{project.website}</a>
+                                            </div>
+                                        }
+                                    </div>
+                                }
                             </div>
                         ))}
                     </div>

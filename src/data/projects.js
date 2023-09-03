@@ -7,6 +7,9 @@ export const projects = [
         type: 'Patient Resources Website',
         description: 'A medical resources website that allows patients to easily learn about their condition and available treatments by using an interactive skeleton diagram. A headless CMS allows doctors to easily create dynamic content on the fly.',
         contributions: ["code", "design", "copy"], // code, design, copy
+        website: "https://www.arnotortho.com",
+        techLogos: [],
+        prose: "",
     },
     {
         id: 1,
@@ -16,6 +19,9 @@ export const projects = [
         type: 'Custom JIRA Report',
         description: 'Generate custom sprint reports using JIRA and Postmark APIs to automatically send status emails to stakeholders.',
         contributions: ["code", "design"],
+        website: null,
+        techLogos: [],
+        prose: "",
     },
     {
         id: 3,
@@ -25,6 +31,9 @@ export const projects = [
         type: 'Various Web Apps and Components',
         description: 'An e-commerce site that allows consumers to add their personal photos to various products including photobooks, canvases, calendars, mugs, and more.',
         contributions: ["code"],
+        website: "https://www.kodakmoments.com",
+        techLogos: [],
+        prose: "",
     },
     {
         id: 4,
@@ -34,6 +43,9 @@ export const projects = [
         type: 'Training & Certification App',
         description: 'A curriculum of video-based courses and certification quizzes that help train teachers to conduct state assessments for students with severe cognitive disabilities.',
         contributions: ["code", "design"],
+        website: "https://www.dlmnysaatraining.com/",
+        techLogos: [],
+        prose: "",
     },
     {
         id: 2,
@@ -43,5 +55,8 @@ export const projects = [
         type: 'E-commerce Web App',
         description: 'An online farmers market that made it convenient to buy products directly from local farms within a 30 mile radius of a consumer\'s home. The site facilitated farm-to-consumer and farm-to-farm sales.',
         contributions: ["code", "design", "copy"],
+        website: "https://www.pasturestand.com/",
+        techLogos: [],
+        prose: "",
     }
 ]

@@ -10,6 +10,7 @@ import tailwind from '../../public/logos/tailwind.svg'
 import { BsPencil, BsFillCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
 import { FaCode,FaGithub, FaLinkedin } from 'react-icons/fa'
 import { PiCompassToolBold } from 'react-icons/pi'
+import { IoEarthOutline } from 'react-icons/io5'
 
 import { 
     WiSolarEclipse, WiCloudy, WiCloud, WiRainMix, WiSprinkle, WiSleet, WiSnow, WiSnowWind, WiFog, WiStormShowers, WiThunderstorm
@@ -86,7 +87,7 @@ export const ICONS = {
     linkedin: FaLinkedin,
     up: BsFillCaretUpFill,
     down: BsCaretDownFill,
-
+    earth: IoEarthOutline,
 }
 
 export const COLORS = {
