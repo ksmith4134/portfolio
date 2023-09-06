@@ -138,7 +138,7 @@ export default function Home(props) {
                                     btc
                                 </div>
                             </div>
-                            <div className="w-full">
+                            <div className="w-full h-16">
                                 <LineGraph rawData={bitcoinPriceChart} />
                             </div>
                             <div className="flex justify-between items-center w-full gap-2">
