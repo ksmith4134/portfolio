@@ -6,14 +6,12 @@ import silentBob from '../../public/SilentBobWhite.svg'
 import earth from '../../public/cards/earth-1.png'
 import { FaReact } from 'react-icons/fa'
 import { BiLogoTailwindCss, BiCameraMovie, BiBook } from 'react-icons/bi'
-import { BsBook } from 'react-icons/bs'
 import { MdOutlineCurrencyBitcoin } from 'react-icons/md'
-import { FaUserAstronaut, } from 'react-icons/fa'
-import { IoEarth } from 'react-icons/io5'
 import MusicPlayer from "@/components/widgets/musicPlayer";
 import WebPlayer from "@/components/widgets/webPlayer";
 import { projects } from "@/data/projects";
 import IconRender from "@/components/media/iconRender";
+import LineGraph from "@/components/lineGraph";
 
 export default function Home(props) {
 
@@ -21,6 +19,7 @@ export default function Home(props) {
         bitcoin = null,
         weather = null,
         spotify = null,
+        bitcoinPriceChart
     } = props
 
     const [ toolTip, setToolTip ] = useState({label: '', id: 0})
@@ -63,7 +62,7 @@ export default function Home(props) {
     // #endregion
 
     // #region Weather
-    // console.log('weather', weather)
+    // console.log('weather', weatherData)
     const tempF = weather.tempF ? weather.tempF : '-'
     const WeatherIcon = WEATHER_CONDITIONS[weather.condition.code].icon
     // #endregion
@@ -121,15 +120,15 @@ export default function Home(props) {
                 <MusicPlayer />
 
                 {/* SECTION: About Me Interest Cards */}
-                <section className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-amber-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
+                <section className="mt-4 flex flex-wrap md:flex-nowrap gap-4">
+                    <div className="w-full h-40 hover:w-[130rem] border border-neutral-800/60 p-4 bg-gradient-radial from-amber-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
                         <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
                                 <MdOutlineCurrencyBitcoin className="text-2xl text-white" />
                             </div>
                             <div className="mt-6">
-                                <p className="mt-4 text-neutral-600 text-xs">Recent interest</p>
-                                <p className="mt-1 text-neutral-300 font-semibold">{bitcoinCurrentPrice}</p>
+                                <p className="mt-4 text-neutral-600 text-xs">Interest</p>
+                                <p className="mt-1 text-neutral-300 font-semibold">Bitcoin</p>
                             </div>
                         </div>
                         <div className="opacity-0 group-hover:opacity-100 flex flex-col justify-between items-center w-full h-full absolute top-0 left-0 p-3 transition-opacity duration-1000 ease-in-out overflow-y-scroll no-scrollbar bg-gradient-radial from-amber-500/0">
@@ -139,44 +138,49 @@ export default function Home(props) {
                                     btc
                                 </div>
                             </div>
-                            <div className="mt-4 w-full flex flex-row gap-2 items-center">
-                                <p className="text-[10px] text font-light text-white w-16">Current</p>
-                                <div className="w-full text-xs rounded border border-white/10 p-2 text-white bg-white/10">{bitcoinCurrentPrice}</div>
+                            <div className="w-full">
+                                <LineGraph rawData={bitcoinPriceChart} />
                             </div>
-                            <div className="mt-2 w-full flex flex-row gap-2 items-center">
-                                <p className="text-[10px] text font-light text-white w-16">24 hr</p>
-                                <div className="w-full text-xs rounded border border-white/10 p-2 text-white bg-white/10 flex justify-between items-center">
-                                    <p>{bitcoinPriceChange}</p>
-                                    <IconRender icon={bitcoinChangeSymbol} color={bitcoinChangeColor} size={'small'} />
+                            <div className="flex justify-between items-center w-full gap-2">
+                                <div className="w-full flex gap-2 items-center">
+                                    <p className="flex-none text-[10px] text font-light text-white">Current</p>
+                                    <div className="grow text-xs rounded border border-white/10 p-2 text-white bg-white/10">{bitcoinCurrentPrice}</div>
+                                </div>
+                                <div className="flex gap-2 items-center">
+                                    <p className="flex-none w-7 text-[10px] text font-light text-white text-right">24 hr</p>
+                                    <div className="grow text-xs rounded border border-white/10 p-2 text-white bg-white/10 flex justify-between items-center gap-1">
+                                        <p>{bitcoinPriceChange}</p>
+                                        <IconRender icon={bitcoinChangeSymbol} color={bitcoinChangeColor} size={'small'} />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
+                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-emerald-400/80 to-emerald-600/60">
                             <WeatherIcon className="text-2xl text-white" />
                         </div>
                         <div className="mt-6">
-                            <p className="mt-4 text-neutral-600 text-xs">Local weather</p>
+                            <p className="mt-4 text-neutral-600 text-xs">Weather</p>
                             <p className="mt-1 text-neutral-300 font-semibold">{tempF}&deg; F</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-sky-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-100 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
+                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial from-sky-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-sky-400/80 to-sky-600/60">
                             <BiCameraMovie className="text-2xl text-white" />
                         </div>
                         <div className="mt-6">
-                            <p className="mt-4 text-neutral-600 text-xs">Favorite movie</p>
-                            <p className="mt-1 text-neutral-300 font-semibold">Interstellar</p>
+                            <p className="mt-4 text-neutral-600 text-xs">Movie Genre</p>
+                            <p className="mt-1 text-neutral-300 font-semibold">Sci-Fi</p>
                         </div>
                     </div>
-                    <div className="border border-neutral-800/60 p-4 bg-gradient-radial from-purple-500/5 rounded-xl relative overflow-hidden group bg-neutral-800/10 hover:bg-gradient-to-bl hover:from-neutral-900/30 hover:to-black hover:border-neutral-900 transition-colors duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
+                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial from-purple-500/5 rounded-xl relative overflow-hidden group bg-neutral-800/10 hover:bg-gradient-to-bl hover:from-neutral-900/30 hover:to-black hover:border-neutral-900 transition-all duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
                         <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-purple-400/80 to-purple-600/60">
                                 <BiBook className="text-2xl text-white" />
                             </div>
                             <div className="mt-6">
-                                <p className="mt-4 text-neutral-600 text-xs">Favorite author</p>
+                                <p className="mt-4 text-neutral-600 text-xs">Author</p>
                                 <p className="mt-1 text-neutral-300 font-semibold">Bill Bryson</p>
                             </div>
                         </div>
@@ -191,9 +195,9 @@ export default function Home(props) {
                 <section className="pt-16">
                     <h2 id="projects" className="pt-8 font-semibold text-5xl text-neutral-200 text-center">Projects</h2>
                     <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto"><span className="font-extrabold">Click on a project</span> below to learn about individual contributions, coding challenges, and important design considerations.</p>
-                    <div className="mt-12 grid grid-cols-1 gap-8">
+                    <div className="mt-12 flex flex-wrap gap-8">
                         { projects.map((project) => (
-                            <div key={project.id} className="border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10 shadow-inner shadow-neutral-600/5 hover:cursor-pointer" onClick={() => handleClick(project.id)}>
+                            <div key={project.id} className="w-full border border-neutral-800/60 p-8 rounded-xl bg-neutral-600/5 hover:bg-neutral-600/10 shadow-inner shadow-neutral-600/5 hover:cursor-pointer" onClick={() => handleClick(project.id)}>
                                 <div className="flex justify-between items-center gap-4">
                                     <div>
                                         <div className="border border-neutral-800 rounded-full px-2 py-1 w-fit text-neutral-400 text-xs flex gap-2 justify-start items-center">
@@ -218,12 +222,19 @@ export default function Home(props) {
                                 </div>
                                 {projectID === project.id && displayProject &&
                                     <div className="mt-8">
-                                        {project.website && 
-                                            <div className="flex items-center gap-2">
-                                                <IconRender icon={"earth"} color={"white"} />
-                                                <a href={project.website} target="_blank" className="text-neutral-400 text-sm hover:underline hover:underline-offset-4">{project.website}</a>
-                                            </div>
-                                        }
+                                        <ul className="px-8">
+                                            {project.tech.length > 0 && project.tech.map((item) => (
+                                                <li key={item.id} className="list-disc text-neutral-400 text-sm">
+                                                    {item.label}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <div className="mt-4">
+                                            {project.website && 
+                                                <a href={project.website} target="_blank" className="text-neutral-400 text-sm underline underline-offset-4 decoration-neutral-700 hover:decoration-white decoration-1">{project.website}</a>
+                                            }
+                                        </div>
+
                                     </div>
                                 }
                             </div>
@@ -253,10 +264,16 @@ export default function Home(props) {
 
 export async function getStaticProps(){
 
-    // #region Bitcoin API
+    // #region Bitcoin Current Price API
     const bitcoinResponse = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin')
     const bitcoinData = await bitcoinResponse.json()
     const bitcoin = bitcoinData[0]
+    // #endregion
+
+    // #region Bitcoin Current Price API
+    const bitcoinChartResponse = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily&precision=2')
+    const bitcoinChartData = await bitcoinChartResponse.json()
+    const bitcoinPriceChart = bitcoinChartData.prices.map(item => item[1])
     // #endregion
 
     // #region Weather API
@@ -300,12 +317,12 @@ export async function getStaticProps(){
     // #endregion
 
 
-
     return {
         props: {
             bitcoin,
             weather,
-            spotify: null
+            spotify: null,
+            bitcoinPriceChart,
         },
         revalidate: 14400,
     }

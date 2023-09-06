@@ -6,6 +6,7 @@ import nodejs from '../../public/logos/nodejs.svg'
 import react from '../../public/logos/react.svg'
 import redux from '../../public/logos/redux.svg'
 import tailwind from '../../public/logos/tailwind.svg'
+import storyblok from '../../public/logos/storyblok.svg'
 
 import { BsPencil, BsFillCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
 import { FaCode,FaGithub, FaLinkedin } from 'react-icons/fa'
@@ -77,6 +78,7 @@ export const SVG_LOGOS = [
     { id: 6, svg: HTML5, width: 45.035, height: 51.068, label: '' },
     { id: 5, svg: CSS3, width: 45.782, height: 51.922, label: '' },    
     { id: 4, svg: tailwind, width: 58.394, height: 35.063, label: '' },
+    // { id: 8, svg: storyblok, width: 58.394, height: 35.063, label: '' },
 ]
 
 export const ICONS = {
