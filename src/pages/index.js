@@ -121,7 +121,7 @@ export default function Home(props) {
 
                 {/* SECTION: About Me Interest Cards */}
                 <section className="mt-4 flex flex-wrap md:flex-nowrap gap-4">
-                    <div className="w-full h-40 hover:w-[130rem] border border-neutral-800/60 p-4 bg-gradient-radial from-amber-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
+                    <div className="w-full h-40 hover:w-[130rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-amber-500/10  rounded-xl transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
                         <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
                                 <MdOutlineCurrencyBitcoin className="text-2xl text-white" />
@@ -131,8 +131,8 @@ export default function Home(props) {
                                 <p className="mt-1 text-neutral-300 font-semibold">Bitcoin</p>
                             </div>
                         </div>
-                        <div className="opacity-0 group-hover:opacity-100 flex flex-col justify-between items-center w-full h-full absolute top-0 left-0 p-3 transition-opacity duration-1000 ease-in-out overflow-y-scroll no-scrollbar bg-gradient-radial from-amber-500/0">
-                            <div className="w-full flex justify-between items-end">
+                        <div className="opacity-0 group-hover:opacity-100 flex flex-col justify-between items-center w-full h-full absolute top-0 left-0 p-3 transition-opacity duration-1000 ease-in-out">
+                            <div className="w-full flex justify-between items-center">
                                 <p className="text-white font-semibold text-sm">Bitcoin</p>
                                 <div className="px-3 py-1 bg-amber-500/70 rounded-md text-white text-xs font-bold">
                                     btc
@@ -141,14 +141,14 @@ export default function Home(props) {
                             <div className="w-full h-16">
                                 <LineGraph rawData={bitcoinPriceChart} />
                             </div>
-                            <div className="flex justify-between items-center w-full gap-2">
+                            <div className="mt-2 flex justify-between items-center w-full gap-2">
                                 <div className="w-full flex gap-2 items-center">
                                     <p className="flex-none text-[10px] text font-light text-white">Current</p>
-                                    <div className="grow text-xs rounded border border-white/10 p-2 text-white bg-white/10">{bitcoinCurrentPrice}</div>
+                                    <div className="grow text-xs rounded border border-neutral-400/10 p-1.5 text-white bg-white/5">{bitcoinCurrentPrice}</div>
                                 </div>
                                 <div className="flex gap-2 items-center">
                                     <p className="flex-none w-7 text-[10px] text font-light text-white text-right">24 hr</p>
-                                    <div className="grow text-xs rounded border border-white/10 p-2 text-white bg-white/10 flex justify-between items-center gap-1">
+                                    <div className="grow text-xs rounded border border-neutral-400/10 p-1.5 text-white bg-white/5 flex justify-between items-center gap-1">
                                         <p>{bitcoinPriceChange}</p>
                                         <IconRender icon={bitcoinChangeSymbol} color={bitcoinChangeColor} size={'small'} />
                                     </div>
@@ -156,7 +156,7 @@ export default function Home(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial from-emerald-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
+                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-emerald-500/10 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-emerald-400/80 to-emerald-600/60">
                             <WeatherIcon className="text-2xl text-white" />
                         </div>
@@ -165,7 +165,7 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">{tempF}&deg; F</p>
                         </div>
                     </div>
-                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial from-sky-500/5 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
+                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-sky-500/10 rounded-xl bg-neutral-800/10 hover:bg-neutral-800/20 transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5">
                         <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-sky-400/80 to-sky-600/60">
                             <BiCameraMovie className="text-2xl text-white" />
                         </div>
@@ -174,7 +174,7 @@ export default function Home(props) {
                             <p className="mt-1 text-neutral-300 font-semibold">Sci-Fi</p>
                         </div>
                     </div>
-                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial from-purple-500/5 rounded-xl relative overflow-hidden group bg-neutral-800/10 hover:bg-gradient-to-bl hover:from-neutral-900/30 hover:to-black hover:border-neutral-900 transition-all duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
+                    <div className="w-full h-40 hover:w-[140rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-purple-500/10 rounded-xl relative overflow-hidden group bg-neutral-800/10 hover:bg-gradient-to-bl hover:from-neutral-900/30 hover:to-black hover:border-neutral-900 transition-all duration-1000 ease-in-out shadow-inner shadow-neutral-400/5">
                         <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-purple-400/80 to-purple-600/60">
                                 <BiBook className="text-2xl text-white" />
