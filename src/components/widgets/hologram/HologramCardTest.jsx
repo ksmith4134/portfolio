@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 
-export default function HologramCard() {
+export default function HologramCardTest() {
     let bounds;
     const inputRef = useRef();
     const glowRef = useRef();

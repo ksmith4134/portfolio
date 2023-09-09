@@ -3,7 +3,7 @@ import { COLORS, SVG_LOGOS, WEATHER_CONDITIONS } from "@/components/Theme";
 import Image from "next/image";
 import nextIcon from '../../public/logos/nextjs-logotype-dark-background.svg'
 import silentBob from '../../public/SilentBobWhite.svg'
-import earth from '../../public/cards/earth-1.png'
+import earth from '../../public/animations/earth-1.png'
 import { FaReact } from 'react-icons/fa'
 import { BiLogoTailwindCss, BiCameraMovie, BiBook } from 'react-icons/bi'
 import { MdOutlineCurrencyBitcoin } from 'react-icons/md'
