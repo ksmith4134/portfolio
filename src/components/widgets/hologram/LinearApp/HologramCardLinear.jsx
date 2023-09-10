@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import image from '../../../../public/holosheet___cosmos_1_by_aschefield101_dfym6ov.png'
+import image from '../../../../../public/animations/holofoils/cashapp.jpg'
+import styles from './HologramCardLinear.module.css'
 
 export default function HologramCardLinear() {
 
@@ -59,34 +59,29 @@ export default function HologramCardLinear() {
         <>
             
             <div 
-                className="sc-61c592de-0 gLjvKm" 
+                className={styles.gLjvKm}
                 style={{"--m-x": `${mouseCoords.mx}%`, "--m-y": `${mouseCoords.my}%`, "--bg-x": `${mouseCoords.bx}%`, "--bg-y": `${mouseCoords.by}%`, "--r-x": `${mouseCoords.rx}deg`, "--r-y": `${mouseCoords.ry}deg`, "--opacity": `${opacity}`}}
                 ref={inputRef}
                 onMouseLeave={removeListener}
                 onMouseMove={rotateToMouse}
             >
                 
-                <div className="sc-61c592de-1 nBKd">
-                    <div className="sc-61c592de-4 ecVroI">
-                        <img 
+                <div className={styles.nBKd}>
+                    <div className={styles.ecVroI}>
+                        <Image 
                             alt="test card hologram" 
                             data-nosnippet="true" 
                             data-loaded="true" 
-                            width="1360" 
-                            height="1680" 
+                            fill={true} 
                             decoding="async" 
                             data-nimg="1" 
-                            className="sc-5f7b9831-0 dqWqYY" 
+                            className={styles.dqWqYY}
                             style={{ color:"transparent" }} 
-                            src={'https://cdn.sanity.io/images/ornj730p/production/c15db21d41cbaa1ec2583168a74011159f755658-1360x1680.jpg?q=95&amp;auto=format&amp;dpr=2'}
-                        /> {/* https://cdn.sanity.io/images/ornj730p/production/c15db21d41cbaa1ec2583168a74011159f755658-1360x1680.jpg?q=95&amp;auto=format&amp;dpr=2 */}
+                            src={image}
+                        /> 
                     </div>
-                
-                    {/* Delete Me, Tesing Purposes */}
-                    {/* <div ref={glowRef} className="glow" /> */}
-
-                    <div className="sc-61c592de-3 fwVxsc"></div>
-                    <div className="sc-61c592de-2 cJAjge"></div>
+                    <div className={styles.fwVxsc}></div>
+                    <div className={styles.cJAjge}></div>
                 </div>
             </div>
         </>

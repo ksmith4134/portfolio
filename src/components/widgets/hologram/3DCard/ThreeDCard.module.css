@@ -1,0 +1,59 @@
+/* 3D CARD CURSOR HIGHLIGHT */
+.app {
+    perspective: 1500px;
+}
+
+.card {
+    width: 500px;
+    height: 300px;
+    padding: 1em;
+    box-shadow: 0 1px 5px #00000099;
+
+    border-radius: 20px;
+    background-image: url('../../../../../public/animations/holofoils/holosheet_5_by_aschefield101_d33dje0.jpg');
+    background-size: cover;
+
+    position: relative;
+    overflow: hidden;
+
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    transform: rotate3d(0);
+}
+
+.imageTop {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url('../../../../../public/animations/holofoils/holosheet___cosmos_1_by_aschefield101_dfym6ov.png');
+    filter: saturate(1.5);
+    background-size: cover;
+}
+
+.imageTop:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.card:hover {
+    transition-duration: 150ms;
+    box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.card .glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: radial-gradient(circle at 50% -20%, #ffffff10, #0000000f);
+}

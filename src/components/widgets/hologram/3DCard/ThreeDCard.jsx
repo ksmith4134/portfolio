@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
+import styles from './ThreeDCard.module.css'
 
-
-export default function HologramCardTest() {
+export default function ThreeDCard() {
     let bounds;
     const inputRef = useRef();
     const glowRef = useRef();
@@ -49,19 +49,19 @@ export default function HologramCardTest() {
 
     return (
 
-        <div className="app">
+        <div className={styles.app}>
             <div
-                className="card"
+                className={styles.card}
                 ref={inputRef}
                 onMouseLeave={removeListener}
                 onMouseMove={rotateToMouse}
             >
-                <div className="imageTop"></div>
+                <div className={styles.imageTop}></div>
                 <div className="relative w-full h-full flex flex-col justify-end items-end text-white">
                     <h1 className="text-4xl font-semibold">Kevin Smith</h1>
                     <p className="text-lg font-thin">Web Developer, UI / UX Designer</p>
                 </div>
-                <div ref={glowRef} className="glow" />
+                <div ref={glowRef} className={styles.glow} />
             </div>
         </div>
 

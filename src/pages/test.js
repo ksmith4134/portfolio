@@ -1,13 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import HologramCardTest from "@/components/widgets/hologram/HologramCardTest"
-import HologramCardLinear from "@/components/widgets/hologram/HologramCardLinear"
+import ThreeDCard from "@/components/widgets/hologram/3DCard/ThreeDCard"
+import HologramCardLinear from "@/components/widgets/hologram/LinearApp/HologramCardLinear"
+import HologramInitials from "@/components/widgets/hologram/Initials/HologramInitials"
+import HologramTemplate from "@/components/widgets/hologram/HologramTemplate"
+import HologramBitcoin from "@/components/widgets/hologram/Bitcoin/HologramBitcoin"
+
 
 export default function test() {
   return (
-    <div className="relative z-30 max-w-screen min-h-screen py-40">
-        <div className="flex justify-center items-center">
-            <HologramCardLinear />
-            {/* <HologramCardTest /> */}
+    <div className="relative z-30 max-w-screen min-h-screen py-20">
+        <div className="flex flex-col justify-center items-center gap-8">
+            <HologramBitcoin />
         </div>
     </div>
   )
