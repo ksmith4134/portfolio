@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import styles from './HologramInitials.module.css'
+import styles from './HologramPinkFloyd.module.css'
 
-export default function HologramInitials(props) {
+export default function HologramPinkFloyd(props) {
 
     const {
         width = 300,
         height = 300,
         perspective = 600,
         radius = 20,
-        topImage = '/animations/holofoils/KS-2b.jpg',
-        opacity = 0.8,
+        topImage = '/animations/holofoils/PinkFloyd-1d.jpg',
+        opacity = 0,
         rotateX = 20,
         rotateY = 15,
         shimmerRate = 30, // 30 is a good default value
@@ -106,10 +106,9 @@ export default function HologramInitials(props) {
                             style={{ color:"transparent" }} 
                             src={topImage}
                         /> 
-                        {/* <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-end items-end">
-                            <h1 className="mt-2 text-4xl font-semibold text-white">Kevin Smith</h1>
-                            <p className="mt-0.5 text-md font-thin text-white ">Web Developer, UI / UX Designer</p>
-                        </div> */}
+                        <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-end items-end">
+                            
+                        </div>
                     </div>
                     <div className={styles.cursourHighlight}></div>
                     <div className={styles.foil}></div>

@@ -97,13 +97,13 @@ export default function Home(props) {
                             </span>
                             <span>&nbsp;&nbsp;</span>
                             <span className="inline-flex items-baseline">
-                                <FaReact className="w-5 h-5 fill-[#61dbfb]" />
-                                <span className="text-[#61dbfb] font-normal">&nbsp;React&nbsp;&nbsp;</span>
+                                <FaReact className="w-5 h-5 fill-white" />
+                                <span className="text-white font-normal">&nbsp;React&nbsp;&nbsp;</span>
                             </span>
                             <span className="inline-flex">
                                 and&nbsp;&nbsp;
-                                <BiLogoTailwindCss className="w-5 h-5 fill-[#38BDF8]" />
-                                <span className="text-[#38BDF8] font-normal">&nbsp;Tailwind</span>.
+                                <BiLogoTailwindCss className="w-5 h-5 fill-white" />
+                                <span className="text-white font-normal">&nbsp;Tailwind</span>.
                             </span>
                         </p>
                         <p className="mt-6 text-neutral-400">Most of all I love taking projects from the initial, conceptual stage all the way to deployment. That means thinking through architectural puzzles, modeling content, creating UI designs, and writing solid code.</p>
