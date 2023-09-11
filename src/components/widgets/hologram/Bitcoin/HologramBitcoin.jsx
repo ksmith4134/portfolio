@@ -9,8 +9,8 @@ export default function HologramBitcoin(props) {
         height = 300,
         perspective = 600,
         radius = 20,
-        topImage = '/animations/holofoils/BitcoinTest.jpg',
-        opacity = 0.8,
+        topImage = '/animations/holofoils/Bitcoin-r1b.jpg',
+        opacity = 0.4,
         rotateX = 20,
         rotateY = 15,
         shimmerRate = 30, // 30 is a good default value
