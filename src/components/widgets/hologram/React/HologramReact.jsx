@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import styles from './HologramPinkFloyd.module.css'
+import styles from './HologramReact.module.css'
+import {FaReact} from 'react-icons/fa'
 
-export default function HologramPinkFloyd(props) {
+export default function HologramReact(props) {
 
     const {
         width = 300,
         height = 300,
         perspective = 600,
         radius = 20,
-        topImage = '/animations/holofoils/PinkFloyd-2.jpg',
+        topImage = '/animations/holofoils/React-1.jpg',
         opacity = 0.2,
         rotateX = 20,
         rotateY = 15,
@@ -106,12 +107,14 @@ export default function HologramPinkFloyd(props) {
                             style={{ color:"transparent" }} 
                             src={topImage}
                         /> 
-                        <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-end items-end">
-                            
-                        </div>
+                        
+                    </div>
+                    <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-center items-center">
+                        <FaReact className="w-20 h-20 text-cyan-300" />
                     </div>
                     <div className={styles.cursourHighlight}></div>
                     <div className={styles.foil}></div>
+
                 </div>
             </div>
         </div>

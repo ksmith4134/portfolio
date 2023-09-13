@@ -12,6 +12,9 @@ import WebPlayer from "@/components/widgets/webPlayer";
 import { projects } from "@/data/projects";
 import IconRender from "@/components/media/iconRender";
 import LineGraph from "@/components/lineGraph";
+import HologramBitcoin from "@/components/widgets/hologram/Bitcoin/HologramBitcoin";
+import HologramReact from "@/components/widgets/hologram/React/HologramReact";
+import HologramPinkFloyd from "@/components/widgets/hologram/PinkFloyd/HologramPinkFloyd";
 
 export default function Home(props) {
 
@@ -111,16 +114,25 @@ export default function Home(props) {
                     
                 </section>
 
+                {/* HLOGRAMS */}
+                <div className="mt-16 flex justify-between items-center gap-6">
+                    
+                        <HologramBitcoin width={220} height={220} opacity={0} />
+                        <HologramPinkFloyd width={220} height={220} opacity={0} />
+                        <HologramReact width={220} height={220} opacity={0} />
+                    
+                </div>
+
                 {/* SECTION: TEST SPOTIFY PLAYER */}
-                { spotify?.access_token && 
+                {/* { spotify?.access_token && 
                     <WebPlayer token={spotifyToken} />
-                }
+                } */}
 
                 {/* SECTION: Spotify Music Player */}
-                <MusicPlayer />
+                {/* <MusicPlayer /> */}
 
                 {/* SECTION: About Me Interest Cards */}
-                <section className="mt-4 flex flex-wrap md:flex-nowrap gap-4">
+                {/* <section className="mt-4 flex flex-wrap md:flex-nowrap gap-4">
                     <div className="w-full h-40 hover:w-[130rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-amber-500/10  rounded-xl transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
                         <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
@@ -189,10 +201,10 @@ export default function Home(props) {
                             <p className={`font-mono text-neutral-300 text-[14px] leading-[18px] text-right absolute word-animation opacity-0`}>A<br></br>Short<br></br>History<br></br>Of Nearly<br></br>Everything</p>
                         </div>
                     </div>
-                </section>
+                </section> */}
                 
                 {/* SECTION: Projects */}
-                <section className="pt-16">
+                {/* <section className="pt-16">
                     <h2 id="projects" className="pt-8 font-semibold text-5xl text-neutral-200 text-center">Projects</h2>
                     <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto"><span className="font-extrabold">Click on a project</span> below to learn about individual contributions, coding challenges, and important design considerations.</p>
                     <div className="mt-12 flex flex-wrap gap-8">
@@ -205,7 +217,6 @@ export default function Home(props) {
                                             <p>{project.status}</p>
                                         </div>
                                     </div>
-                                    {/*  */}
                                 </div>
                                 <h2 className="mt-6 text-2xl font-semibold text-neutral-300">{project.title}</h2>
                                 <h3 className="mt-1 font-light text-sm text-neutral-400">{project.type}</h3>
@@ -240,7 +251,7 @@ export default function Home(props) {
                             </div>
                         ))}
                     </div>
-                </section>
+                </section> */}
 
                 {/* SECTION: Tech Logos */}
                 <section className="pt-20">

@@ -72,7 +72,7 @@ export default function LineGraph({rawData}) {
                     borderWidth: 2,
                     fill: "origin",
                     backgroundColor: ({chart: {ctx}}) => {
-                        const gradient = ctx.createLinearGradient(0, 0, 0, 65);
+                        const gradient = ctx.createLinearGradient(0, 50, 0, 80);
                         gradient.addColorStop(0, "rgb(245 158 11 / 0.1)"); // amber: rgb(245 158 11 / 0.2)
                         gradient.addColorStop(1, "rgb(245 158 11 / 0)");
                         return gradient;
