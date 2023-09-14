@@ -109,9 +109,6 @@ export default function HologramReact(props) {
                         /> 
                         
                     </div>
-                    <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-center items-center">
-                        <FaReact className="w-20 h-20 text-cyan-300" />
-                    </div>
                     <div className={styles.cursourHighlight}></div>
                     <div className={styles.foil}></div>
 

@@ -117,9 +117,9 @@ export default function Home(props) {
                 {/* HLOGRAMS */}
                 <div className="mt-16 flex justify-between items-center gap-6">
                     
-                        <HologramBitcoin width={220} height={220} opacity={0} />
-                        <HologramPinkFloyd width={220} height={220} opacity={0} />
-                        <HologramReact width={220} height={220} opacity={0} />
+                        <HologramBitcoin width={220} height={220} radius={20} opacity={0} />
+                        <HologramPinkFloyd width={220} height={220}  radius={20} opacity={0} />
+                        <HologramReact width={220} height={220}  radius={20} opacity={0} />
                     
                 </div>
 
@@ -204,7 +204,7 @@ export default function Home(props) {
                 </section> */}
                 
                 {/* SECTION: Projects */}
-                {/* <section className="pt-16">
+                <section className="pt-16">
                     <h2 id="projects" className="pt-8 font-semibold text-5xl text-neutral-200 text-center">Projects</h2>
                     <p className="mt-4 font-light text-neutral-400 text-center max-w-lg mx-auto"><span className="font-extrabold">Click on a project</span> below to learn about individual contributions, coding challenges, and important design considerations.</p>
                     <div className="mt-12 flex flex-wrap gap-8">
@@ -251,7 +251,7 @@ export default function Home(props) {
                             </div>
                         ))}
                     </div>
-                </section> */}
+                </section>
 
                 {/* SECTION: Tech Logos */}
                 <section className="pt-20">

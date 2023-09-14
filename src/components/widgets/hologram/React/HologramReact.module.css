@@ -73,8 +73,8 @@
     background: 
         radial-gradient( 
             farthest-corner circle at var(--m-x) var(--m-y), 
-            rgba(255,255,255,0.4) 20%, 
-            rgba(255,255,255,0.3) 40%, 
+            rgba(255,255,255,0.2) 20%, 
+            rgba(255,255,255,0.1) 40%, 
             rgba(255,255,255,0) 
         100% );
 }
@@ -102,9 +102,9 @@
         repeating-linear-gradient( 
             128deg, 
             #252527 0%, 
-            hsl(180,10%,60%, 0.5) 3.8%, 
-            hsl(180,10%,60%, 0.5) 4.5%, 
-            hsl(180,10%,60%, 0.5) 5.2%, 
+            hsl(180,10%,60%, 0.1) 3.8%, 
+            hsl(180,10%,60%, 0.1) 4.5%, 
+            hsl(180,10%,60%, 0.1) 5.2%, 
             #2d2e2f 10%, 
             #2b2c2e 12% 
         ) var(--bg-x) var(--bg-y) / 300%;
@@ -112,8 +112,8 @@
         radial-gradient( 
             farthest-corner circle at var(--m-x) var(--m-y), 
             rgba(255,255,255,0.1) 12%, 
-            rgba(255,255,255,0.15) 20%, 
-            rgba(255,255,255,0.25) 120% 
+            rgba(255,255,255,0.1) 20%, 
+            rgba(255,255,255,0.1) 120% 
         ) var(--bg-x) var(--bg-y) / 300%;
     background-blend-mode: hue, hue, soft-light, soft-light;
     background: var(--pattern),var(--rainbow),var(--diagonal),var(--shade);
@@ -139,5 +139,5 @@
         0% var(--bg-y), 
         calc(var(--bg-x) * -1) calc(var(--bg-y) * -1), 
         var(--bg-x) var(--bg-y);
-    background-blend-mode: soft-light, hue, hard-light;
+    background-blend-mode: color-dodge, hue, color-dodge;
 }
