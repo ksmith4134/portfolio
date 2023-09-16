@@ -6,12 +6,9 @@ import IconRender from "../media/iconRender";
 
 export default function Header() {
     return (
-        <div className="relative z-20 max-w-screen bg-neutral-950">
+        <div className="relative max-w-screen bg-neutral-950">
             <nav className="w-full mx-auto px-8 py-6">
                 <div className="w-full mx-auto md:px-8 flex items-center justify-center">
-                    {/* <Link href={'/'}>
-                        <Image src={Initials} width={40} height={40} alt="initials logo" />
-                    </Link> */}
                     <div className="flex gap-4">
                         { nav.map((link) => (
                             <Link 
@@ -27,7 +24,7 @@ export default function Header() {
             </nav>
             <div 
                 className="
-                    max-w-4xl mx-auto w-full h-px bg-gradient-to-tr 
+                    max-w-6xl mx-auto w-full h-px bg-gradient-to-tr 
                     from-neutral-950 from-25%
                     via-neutral-700 via-50%
                     to-neutral-950 to-75%

@@ -1,15 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import styles from './HologramTemplate.module.css'
+import styles from './HolofoilTemplate.module.css'
 
-export default function HologramTemplateLinear(props) {
+export default function HolofoilTemplate(props) {
 
     const {
         width = 500,
         height = 300,
         perspective = 600,
         radius = 20,
-        topImage = '/animations/holofoils/KS-2b.jpg',
+        topImage = '/animations/holofoils/React-1.jpg',
         opacity = 0.4,
         rotateX = 20,
         rotateY = 15,
@@ -106,10 +106,10 @@ export default function HologramTemplateLinear(props) {
                             style={{ color:"transparent" }} 
                             src={topImage}
                         /> 
-                        <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-end items-end">
+                        {/* <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-end items-end">
                             <h1 className="mt-2 text-4xl font-semibold text-white">Kevin Smith</h1>
                             <p className="mt-0.5 text-md font-thin text-white ">Web Developer, UI / UX Designer</p>
-                        </div>
+                        </div> */}
                     </div>
                     <div className={styles.cursourHighlight}></div>
                     <div className={styles.foil}></div>

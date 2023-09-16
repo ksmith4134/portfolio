@@ -8,7 +8,7 @@ import redux from '../../public/logos/redux.svg'
 import tailwind from '../../public/logos/tailwind.svg'
 import storyblok from '../../public/logos/storyblok.svg'
 
-import { BsPencil, BsFillCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
+import { BsPencil, BsFillCaretUpFill, BsCaretDownFill, BsFillSunFill } from 'react-icons/bs'
 import { FaCode,FaGithub, FaLinkedin } from 'react-icons/fa'
 import { PiCompassToolBold } from 'react-icons/pi'
 import { IoEarthOutline } from 'react-icons/io5'
@@ -90,13 +90,10 @@ export const ICONS = {
     up: BsFillCaretUpFill,
     down: BsCaretDownFill,
     earth: IoEarthOutline,
+    sun: BsFillSunFill,
 }
 
 export const COLORS = {
-    CARDS: {
-        blue: '',
-        red: '',
-    },
     STATUS: {
         'Live': 'bg-green-500 animate-pulse', 
         'In Development': 'bg-blue-500', 
@@ -107,5 +104,34 @@ export const COLORS = {
         'gray': 'text-neutral-700',
         'red': 'text-red-600',
         'green': 'text-emerald-600',
+    }
+}
+
+export const CARDS = {
+    WIDTH: {
+        'full': 'w-full',
+        'half': 'basis-1/2',
+        'twothird': 'basis-2/3',
+        'third': 'basis-1/3',
+        'fourth': 'basis-1/4'
+    },
+    HEIGHT: {
+        'full': 'h-full',
+        'fit': 'h-fit',
+        '80': 'h-80',
+    },
+    FLEX: {
+        'none': '',
+        'shrink': 'flex-shrink-0',
+    },
+    PADDING: {
+        'none': '',
+        'normal': 'p-8'
+    },
+    BACKGROUND: {
+        'linear': 'absolute z-10 w-full h-full top-0 left-0 bg-gradient-to-b from-neutral-900/60',
+        'radial': 'absolute z-0 w-full h-full top-0 left-0 bg-gradient-card from-neutral-500/10',
+        'radial-btm': 'absolute z-0 w-full h-full top-0 left-0 bg-gradient-radial-btm from-neutral-500/30',
+        'bottom': 'absolute bottom-0 left-0 z-30 w-full h-20 bg-gradient-to-b from-transparent to-neutral-950',
     }
 }
