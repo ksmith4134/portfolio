@@ -1,6 +1,7 @@
 import React from 'react'
-import {CARDS} from '../Theme'
+import {CARDS, ICONS} from '../Theme'
 import { FiArrowRight } from 'react-icons/fi'
+import Link from 'next/link';
 
 export default function Card(props) {
 
@@ -13,7 +14,9 @@ export default function Card(props) {
         subtitle,
         children,
         background,
-        link,
+        link = '',
+        linkTarget = '',
+        icon,
     } = props;
 
     const styleWidth = CARDS.WIDTH[width];
@@ -21,25 +24,30 @@ export default function Card(props) {
     const stylePadding = CARDS.PADDING[padding];
     const styleFlex = CARDS.FLEX[shrink];
     const styleBackground = CARDS.BACKGROUND[background];
+    const Icon = ICONS[icon]
 
     return (
-        <div className={`relative overflow-hidden rounded-2xl group border border-white/5 hover:border-white/20 hover:cursor-pointer ${styleWidth} ${styleHeight} ${stylePadding} ${styleFlex} shadow-inner shadow-white/5`}>
-            <div className={`bg-neutral-900/40 w-full h-full flex flex-col ${title ? 'justify-between' : 'justify-center'} p-8`}>
+        <Link href={link} target={linkTarget} className={`relative overflow-hidden rounded-2xl group border border-white/5 hover:border-white/20 hover:cursor-pointer ${styleWidth} ${styleHeight} ${stylePadding} ${styleFlex}`}>
+
+            <div className={`bg-neutral-800/20 w-full h-full flex flex-col ${title ? 'justify-between' : 'justify-center'} p-8`}>
+                   
+                { icon && <Icon className="mt-2 text-white w-16 h-16" /> }
                 { title && 
-                    <div>
+                    <div className={`z-50 ${icon && 'mt-6'}`}>
                         <h2 className="text-left text-2xl font-semibold text-white">{title}</h2>
-                        <div className="inline-flex items-center gap-2">
-                            <p className="mt-1 text-left text-sm font-extralight text-neutral-400">{subtitle}</p>
+                        <div className="mt-1 inline-flex items-center gap-2">
+                            <p className="text-left text-sm font-extralight text-neutral-400">{subtitle}</p>
                             {link && <FiArrowRight className="mt-px text-neutral-400 translate-x-0 group-hover:translate-x-1 transition duration-300 ease-in-out" />}
                         </div>
                     </div>
                 }
-
+                
                 { children }
+
             </div>
 
             <div className={`${styleBackground}`}></div>
 
-        </div>
+        </Link>
     )
 }

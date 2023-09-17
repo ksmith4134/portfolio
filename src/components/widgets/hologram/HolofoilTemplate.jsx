@@ -43,7 +43,7 @@ export default function HolofoilTemplate(props) {
             opacity: 1,
         })
 
-        // Testing Calcs Logs
+        // #region Testing Calcs Console Logs
         // console.log(
         //     // 'ORIGINAL VALUES',
         //     // '\nbounds', bounds,
@@ -64,6 +64,7 @@ export default function HolofoilTemplate(props) {
         //     // '\nrx-divisor', (bounds.right-bounds.left) / (2*rotateX),
         //     // '\nry-divisor', (bounds.bottom-bounds.top) / (2*rotateY),
         // )
+        // #endregion
 
     };
 
@@ -105,11 +106,7 @@ export default function HolofoilTemplate(props) {
                             quality={100}
                             style={{ color:"transparent" }} 
                             src={topImage}
-                        /> 
-                        {/* <div className="absolute p-4 z-100 w-full h-full flex flex-col justify-end items-end">
-                            <h1 className="mt-2 text-4xl font-semibold text-white">Kevin Smith</h1>
-                            <p className="mt-0.5 text-md font-thin text-white ">Web Developer, UI / UX Designer</p>
-                        </div> */}
+                        />
                     </div>
                     <div className={styles.cursourHighlight}></div>
                     <div className={styles.foil}></div>

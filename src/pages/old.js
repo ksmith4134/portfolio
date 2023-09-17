@@ -133,7 +133,7 @@ export default function Home(props) {
 
                 {/* SECTION: About Me Interest Cards */}
                 {/* <section className="mt-4 flex flex-wrap md:flex-nowrap gap-4">
-                    <div className="w-full h-40 hover:w-[130rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-amber-500/10  rounded-xl transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
+                    <div className="w-full h-40 hover:w-[130rem] border border-neutral-800/60 p-4 bg-gradient-radial-btm from-amber-500/10 rounded-xl transition-all duration-1000 ease-in-out flex flex-col justify-between shadow-inner shadow-neutral-400/5 group relative">
                         <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-1000 ease-in-out w-full h-full flex flex-col justify-between">
                             <div className="p-2 w-fit flex place-items-start rounded-lg bg-gradient-to-b from-amber-400/80 to-amber-600/60">
                                 <MdOutlineCurrencyBitcoin className="text-2xl text-white" />

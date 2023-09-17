@@ -8,10 +8,11 @@ import redux from '../../public/logos/redux.svg'
 import tailwind from '../../public/logos/tailwind.svg'
 import storyblok from '../../public/logos/storyblok.svg'
 
-import { BsPencil, BsFillCaretUpFill, BsCaretDownFill, BsFillSunFill } from 'react-icons/bs'
+import { BsPencil, BsFillCaretUpFill, BsCaretDownFill, BsFillSunFill, BsSpotify } from 'react-icons/bs'
 import { FaCode,FaGithub, FaLinkedin } from 'react-icons/fa'
 import { PiCompassToolBold } from 'react-icons/pi'
 import { IoEarthOutline } from 'react-icons/io5'
+
 
 import { 
     WiSolarEclipse, WiCloudy, WiCloud, WiRainMix, WiSprinkle, WiSleet, WiSnow, WiSnowWind, WiFog, WiStormShowers, WiThunderstorm
@@ -91,6 +92,7 @@ export const ICONS = {
     down: BsCaretDownFill,
     earth: IoEarthOutline,
     sun: BsFillSunFill,
+    spotify: BsSpotify,
 }
 
 export const COLORS = {
@@ -129,7 +131,7 @@ export const CARDS = {
         'normal': 'p-8'
     },
     BACKGROUND: {
-        'linear': 'absolute z-10 w-full h-full top-0 left-0 bg-gradient-to-b from-neutral-900/60',
+        'linear': 'absolute z-0 w-full h-full top-0 left-0 bg-gradient-to-b from-neutral-900/60',
         'radial': 'absolute z-0 w-full h-full top-0 left-0 bg-gradient-card from-neutral-500/10',
         'radial-btm': 'absolute z-0 w-full h-full top-0 left-0 bg-gradient-radial-btm from-neutral-500/30',
         'bottom': 'absolute bottom-0 left-0 z-30 w-full h-20 bg-gradient-to-b from-transparent to-neutral-950',
