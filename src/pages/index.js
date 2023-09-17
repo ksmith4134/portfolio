@@ -1,17 +1,19 @@
 import { useState } from "react";
-import { SVG_LOGOS, WEATHER_CONDITIONS, COLORS } from "@/components/Theme";
+import Link from "next/link";
 import Image from "next/image";
-import nextIcon from '../../public/logos/nextjs-logotype-dark-background.svg'
+
+import { SVG_LOGOS, WEATHER_CONDITIONS, COLORS } from "@/components/Theme";
+import { projects } from "@/data/projects";
+import { nav } from "@/data/nav";
+
 import { FaReact } from 'react-icons/fa'
+import { FiArrowRight } from 'react-icons/fi'
 import { BiLogoTailwindCss } from 'react-icons/bi'
 import { BsSpotify } from 'react-icons/bs'
+import nextIcon from '../../public/logos/nextjs-logotype-dark-background.svg'
 
-import { projects } from "@/data/projects";
 import IconRender from "@/components/media/iconRender";
-import HolofoilTemplate from "@/components/widgets/hologram/HolofoilTemplate";
 import Card from "@/components/ui/card";
-import Link from "next/link";
-import { nav } from "@/data/nav";
 import SoundBars from "@/components/svg/SoundBars";
 import HologramPinkFloyd from "@/components/widgets/hologram/PinkFloyd/HologramPinkFloyd";
 
@@ -79,10 +81,10 @@ export default function Home(props) {
         <main className="relative max-w-screen min-h-screen">
             <div className="max-w-5xl mx-auto px-8">
                 
-                <div className="mt-24 flex flex-col w-full">
-                    <h1 className="text-center font-bold text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white  to-neutral-400">Kevin Smith</h1>
-                    <p className="text-center mt-4 font-extralight text-2xl text-neutral-400">Web Developer, UI / UX Designer</p>
-                    <div className="mt-5 flex justify-center items-center gap-4">
+                <div className="mt-28 flex flex-col w-full">
+                    <h1 className="text-center font-extrabold text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white  to-neutral-400">Kevin Smith</h1>
+                    <p className="text-center mt-4 text-2xl font-extralight text-neutral-400">Web Developer, UI / UX Designer</p>
+                    {/* <div className="mt-5 flex justify-center items-center gap-4">
                         { nav.map((link) => (
                             <Link 
                                 key={link.id}
@@ -91,15 +93,14 @@ export default function Home(props) {
                                 <IconRender icon={link.icon} />
                             </Link>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
                 
-                <div className="mt-24 flex flex-col gap-8">
+                <div className="mt-16 flex flex-col gap-8">
 
                     <section className="flex justify-center items-stretch gap-8">
-
                         <Card width={"full"} padding={'none'}>
-                            <p className="text-neutral-400 leading-8">I am a Software Program Manager by day, and a web developer by night (and weekends) where you&apos;ll find me most commonly using&nbsp;&nbsp;
+                            <p className="text-neutral-300 leading-8">I am a Software Program Manager by day, and a web developer by night (and weekends) where you&apos;ll find me most commonly using&nbsp;&nbsp;
                                 <span className="inline-flex items-baseline">
                                     <Image src={nextIcon} width={72} height={72} alt="logo" />
                                 </span>
@@ -116,7 +117,6 @@ export default function Home(props) {
                                 &nbsp;Most of all, I enjoy taking projects from the initial, conceptual stage all the way to deployment.
                             </p>
                         </Card>
-
                         <Card width={"fourth"} background={'radial'}>
                             <div className="p-3 w-fit flex place-items-center mx-auto rounded-lg bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20">
                                 <WeatherIcon className="text-4xl text-white" />
@@ -130,16 +130,12 @@ export default function Home(props) {
                     
 
                     <section className="flex justify-center items-stretch gap-8 h-80">
-
-                        <Card width={"twothird"} title={"Holofoil Cards"} subtitle={"React UI Component"}>
+                        <Card width={"twothird"} title={"Holofoil Cards"} subtitle={"React UI Component"} link={"/holo"}>
                             <div className="absolute z-40 top-[40%]">
-                                <HologramPinkFloyd width={310} height={310} opacity={0.6} radius={12} rotateY={12} />
+                                <HologramPinkFloyd width={308} height={308} opacity={0.6} radius={12} rotateY={12} />
                             </div>
-                            {/* <div className="absolute bottom-0 left-0 z-50 w-full h-20 bg-gradient-to-b from-transparent to-neutral-950"></div> */}
                         </Card>
-
-                        <Card width={"full"} shrink={"none"} title={"Arnot Health Orthopedics"} subtitle={"Medical Resources Web App"}>
-
+                        <Card width={"full"} shrink={"none"} title={"Arnot Health Orthopedics"} subtitle={"Medical Resources Web App"} link={projects[0].website}>
                             <p className="mt-8 text-sm text-neutral-400 line-clamp-4">{projects[0].description}</p>
                             <div className="mt-8 flex gap-2">
                                 <div className="rounded-md px-2 py-1 w-fit bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 text-xs flex gap-2 justify-start items-center">
@@ -159,9 +155,7 @@ export default function Home(props) {
                     </section>
 
                     <section className="flex justify-center items-stretch gap-8 h-80">
-
-                        <Card width={"full"} shrink={"none"} title={"NYS Education Department"} subtitle={"Teacher Training Web App"}>
-
+                        <Card width={"full"} shrink={"none"} title={"NYS Education Department"} subtitle={"Teacher Training Web App"} link={projects[3].website}>
                             <p className="mt-8 text-sm text-neutral-400 line-clamp-4">{projects[3].description}</p>
                             <div className="mt-8 flex gap-2">
                                 <div className="rounded-md px-2 py-1 w-fit bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 text-xs flex gap-2 justify-start items-center">
@@ -178,17 +172,71 @@ export default function Home(props) {
                                 ))}
                             </div>
                         </Card>
-
-                        <Card width={"twothird"} title={"Spotify Player"} subtitle={"NEXT.js Component"} background={'radial-btm'}>
-                            <div className="absolute z-50 w-full text-white p-8 font-light text-sm top-[36%] left-0">
-                                <BsSpotify className="text-white w-16 h-16" />
-                                <p className="mt-4">Use Spotify&apos;s Authenticated Web APIs and JavaScript SDKs to stream music directly on your own website.</p>
-                            </div>
-                            <div className="absolute z-40 top-[50%] left-[24%] opacity-40 blur-2xl">
-                                <SoundBars />
+                        <Card width={"twothird"} background={'radial-btm'}>
+                            <div className="group w-full h-full flex flex-col justify-between">
+                                <BsSpotify className="mt-2 text-white w-16 h-16" />
+                                <div className="mt-6">
+                                    <h2 className="text-left text-2xl font-semibold text-white">Spotify Player</h2>
+                                    <div className="inline-flex items-center gap-2">
+                                        <p className="mt-1 text-left text-sm font-extralight text-neutral-400">NEXT.js Component</p>
+                                        <FiArrowRight className="text-neutral-400 translate-x-0 group-hover:translate-x-1 transition duration-300 ease-in-out" />
+                                    </div>
+                                </div>
+                                <p className="text-neutral-200 text-sm">Use Spotify&apos;s authenticated Web API and JavaScript SDK to stream music directly on your own website.</p>
+                                <div className="absolute z-40 top-[50%] left-[24%] opacity-30 blur-2xl group-hover:opacity-40 transition-opacity duration-500 ease-in-out">
+                                    <SoundBars />
+                                </div>
                             </div>
                         </Card>
                     </section>
+
+                    <section className="flex justify-center items-stretch gap-8">
+                        <Card width={"half"}>
+                            <h2 className="text-left text-2xl font-semibold text-white">Kodak Moments</h2>
+                            <div className="inline-flex items-center gap-2">
+                                <p className="mt-1 text-left text-sm font-extralight text-neutral-400">Various Full-Stack Projects</p>
+                                <FiArrowRight className="text-neutral-400 translate-x-0 group-hover:translate-x-1 transition duration-300 ease-in-out" />
+                            </div>
+                            <p className="mt-6 text-sm text-neutral-400 line-clamp-4">{projects[5].description}</p>
+                            <div className="mt-8 flex gap-2">
+                                <div className="rounded-md px-2 py-1 w-fit bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 text-xs flex gap-2 justify-start items-center">
+                                    <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[projects[5].status]}`}></div>
+                                    <p>{projects[5].status}</p>
+                                </div>
+                                { projects[5].contributions.map((item) => (
+                                    <div key={item} className="rounded-md flex place-items-center gap-2 px-2 py-2 bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 group/item">
+                                        <div className="group-hover/item:hidden text-sm">
+                                            <IconRender icon={item} size={'small'} color={'white'} />
+                                        </div>
+                                        <p className="hidden group-hover/item:block text-xs leading-3">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </Card>
+                        <Card width={"half"}>
+                            <h2 className="text-left text-2xl font-semibold text-white">Pasture Stand</h2>
+                            <div className="inline-flex items-center gap-2">
+                                <p className="mt-1 text-left text-sm font-extralight text-neutral-400">Multi-Vendor E-Commerce</p>
+                                <FiArrowRight className="text-neutral-400 translate-x-0 group-hover:translate-x-1 transition duration-300 ease-in-out" />
+                            </div>
+                            <p className="mt-6 text-sm text-neutral-400 line-clamp-4">{projects[4].description}</p>
+                            <div className="mt-8 flex gap-2">
+                                <div className="rounded-md px-2 py-1 w-fit bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 text-xs flex gap-2 justify-start items-center">
+                                    <div className={`w-2 h-2 rounded-full ${COLORS.STATUS[projects[4].status]}`}></div>
+                                    <p>{projects[4].status}</p>
+                                </div>
+                                { projects[4].contributions.map((item) => (
+                                    <div key={item} className="rounded-md flex place-items-center gap-2 px-2 py-2 bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 group/item">
+                                        <div className="group-hover/item:hidden text-sm">
+                                            <IconRender icon={item} size={'small'} color={'white'} />
+                                        </div>
+                                        <p className="hidden group-hover/item:block text-xs leading-3">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </Card>
+                    </section>
+
                 </div>
 
 

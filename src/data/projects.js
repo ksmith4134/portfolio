@@ -62,7 +62,7 @@ export const projects = [
         thumbnail: '',
         title: 'NYS Education Department',
         type: 'Training & Certification App',
-        description: 'A curriculum of video-based courses and certification quizzes that help train teachers to conduct state assessments for students with severe cognitive disabilities.',
+        description: 'A curriculum of video-based courses and certification quizzes that help train teachers to conduct state assessments for students with severe cognitive disabilities. Developed custom Auth and email provider API endpoints for the Strapi headless CMS.',
         contributions: ["code", "design"],
         website: "https://www.dlmnysaatraining.com/",
         tech: [
@@ -81,5 +81,24 @@ export const projects = [
         tech: [
             { id: 0, logo: '', label: '', }
         ],
-    }
+    },
+    {
+        id: 5,
+        status: 'In Development',
+        thumbnail: '',
+        title: 'Kodak Moments',
+        type: 'Custom JIRA Report',
+        description: 'Worked on the e-commerce website, React component library, and Contentful CMS. Built a web app using Jira and Postmark APIs to generate custom sprint reports and automatically send status emails to relevant stakeholders.',
+        contributions: ["code", "design"],
+        website: 'https://www.kodakmoments.com/',
+        tech: [
+            { id: 0, logo: 'NEXT', label: 'NEXT.js', },
+            { id: 1, logo: 'react', label: 'React', },
+            { id: 5, logo: 'javascript', label: 'JavaScript', },
+            { id: 2, logo: 'tailwind', label: 'Tailwind', },
+            { id: 3, logo: 'nodejs', label: 'Node.js', },
+            { id: 4, logo: '', label: 'JIRA API', },
+            { id: 6, logo: '', label: 'Postmark Email API', },
+        ],
+    },
 ]
