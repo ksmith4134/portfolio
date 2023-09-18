@@ -81,7 +81,7 @@ export default function Home(props) {
                     </section>
                     
                     <section className="flex justify-center items-stretch gap-8 h-80">
-                        <Card width={"twothird"} title={"Holofoils"} subtitle={"React UI Component"} link={"/holofoils"}>
+                        <Card width={"twothird"} title={"Holofoils"} subtitle={"React Component"} link={"/holofoils"}>
                             <div className="absolute z-40 top-[40%]">
                                 <HologramPinkFloyd width={308} height={308} opacity={0.6} radius={12} rotateY={12} />
                             </div>
@@ -192,18 +192,6 @@ export default function Home(props) {
 
 export async function getStaticProps(){
 
-    // #region Bitcoin Current Price API
-    // const bitcoinResponse = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin')
-    // const bitcoinData = await bitcoinResponse.json()
-    // const bitcoin = bitcoinData[0]
-    // #endregion
-
-    // #region Bitcoin Current Price API
-    // const bitcoinChartResponse = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily&precision=2')
-    // const bitcoinChartData = await bitcoinChartResponse.json()
-    // const bitcoinPriceChart = bitcoinChartData.prices.map(item => item[1])
-    // #endregion
-
     // #region Weather API
     const weatherResponse = await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=14607&aqi=no`)
     const weatherData = await weatherResponse.json()
@@ -247,10 +235,8 @@ export async function getStaticProps(){
 
     return {
         props: {
-            // bitcoin,
             weather,
             spotify: null,
-            // bitcoinPriceChart,
         },
         revalidate: 14400,
     }

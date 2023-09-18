@@ -11,7 +11,7 @@ export default function Holofoils({jsxCode, cssCode}) {
             <div className="max-w-2xl mx-auto">
 
                 <h1 className="text-white font-bold text-4xl">Holofoils</h1>
-                <h5 className="mt-2 text-neutral-600 text-md font-normal">React UI Component</h5>
+                <h5 className="mt-2 text-neutral-600 text-md font-normal">NEXT.js Component</h5>
                 <div className="mt-8 prose prose-invert max-w-none">
                     <p>Inspired by the work of&nbsp;
                         <a href="https://github.com/simeydotme/pokemon-cards-css" target="_blank">
@@ -34,7 +34,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                     <div className="flex justify-between items-center gap-2">
                         <h2 className="text-neutral-300 font-semibold text-2xl">JSX Component</h2>
                     </div>
-                    <div className="mt-4 overflow-auto rounded-lg border border-white/5 h-96 bg-neutral-800/20 no-scrollbar">
+                    <div className="mt-4 overflow-auto border border-white/5 h-96 bg-neutral-800/20">
                         <pre className="break-normal" dangerouslySetInnerHTML={{ __html: jsxCode }} />
                     </div>
                 </div>
@@ -43,16 +43,16 @@ export default function Holofoils({jsxCode, cssCode}) {
                     <div className="flex justify-between items-center gap-2">
                         <h2 className="text-neutral-300 font-semibold text-2xl">CSS Module</h2>
                     </div>
-                    <div className="mt-4 overflow-auto rounded-lg border border-white/5 h-96 bg-neutral-800/20 no-scrollbar">
+                    <div className="mt-4 overflow-auto border border-white/5 h-96 bg-neutral-800/20">
                         <pre className="break-normal" dangerouslySetInnerHTML={{ __html: cssCode }} />
                     </div>
                 </div>
 
                 <h2 className="mt-16 text-neutral-300 font-bold text-2xl">Gallery</h2>
                 <div className="mt-4 flex justify-between items-center gap-6">
-                    <HologramReact width={240} height={240} opacity={0.4} />
-                    <HologramBitcoin width={240} height={240} opacity={0.4} />
-                    <HologramPinkFloyd width={240} height={240} opacity={0.4} />
+                    <HologramReact width={220} height={220} opacity={0.4} />
+                    <HologramBitcoin width={220} height={220} opacity={0.4} />
+                    <HologramPinkFloyd width={220} height={220} opacity={0.4} />
                 </div>
 
             </div>
@@ -70,7 +70,7 @@ export async function getStaticProps() {
     const jsxCode = `
     import { useState, useRef } from "react";
     import Image from "next/image";
-    import styles from './HolofoilTemplate.module.css'
+    import styles from "./HolofoilTemplate.module.css"
 
     export default function HolofoilTemplate(props) {
 
@@ -254,13 +254,14 @@ export async function getStaticProps() {
     }
 
     .foil {
-        mix-blend-mode: color-dodge; /* Original: color-dodge */
+        mix-blend-mode: color-dodge;
         opacity: var(--opacity);
         will-change: background;
         transition-property: opacity;
         clip-path: inset(0 0 1px 0 round var(--radius));
         --step: 5%;
-        --pattern: url('../public/test-image.jpg') center / var(--foil-size);
+        /* Insert your own image path into the url below */
+        --pattern: url('../public/image.jpg') center / var(--foil-size);
         --rainbow: 
             repeating-linear-gradient( 
                 0deg, 
@@ -290,7 +291,11 @@ export async function getStaticProps() {
                 rgba(255,255,255,0.25) 120% 
             ) var(--bg-x) var(--bg-y) / 300%;
         background-blend-mode: hue, hue, hard-light, overlay;
-        background: var(--pattern),var(--rainbow),var(--diagonal),var(--shade);
+        background: 
+            var(--pattern),
+            var(--rainbow),
+            var(--diagonal),
+            var(--shade);
     }
 
     .foil::after {
