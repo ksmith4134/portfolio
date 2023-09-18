@@ -5,11 +5,11 @@ import styles from './HolofoilTemplate.module.css'
 export default function HolofoilTemplate(props) {
 
     const {
-        width = 500,
+        width = 300,
         height = 300,
         perspective = 600,
         radius = 20,
-        topImage = '/animations/holofoils/React-1.jpg',
+        foregroundImage = '/animations/holofoils/React-1.jpg',
         opacity = 0.4,
         rotateX = 20,
         rotateY = 15,
@@ -105,7 +105,7 @@ export default function HolofoilTemplate(props) {
                             className={styles.image}
                             quality={100}
                             style={{ color:"transparent" }} 
-                            src={topImage}
+                            src={foregroundImage}
                         />
                     </div>
                     <div className={styles.cursourHighlight}></div>

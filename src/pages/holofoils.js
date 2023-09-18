@@ -1,16 +1,25 @@
+import Link from "next/link";
+import Image from "next/image";
 import HologramBitcoin from "@/components/widgets/hologram/Bitcoin/HologramBitcoin";
 import HologramReact from "@/components/widgets/hologram/React/HologramReact";
 import HologramPinkFloyd from "@/components/widgets/hologram/PinkFloyd/HologramPinkFloyd";
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaArrowLeft } from 'react-icons/fa'
+import HolofoilTemplate from "@/components/widgets/hologram/HolofoilTemplate";
 
 export default function Holofoils({jsxCode, cssCode}) {
 
 
     return (
-        <div className='relative z-30 max-w-screen min-h-screen py-20 w-full'>
-            <div className="max-w-2xl mx-auto">
+        <div className='relative z-30 max-w-screen min-h-screen pt-12 pb-20 w-full'>
+            <article className="max-w-2xl mx-auto">
 
-                <h1 className="text-white font-bold text-4xl">Holofoils</h1>
+                <Link href={'/'}>
+                    <button className="inline-flex items-center gap-2 text-neutral-300 px-3 py-2 rounded-md border border-neutral-600/20 bg-gradient-to-t from-neutral-400/10 hover:from-neutral-400/10 group">
+                        <FaArrowLeft className="text-xs group-hover:-translate-x-1 transition duration-200 ease-in-out" />
+                        <p className="text-sm">Back</p>
+                    </button>
+                </Link>
+                <h1 className="mt-12 text-white font-bold text-4xl tracking-wide">Holofoils</h1>
                 <h5 className="mt-2 text-neutral-600 text-md font-normal">NEXT.js Component</h5>
                 <div className="mt-8 prose prose-invert max-w-none">
                     <p>Inspired by the work of&nbsp;
@@ -27,35 +36,89 @@ export default function Holofoils({jsxCode, cssCode}) {
                             </span>
                         </a>.
                     </p>
-                    <p>Copy and paste the code below into your own React codebase to start using these beautiful holofoil cards. Customize them using your own images and standard props. Get started below...</p>
+                    <p>Follow the directions below to start using these holofoil cards in your own React or NEXT.js project. Customize the cards using your own images, component props, and custom styling. Get started below...</p>
                 </div>
 
-                <div className="mt-16">
-                    <div className="flex justify-between items-center gap-2">
-                        <h2 className="text-neutral-300 font-semibold text-2xl">JSX Component</h2>
+                <div className="mt-12 prose prose-invert max-w-none">
+                    <h2>Steps</h2>
+                    <ol>
+                        <li>Create a file called, <code>HolofoilTemplate.jsx</code> in your /components folder.</li>
+                        <li>Copy the code below and paste it into the new component file. Note, if using VS Code, press Shift+Alt+F for Windows or Cmd+k+f for Mac.</li>
+                        <figure className="mt-4 w-full not-prose">
+                            <div className="flex justify-between items-center gap-2">
+                                <h2 className="text-neutral-300 text-sm font-mono px-4 py-3 bg-neutral-900 w-full italic">/src/components/HolofoilTemplate.jsx</h2>
+                            </div>
+                            <div className="overflow-auto border border-white/5 h-96 bg-neutral-800/20 text-sm">
+                                <pre className="break-normal" dangerouslySetInnerHTML={{ __html: jsxCode }} />
+                            </div>
+                        </figure>
+                        <li>Add a main, foreground image to your public folder. Add the <strong>absolute</strong> url string to the <code>foregroundImage</code> prop of the HolofoilTemplate.jsx component. There is a code comment in the desctructured props pointing to the correct place to put the url.</li>
+                        <figure className="flex flex-col items-center">
+                            <Image 
+                                alt=""
+                                width={400}
+                                height={400}
+                                src={'/animations/holofoils/horsehead-nebula.jpg'}
+                                className="brightness-125"
+
+                            />
+                            <figcaption>Photo courtesy of ESA Hubble</figcaption>
+                        </figure>
+                        <li>In the same folder as the component, create a second file called, <code>HolofoilTemplate.module.css</code></li>
+                        <li>Copy the code below and paste it into the new component file. Note, if using VS Code, press Shift+Alt+F for Windows or Cmd+k+f for Mac.</li>
+                        <figure className="mt-4 w-full not-prose">
+                            <div className="flex justify-between items-center gap-2">
+                                <h2 className="text-neutral-300 text-sm font-mono px-4 py-3 bg-neutral-900 w-full italic">/src/components/HolofoilTemplate.module.css</h2>
+                            </div>
+                            <div className="overflow-auto border border-white/5 h-96 bg-neutral-800/20 text-sm">
+                                <pre className="break-normal" dangerouslySetInnerHTML={{ __html: cssCode }} />
+                            </div>
+                        </figure>
+                        <li>Add a background image to your public folder. <em>Note: A good background image typically consists of a random or repeating white pattern on a black background.</em></li>
+                        <figure className="flex flex-col items-center">
+                            <Image 
+                                alt=""
+                                width={500}
+                                height={500}
+                                src={'/animations/holofoils/cosmosfoil-2.png'}
+                                className=""
+
+                            />
+                            <figcaption>Photo courtesy of aschefield101 on deviantart.com</figcaption>
+                        </figure>
+                        <li>Add the <strong>relative</strong> url pointing to the background image, to the <code>--pattern</code> CSS variable (found within the <code>.foil</code> class). There is a code comment in the CSS pointing to the correct place to put the url.</li>
+                        <li>Import and add the <code>{`<HolofoilTemplate />`}</code> component to a page. Hover over the holofoil and see how it works!</li>
+                        <figure className="flex flex-col items-center not-prose">
+                            <HolofoilTemplate 
+                                foregroundImage={'/animations/holofoils/horsehead-nebula.jpg'} 
+                                width={400} 
+                                height={480} 
+                                opacity={0.4} 
+                                rotateX={16} 
+                                rotateY={12} 
+                            />
+                        </figure>
+                    </ol>
+
+                    <h2>Future Enhancements</h2>
+                    <ul>
+                        <li>Set the background image in props instead of manually in CSS.</li>
+                        <li>Stack multiple layers of foreground images and apply the &ldquo;foil&rdquo; effect only to specific layers (specified with a prop).</li>
+                        <li>Fix the CSS properties causing clunky pitch (x-axis) and yaw (y-axis) rotation animations in the Mozilla browser.</li>
+                    </ul>
+
+                    <h2>Gallery</h2>
+                    <div className="mt-4 flex flex-wrap justify-between items-center gap-4 not-prose isolate">
+                        <HologramPinkFloyd width={210} height={210} opacity={1} />
+                        <HologramBitcoin width={210} height={210} opacity={0.8} />
+                        <HologramReact width={210} height={210} opacity={1} />
                     </div>
-                    <div className="mt-4 overflow-auto border border-white/5 h-96 bg-neutral-800/20">
-                        <pre className="break-normal" dangerouslySetInnerHTML={{ __html: jsxCode }} />
-                    </div>
+
                 </div>
 
-                <div className="mt-16">
-                    <div className="flex justify-between items-center gap-2">
-                        <h2 className="text-neutral-300 font-semibold text-2xl">CSS Module</h2>
-                    </div>
-                    <div className="mt-4 overflow-auto border border-white/5 h-96 bg-neutral-800/20">
-                        <pre className="break-normal" dangerouslySetInnerHTML={{ __html: cssCode }} />
-                    </div>
-                </div>
 
-                <h2 className="mt-16 text-neutral-300 font-bold text-2xl">Gallery</h2>
-                <div className="mt-4 flex justify-between items-center gap-6">
-                    <HologramReact width={220} height={220} opacity={0.4} />
-                    <HologramBitcoin width={220} height={220} opacity={0.4} />
-                    <HologramPinkFloyd width={220} height={220} opacity={0.4} />
-                </div>
 
-            </div>
+            </article>
         </div>
     );
 }
@@ -69,7 +132,6 @@ export async function getStaticProps() {
 
     const jsxCode = `
     import { useState, useRef } from "react";
-    import Image from "next/image";
     import styles from "./HolofoilTemplate.module.css"
 
     export default function HolofoilTemplate(props) {
@@ -79,11 +141,11 @@ export async function getStaticProps() {
             height = 300,
             perspective = 600,
             radius = 20,
-            topImage = '/test-image.jpg', // insert your own image
+            foregroundImage = '/replace-me.jpg', // <-- Insert your own image
             opacity = 0.4,
             rotateX = 20,
             rotateY = 15,
-            shimmerRate = 30, // This is a realistic value for most holos
+            shimmerRate = 30,
         } = props
 
         const [ holoCoordinates, setHoloCoordinates ] = useState({ 
@@ -155,13 +217,11 @@ export async function getStaticProps() {
                 >
                     <div className={styles.card}>
                         <div className={styles.imageContainer}>
-                            <Image 
-                                alt="hologram foil" 
-                                fill
+                            <img 
+                                src={foregroundImage}
                                 className={styles.image}
-                                quality={100}
                                 style={{ color:"transparent" }} 
-                                src={topImage}
+                                alt="holofoil main image"
                             />
                         </div>
                         <div className={styles.cursourHighlight}></div>
@@ -260,8 +320,8 @@ export async function getStaticProps() {
         transition-property: opacity;
         clip-path: inset(0 0 1px 0 round var(--radius));
         --step: 5%;
-        /* Insert your own image path into the url below */
-        --pattern: url('../public/image.jpg') center / var(--foil-size);
+        /* Insert your own image into the url below */
+        --pattern: url('../public/replace-me.jpg') center / var(--foil-size);
         --rainbow: 
             repeating-linear-gradient( 
                 0deg, 

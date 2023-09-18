@@ -18,7 +18,7 @@
     --perspective: 600px;
     --opacity: .5;
     --duration: 300ms;
-    --foil-size: 120%;
+    --foil-size: 80%;
     --easing: ease;
     --transition: var(--duration) var(--easing);
     position: relative;

@@ -52,16 +52,16 @@ export default function Home(props) {
 
                     <section className="flex justify-center items-stretch gap-8">
                         <Card width={"full"} padding={'none'}>
-                            <p className="text-neutral-300 leading-8">I am a Software Program Manager by day, and a web developer by night (and weekends) where you&apos;ll find me most commonly using&nbsp;&nbsp;
+                            <p className="text-neutral-300 leading-8">Software Program Manager by day. Web developer by night (and weekends). My daily stack most commonly includes&nbsp;
                                 <span className="inline-flex items-baseline">
-                                    <Image src={nextIcon} width={72} height={72} alt="logo" />
+                                    <Image src={nextIcon} width={72} height={72} alt="logo" />,&nbsp;
                                 </span>
-                                <span>&nbsp;&nbsp;</span>
+                                <span>&nbsp;</span>
                                 <span className="inline-flex items-baseline">
                                     <FaReact className="w-5 h-5 fill-white" />
-                                    <span className="text-white font-normal">&nbsp;React&nbsp;&nbsp;</span>
+                                    <span className="text-white font-normal">&nbsp;React,&nbsp;</span>
                                 </span>
-                                <span className="inline-flex">
+                                <span className="inline-flex items-baseline">
                                     and&nbsp;&nbsp;
                                     <BiLogoTailwindCss className="w-5 h-5 fill-white" />
                                     <span className="text-white font-normal">&nbsp;Tailwind</span>.

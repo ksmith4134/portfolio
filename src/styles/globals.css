@@ -35,7 +35,7 @@ svg {
 }
 
 
-/* PLANET CARD */
+/* PLANET CARD ANIMATION */
 .word-animation {
     animation: 4s ease-in-out 12000ms 1 forwards wordsFadeIn;
 }
@@ -59,7 +59,7 @@ svg {
 }
 
 
-/* SOUND BARS */
+/* SOUND BAR ANIMATION */
 .bar {
     position: absolute;
     bottom: 0px;
@@ -121,19 +121,7 @@ animation: sound 0ms -800ms linear infinite alternate;
 }
 
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-
- /* Slide enter content animation */
+ /* SLIDE ENTER ANIMATION */
  .slide-enter-content > * {
     --stagger: 0;
     --delay: 150ms;
@@ -165,24 +153,20 @@ animation: sound 0ms -800ms linear infinite alternate;
     }
 }
 
-/* width */
+
+/* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
     width: 10px;
 }
-  
-/* Track */
+
 ::-webkit-scrollbar-track {
     background: rgb(10, 10, 10);
-    border-radius: 0px;
 }
-  
-/* Handle */
+
 ::-webkit-scrollbar-thumb {
-    background: #1e1e1e;
-    border-radius: 0px;
-}
-  
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
     background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #313131;
 }
