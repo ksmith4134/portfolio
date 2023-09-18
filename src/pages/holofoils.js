@@ -20,7 +20,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                     </button>
                 </Link>
                 <h1 className="mt-12 text-white font-bold text-4xl tracking-wide">Holofoils</h1>
-                <h5 className="mt-2 text-neutral-600 text-md font-normal">NEXT.js Component</h5>
+                <h5 className="mt-2 text-neutral-600 text-md font-normal">React UI Component</h5>
                 <div className="mt-8 prose prose-invert max-w-none">
                     <p>Inspired by the work of&nbsp;
                         <a href="https://github.com/simeydotme/pokemon-cards-css" target="_blank">

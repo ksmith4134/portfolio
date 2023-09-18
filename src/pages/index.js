@@ -43,8 +43,8 @@ export default function Home(props) {
                 
                 {/* HEADER */}
                 <div className="mt-28 flex flex-col w-full">
-                    <h1 className="text-center font-extrabold text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white  to-neutral-400">Kevin Smith</h1>
-                    <p className="text-center mt-4 text-2xl font-extralight text-neutral-400">Web Developer, UI / UX Designer</p>
+                    <h1 className="text-center font-extrabold text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-neutral-400">Kevin Smith</h1>
+                    <p className="text-center mt-4 text-xl font-extralight text-neutral-400">Web Developer, UI / UX Designer</p>
                 </div>
                 
                 {/* BENTO BOX GRID */}
@@ -66,7 +66,7 @@ export default function Home(props) {
                                     <BiLogoTailwindCss className="w-5 h-5 fill-white" />
                                     <span className="text-white font-normal">&nbsp;Tailwind</span>.
                                 </span>
-                                &nbsp;Most of all, I enjoy taking projects from the initial, conceptual stage all the way to deployment.
+                                &nbsp;I enjoy taking projects from the initial, conceptual stage all the way through to deployment. That includes content modeling, UI design, and programming.
                             </p>
                         </Card>
                         <Card width={"fourth"} background={'radial'}>
@@ -81,7 +81,7 @@ export default function Home(props) {
                     </section>
                     
                     <section className="flex justify-center items-stretch gap-8 h-80">
-                        <Card width={"twothird"} title={"Holofoils"} subtitle={"React Component"} link={"/holofoils"}>
+                        <Card width={"twothird"} title={"Holofoils"} subtitle={"React UI Component"} link={"/holofoils"}>
                             <div className="absolute z-40 top-[40%]">
                                 <HologramPinkFloyd width={308} height={308} opacity={0.6} radius={12} rotateY={12} />
                             </div>
