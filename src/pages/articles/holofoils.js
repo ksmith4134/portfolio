@@ -62,7 +62,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                                 className="brightness-125"
 
                             />
-                            <figcaption>Photo courtesy of ESA Hubble</figcaption>
+                            <figcaption>Horsehead Nebula, Courtesy of ESA Hubble</figcaption>
                         </figure>
                         <li>In the same folder as the component, create a second file called, <code>HolofoilTemplate.module.css</code></li>
                         <li>Copy the code below and paste it into the new component file. Note, if using VS Code, press Shift+Alt+F for Windows or Cmd+k+f for Mac.</li>
@@ -84,7 +84,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                                 className=""
 
                             />
-                            <figcaption>Photo courtesy of aschefield101 on deviantart.com</figcaption>
+                            <figcaption>Courtesy of aschefield101 on deviantart.com</figcaption>
                         </figure>
                         <li>Add the <strong>relative</strong> url pointing to the background image, to the <code>--pattern</code> CSS variable (found within the <code>.foil</code> class). There is a code comment in the CSS pointing to the correct place to put the url.</li>
                         <li>Import and add the <code>{`<HolofoilTemplate />`}</code> component to a page. Hover over the holofoil and see how it works!</li>

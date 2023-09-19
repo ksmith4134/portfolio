@@ -31,9 +31,9 @@ export default function Card(props) {
 
             <div className={`bg-neutral-800/20 w-full h-full flex flex-col ${title ? 'justify-between' : 'justify-center'} p-8`}>
                    
-                { icon && <Icon className="mt-2 text-white w-16 h-16" /> }
+                { icon && <Icon className="text-white w-16 h-16" /> }
                 { title && 
-                    <div className={`z-50 ${icon && 'mt-6'}`}>
+                    <div className={`z-50 ${icon && 'mt-4'}`}>
                         <h2 className="text-left text-2xl font-semibold text-white">{title}</h2>
                         <div className="mt-1 inline-flex items-center gap-2">
                             <p className="text-left text-sm font-extralight text-neutral-400">{subtitle}</p>

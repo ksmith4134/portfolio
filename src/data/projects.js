@@ -62,7 +62,7 @@ export const projects = [
         thumbnail: '',
         title: 'NYS Education Department',
         type: 'Training & Certification App',
-        description: 'A curriculum of video-based courses and certification quizzes that help train teachers to conduct state assessments for students with severe cognitive disabilities. Developed custom Auth and email provider API endpoints for the Strapi headless CMS.',
+        description: 'A curriculum of video-based courses and certification quizzes that help train teachers to conduct state assessments for students with severe cognitive disabilities. Developed custom Auth API endpoints for the Strapi headless CMS.',
         contributions: ["code", "design"],
         website: "https://www.dlmnysaatraining.com/",
         tech: [
