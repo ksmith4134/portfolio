@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { SVG_LOGOS, WEATHER_CONDITIONS, COLORS } from "@/components/Theme";
 import { projects } from "@/data/projects";
@@ -13,6 +14,8 @@ import IconRender from "@/components/media/iconRender";
 import Card from "@/components/ui/card";
 import SoundBars from "@/components/svg/SoundBars";
 import HologramPinkFloyd from "@/components/widgets/hologram/PinkFloyd/HologramPinkFloyd";
+import HolofoilBento from "@/components/widgets/hologram/BentoCard/HolofoilBento";
+import HolofoilTemplate from "@/components/widgets/hologram/HolofoilTemplate";
 
 
 export default function Home(props) {
@@ -82,12 +85,19 @@ export default function Home(props) {
                     </section>
                     
                     <section className="flex justify-center items-stretch gap-8 h-80">
-                        <Card width={"twothird"} title={"Holofoils"} subtitle={"React UI Component"} link={"/articles/holofoils"}>
-                            <div className="absolute z-40 top-[40%]">
-                                <HologramPinkFloyd width={308} height={308} opacity={0.6} radius={12} rotateY={12} />
-                            </div>
-                        </Card>
-                        <Card width={"full"} shrink={"none"} title={"Arnot Health Orthopedics"} subtitle={"Medical Resources Web App"} link={projects[0].website} linkTarget={"_blank"}>
+                        <Link href={'/articles/holofoils'} className="basis-1/3">
+                            <HolofoilBento foregroundImage={'/animations/holofoils/dark-neutral-background.jpg'} opacity={0.6}>
+                                <div className="absolute bottom-0 left-0 z-50 p-8">
+                                    <Image src={'/holofoil-card-3e.png'} width={100} height={120} alt="image" />
+                                    <h2 className="mt-16 text-left text-2xl font-semibold text-white">Holofoil Cards</h2>
+                                    <div className="mt-4 inline-flex items-center gap-2">
+                                        <p className="text-left text-sm font-extralight text-neutral-400">Make your own</p>
+                                        <FiArrowRight className="mt-px text-neutral-400 translate-x-0 group-hover:translate-x-1 transition duration-300 ease-in-out" />
+                                    </div>
+                                </div>
+                            </HolofoilBento>
+                        </Link>
+                        <Card width={"twothird"} shrink={"none"} title={"Arnot Health Orthopedics"} subtitle={"Medical Resources Web App"} link={projects[0].website} linkTarget={"_blank"}>
                             <p className="mt-8 text-md text-neutral-400 line-clamp-4">{projects[0].description}</p>
                             <div className="mt-8 flex gap-2">
                                 <div className="rounded-md px-2 py-1 w-fit bg-gradient-to-t from-neutral-400/5 border border-neutral-600/20 text-neutral-300 text-xs flex gap-2 justify-start items-center">
@@ -124,9 +134,15 @@ export default function Home(props) {
                                 ))}
                             </div>
                         </Card>
-                        <Card width={"third"} background={"radial-btm"} title={"Spotify Player"} subtitle={"NEXT.js Component"} icon={'spotify'} link={"/articles/spotify"}>
-                            <p className="z-40 text-neutral-300 text-md">Use Spotify&apos;s authenticated Web API to stream music directly on your own website.</p>
-                            <div className="absolute top-[50%] left-[20%] opacity-30 blur-2xl group-hover:opacity-40 transition-opacity duration-500 ease-in-out">
+                        <Card width={"third"} background={"radial-btm"} link={"/articles/spotify"} icon={'spotify'}>
+                            <div className="absolute bottom-0 left-0 p-8 z-50 mt-2">
+                                <h2 className="text-left text-2xl font-semibold text-white">Spotify Custom<br />Web Player</h2>
+                                <div className="mt-4 inline-flex items-center gap-2">
+                                    <p className="text-left text-sm font-extralight text-neutral-400">NEXT.js Component</p>
+                                    <FiArrowRight className="mt-px text-neutral-400 translate-x-0 group-hover:translate-x-1 transition duration-300 ease-in-out" />
+                                </div>
+                            </div>
+                            <div className="absolute top-[50%] left-[20%] opacity-20 blur-2xl group-hover:scale-150 group-hover:opacity-30 transition-all duration-500 ease-in-out">
                                 <SoundBars />
                             </div>
                         </Card>

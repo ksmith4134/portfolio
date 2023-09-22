@@ -1,23 +1,23 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import styles from './HolofoilTemplate.module.css'
+import styles from './HolofoilBento.module.css'
 
-export default function HolofoilTemplate(props) {
+export default function HologramPinkFloyd(props) {
 
     const {
-        width = 300,
-        height = 300,
+        width = '100%',
+        height = '100%',
         perspective = 600,
         radius = 20,
-        foregroundImage = '/animations/holofoils/React-1.jpg',
-        opacity = 0.4,
+        foregroundImage = '/animations/holofoils/PinkFloyd-2.jpg',
+        opacity = 0.2,
         rotateX = 20,
         rotateY = 15,
         shimmerRate = 30, // 30 is a good default value
         children,
     } = props
 
-    const [ holoCoordinates, setHoloCoordinates ] = useState({ mx: 50, my: 50, bx: 50, by: 50, rx: 0, ry: 0, opacity })
+    const [ holoCoordinates, setHoloCoordinates ] = useState({ mx: 30, my: 50, bx: 30, by: 30, rx: 0, ry: 0, opacity })
 
     let bounds;
     const inputRef = useRef();
@@ -44,7 +44,7 @@ export default function HolofoilTemplate(props) {
             opacity: 1,
         })
 
-        // #region Testing Calcs Console Logs
+        // Testing Calcs Logs
         // console.log(
         //     // 'ORIGINAL VALUES',
         //     // '\nbounds', bounds,
@@ -65,7 +65,6 @@ export default function HolofoilTemplate(props) {
         //     // '\nrx-divisor', (bounds.right-bounds.left) / (2*rotateX),
         //     // '\nry-divisor', (bounds.bottom-bounds.top) / (2*rotateY),
         // )
-        // #endregion
 
     };
 
@@ -77,8 +76,8 @@ export default function HolofoilTemplate(props) {
         <div 
             className={styles.container} 
             style={{ 
-                "--width": `${width}px`, 
-                "--height": `${height}px`, 
+                "--width": `${width}`, 
+                "--height": `${height}`, 
             }}
         >
             <div 
@@ -107,7 +106,7 @@ export default function HolofoilTemplate(props) {
                             quality={100}
                             style={{ color:"transparent" }} 
                             src={foregroundImage}
-                        />
+                        /> 
                         { children }
                     </div>
                     <div className={styles.cursourHighlight}></div>

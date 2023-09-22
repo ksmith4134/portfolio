@@ -29,7 +29,7 @@ export default function Card(props) {
     return (
         <Link href={link} target={linkTarget} className={`relative overflow-hidden rounded-2xl group border border-white/5 hover:border-white/20 hover:cursor-pointer ${styleWidth} ${styleHeight} ${stylePadding} ${styleFlex}`}>
 
-            <div className={`bg-neutral-800/20 w-full h-full flex flex-col ${title ? 'justify-between' : 'justify-center'} p-8`}>
+            <div className={`bg-neutral-800/20 w-full h-full flex flex-col justify-between p-8`}>
                    
                 { icon && <Icon className="text-white w-16 h-16" /> }
                 { title && 
