@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from './HolofoilBento.module.css'
 
-export default function HologramPinkFloyd(props) {
+export default function HolofoilBento(props) {
 
     const {
         width = '100%',

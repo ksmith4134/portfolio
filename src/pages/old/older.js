@@ -1,17 +1,13 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { COLORS, SVG_LOGOS, WEATHER_CONDITIONS } from "@/components/Theme";
 import Image from "next/image";
-import nextIcon from '../../public/logos/nextjs-logotype-dark-background.svg'
-import silentBob from '../../public/SilentBobWhite.svg'
-import earth from '../../public/animations/earth-1.png'
+import nextIcon from '../../../public/logos/nextjs-logotype-dark-background.svg'
+
 import { FaReact } from 'react-icons/fa'
-import { BiLogoTailwindCss, BiCameraMovie, BiBook } from 'react-icons/bi'
-import { MdOutlineCurrencyBitcoin } from 'react-icons/md'
-import MusicPlayer from "@/components/widgets/musicPlayer";
-import WebPlayer from "@/components/widgets/webPlayer";
+import { BiLogoTailwindCss } from 'react-icons/bi'
+
 import { projects } from "@/data/projects";
 import IconRender from "@/components/media/iconRender";
-import LineGraph from "@/components/lineGraph";
 import HologramBitcoin from "@/components/widgets/hologram/Bitcoin/HologramBitcoin";
 import HologramReact from "@/components/widgets/hologram/React/HologramReact";
 import HologramPinkFloyd from "@/components/widgets/hologram/PinkFloyd/HologramPinkFloyd";

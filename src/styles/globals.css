@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
     html {
         @apply scroll-smooth;
     }
 }
+
+
+/* CARD WITH NOISE AND GRADIENT BG */
+.bg-template-card {
+    background-image: 
+        radial-gradient(150% 200% at 90% -10%,#44444498 0,rgba(84, 84, 84, 0.12) 32.49%,rgba(84, 84, 84, 0) 51.34%),
+        radial-gradient(69.96% 25.89% at 50% 100%,#1f1f1f1a 22.77%,rgba(30, 30, 30, 0) 100%);
+}
+
+.noise {
+    background-position: 50%;
+    background-repeat: repeat;
+    background-image: url('../../public/noise-2x.png');
+    background-size: 140px 100px;
+}
+
+
 
 /* HEADER BG GRADIENT */
 .gradient {
@@ -32,30 +48,6 @@
 
 svg {
     pointer-events: none;
-}
-
-
-/* PLANET CARD ANIMATION */
-.word-animation {
-    animation: 4s ease-in-out 12000ms 1 forwards wordsFadeIn;
-}
-
-@keyframes wordsFadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.earth-animation {
-    animation: 12s ease-in-out 0ms 1 forwards orbit;
-}
-     
-@keyframes orbit {
-    0% { scale: 0; right: 0%; bottom: -50%;}
-    100% { scale: 1; right: 0%; bottom: 0%; transform: translate(-40%, 0%); }
 }
 
 

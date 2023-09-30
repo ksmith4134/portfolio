@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="502" height="261" viewBox="0 0 502 261">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientTransform="translate(0 0.101) scale(1 0.799)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.231"/>
+      <stop offset="1" stop-color="#1a1a1a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0" r="0.5" gradientTransform="scale(1 1.291)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.149"/>
+      <stop offset="1" stop-color="#1a1a1a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="0.557" y1="0.011" x2="0.555" y2="0.956" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#1a1a1a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_1159" data-name="Group 1159" transform="translate(-2073 -1778)">
+    <rect id="Rectangle_252" data-name="Rectangle 252" width="502" height="53" transform="translate(2073 1978)" fill="url(#radial-gradient)"/>
+    <rect id="Rectangle_255" data-name="Rectangle 255" width="502" height="261" rx="16" transform="translate(2073 1778)" fill="url(#radial-gradient-2)"/>
+    <g id="Group_1152" data-name="Group 1152" transform="translate(5.336 -3)" opacity="0.6">
+      <path id="Icon_ionic-md-close" data-name="Icon ionic-md-close" d="M23.308,9.1,21.73,7.523l-6.314,6.314L9.1,7.523,7.523,9.1l6.314,6.314L7.523,21.73,9.1,23.308l6.314-6.314,6.314,6.314,1.578-1.578-6.314-6.314Z" transform="translate(2522.356 1792.477)" fill="#fff"/>
+      <path id="Icon_awesome-minus" data-name="Icon awesome-minus" d="M15.808,14.625H1.216c-.671,0-1.216.227-1.216.506v.506c0,.279.545.506,1.216.506H15.808c.671,0,1.216-.227,1.216-.506v-.506C17.024,14.852,16.48,14.625,15.808,14.625Z" transform="translate(2463.5 1792.873)" fill="#fff" stroke="#fff" stroke-width="1"/>
+      <g id="Group_1151" data-name="Group 1151" transform="translate(2497.242 1800)">
+        <g id="Subtraction_15" data-name="Subtraction 15" transform="translate(3.422 0)" fill="none">
+          <path d="M13,13H9.148V3.852H0V0H13V13Z" stroke="none"/>
+          <path d="M 13 13 L 9.148280143737793 13 L 9.148280143737793 3.852279901504517 L -8.881784197001252e-16 3.852279901504517 L -8.881784197001252e-16 -8.881784197001252e-16 L 13 -8.881784197001252e-16 L 13 13 Z" stroke="none" fill="#fff"/>
+        </g>
+        <g id="Rectangle_250" data-name="Rectangle 250" transform="translate(0.422 2)" fill="none" stroke="#fff" stroke-width="2">
+          <rect width="14" height="14" stroke="none"/>
+          <rect x="1" y="1" width="12" height="12" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectangle_251" data-name="Rectangle 251" width="130" height="130" rx="4" transform="translate(2097 1832)" fill="rgba(255,255,255,0.28)" opacity="0.87"/>
+    <g id="Group_1154" data-name="Group 1154" transform="translate(0 2)">
+      <circle id="Ellipse_45" data-name="Ellipse 45" cx="3" cy="3" r="3" transform="translate(2097 1800)" fill="#fff" opacity="0.6"/>
+      <circle id="Ellipse_46" data-name="Ellipse 46" cx="3" cy="3" r="3" transform="translate(2108 1800)" fill="#fff" opacity="0.6"/>
+      <circle id="Ellipse_47" data-name="Ellipse 47" cx="3" cy="3" r="3" transform="translate(2119 1800)" fill="#fff" opacity="0.6"/>
+    </g>
+    <g id="Group_1157" data-name="Group 1157" transform="translate(3 -7)">
+      <text id="Album" transform="translate(2248 1865)" fill="#ebebeb" font-size="12" font-family="Inter-Regular, Inter" letter-spacing="0.04em"><tspan x="0" y="0">Album</tspan></text>
+      <text id="Meddle" transform="translate(2248 1907)" fill="#ebebeb" font-size="28" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.04em"><tspan x="0" y="0">Meddle</tspan></text>
+      <g id="Group_1155" data-name="Group 1155" transform="translate(2248 1927.655)">
+        <circle id="Ellipse_48" data-name="Ellipse 48" cx="14" cy="14" r="14" transform="translate(0 0.345)" fill="rgba(255,255,255,0.45)"/>
+        <text id="Pink_Floyd" data-name="Pink Floyd" transform="translate(36 19.345)" fill="#ebebeb" font-size="12" font-family="Inter-Medium, Inter" font-weight="500" letter-spacing="0.04em"><tspan x="0" y="0">Pink Floyd</tspan></text>
+      </g>
+    </g>
+    <line id="Line_13" data-name="Line 13" x2="375" transform="translate(2136.5 2004.5)" fill="none" stroke="#8b8b8b" stroke-linecap="round" stroke-width="4"/>
+    <text id="_00:00" data-name="00:00" transform="translate(2097 2008)" fill="rgba(255,255,255,0.41)" font-size="10" font-family="Inter-Light, Inter" font-weight="300" letter-spacing="0.04em"><tspan x="0" y="0">00:00</tspan></text>
+    <text id="_23:32" data-name="23:32" transform="translate(2522 2008)" fill="rgba(255,255,255,0.41)" font-size="10" font-family="Inter-Light, Inter" font-weight="300" letter-spacing="0.04em"><tspan x="0" y="0">23:32</tspan></text>
+    <path id="Exclusion_1" data-name="Exclusion 1" d="M-5101,6756h-486a8.009,8.009,0,0,1-8-8V6503a8.008,8.008,0,0,1,8-8h486a8.008,8.008,0,0,1,8,8v245A8.009,8.009,0,0,1-5101,6756Zm-485-260a8.008,8.008,0,0,0-8,8v243a8.008,8.008,0,0,0,8,8h484a8.008,8.008,0,0,0,8-8V6504a8.008,8.008,0,0,0-8-8Z" transform="translate(7668 -4717)" fill="url(#linear-gradient)"/>
+    <line id="Line_14" data-name="Line 14" x2="13" transform="translate(2136.5 2004.5)" fill="none" stroke="#bfbfbf" stroke-linecap="round" stroke-width="4"/>
+  </g>
+</svg>
