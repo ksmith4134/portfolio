@@ -9,6 +9,56 @@
 }
 
 
+
+.btn {
+    background: 
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(60deg, #00f, #00e8ff) border-box;
+      color: #313149;
+      padding: 20px 70px;
+      border: 5px solid transparent;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 28px;
+}
+
+
+
+
+/* HEADER GRID GRADIENT BG */
+.bg-gradient-button-text {
+    background-image: radial-gradient(
+        45% 40% at 50% 50%,
+        rgba(84, 84, 84, .75) 0%,
+        rgba(84, 84, 84, .20) 50%,
+        rgba(84, 84, 84, 0) 100%
+    );
+}
+
+.bg-gradient-button {
+    background-image: radial-gradient(
+        100% 100% at 50% 50%,
+        rgba(84, 84, 84, .5) 0%,
+        rgba(84, 84, 84, .2) 70%,
+        rgba(84, 84, 84, 0) 100%
+    );
+}
+
+
+/* HEADER GRID GRADIENT BG */
+.bg-gradient-svg {
+    background-image: radial-gradient(
+        60% 60% at 50% 50%,
+        rgba(84, 84, 84, .25) 0%,
+        rgba(84, 84, 84, 0.075) 50%,
+        rgba(84, 84, 84, 0.0375) 65%,
+        rgba(84, 84, 84, 0.019) 75.5%,
+        rgba(84, 84, 84, 0.001) 82.85%,
+        rgba(84, 84, 84, 0) 88%,
+        rgba(84, 84, 84, 0) 100%
+    );
+}
+
 /* CARD WITH NOISE AND GRADIENT BG */
 .bg-template-card {
     background-image: 

@@ -19,15 +19,15 @@ export default function Home(props) {
 
     return (
         <main className="relative max-w-screen min-h-screen">
-            <div className="max-w-5xl mx-auto px-8">
+            <div className="max-w-5xl mx-auto px-8 slide-enter-content">
 
-                <section className="mt-24 flex flex-col md:flex-row justify-center items-center gap-8">
+                <section className="mt-8 flex flex-col md:flex-row justify-start items-center gap-8">
                     <div className="order-2 md:order-1 basis-1/2">
                         <RoundedButton label={"web developer"} />
                         <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
                         <p className="mt-6 max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling.</p>
                     </div>
-                    <div className="order-1 md:order-2 basis-1/2 p-4">
+                    <div className="order-1 md:order-2 basis-1/2 p-4 relative z-20 overflow-hidden h-96 flex flex-col justify-center">
                         <Image 
                             alt="web development technology logos"
                             src={"/new/logo-grid.svg"}
@@ -35,6 +35,8 @@ export default function Home(props) {
                             height={286}
                             className=""
                         />
+                        <span className="noise absolute z-10 pointer-events-none inset-0 opacity-[0.08]"></span>
+                        <span className="absolute z-0 w-full h-full bg-gradient-svg top-0 left-0"></span>
                     </div>
                 </section>
 
@@ -75,9 +77,13 @@ export default function Home(props) {
                             <h3 className="text-xl text-neutral-600">Professional Work</h3>
                             <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
                         </div>
-                        <button className="w-fit rounded-full px-8 py-2.5 border border-neutral-400">
-                            <p className="text-white text-sm">See All</p>
+                        <button className="relative z-20 overflow-hidden w-fit rounded-full px-8 py-2.5 border border-neutral-600">
+                            <p className="relative z-20 text-neutral-300 text-sm">See All</p>
+                            <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
+                            <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
+                            <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>
                         </button>
+
                     </div>
                     <div className="mt-16">
                         { projects.map((project) => (
@@ -95,24 +101,22 @@ export default function Home(props) {
                 </section>
 
                 <section className="mt-40">
-                    <div className=" rounded-2xl border border-neutral-800 relative overflow-hidden z-0 bg-template-card">
-                        <span className="noise pointer-events-none absolute inset-0 opacity-[0.1]"></span>
-                        <div className="w-full h-full p-16 flex justify-between items-center">
+                    <div className="relative z-10 overflow-hidden min-h-[400px] flex flex-col justify-center rounded-2xl border border-neutral-800 bg-template-card">
+                        <span className="noise z-0 absolute pointer-events-none inset-0 opacity-[0.15]"></span>
+                        <div className="relative w-full h-full p-16 flex justify-between items-center">
                             <div className="pl-4">
                                 <h3 className="text-xl text-neutral-600">Education</h3>
                                 <h2 className="mt-4 text-5xl font-bold text-neutral-200">Always.</h2>
                                 <h2 className="mt-2 text-5xl font-bold text-neutral-200">Learning.</h2>
                             </div>
-                            <div className="w-[400px] relative z-0">
-                                { courses.map((course) => (
-                                    <div 
-                                        key={course.id} 
-                                        className="first:mt-0 mt-4 rounded-xl border border-white/20 flex justify-start items-center gap-4 p-2"
-                                    >
-                                        <div className="w-10 h-10 rounded-lg bg-neutral-950/60 border border-neutral-800 p-2 flex justify-center items-center">
-                                            <SiUdemy className="text-white text-lg" />
+                            <div className="w-[400px] relative z-10">
+                                { courses.map((course, index) => (
+                                    <div key={course.id} className="first:mt-0 mt-4 rounded-xl border border-white/10 bg-neutral-300/5 hover:bg-neutral-400/10 hover:cursor-pointer flex justify-start items-center gap-4 p-2 relative">
+                                        <div className="w-10 h-10 rounded-lg bg-neutral-950/50 border border-neutral-800 p-2 flex justify-center items-center">
+                                            <SiUdemy className="text-neutral-200 text-lg" />
                                         </div>
                                         <p className="text-sm text-white font-extralight">{course.title}</p>
+                                        <div className={`${courses.length === index + 1 && 'hidden'} h-4 absolute border-l border-white/20 top-[57px] left-7`}></div>
                                     </div>
                                 ))}
                             </div>
