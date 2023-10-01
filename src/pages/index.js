@@ -23,12 +23,12 @@ export default function Home(props) {
             <div className="max-w-5xl mx-auto px-8 slide-enter-content">
 
                 <section className="mt-8 flex flex-col md:flex-row justify-start items-center gap-8">
-                    <div className="order-2 md:order-1 basis-1/2">
+                    <div className="mt-8 md:mt-0 basis-1/2">
                         <RoundedButton label={"web developer"} />
                         <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
-                        <p className="mt-6 max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling.</p>
+                        <p className="mt-6 md:max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling.</p>
                     </div>
-                    <div className="order-1 md:order-2 basis-1/2 p-4 relative z-20 overflow-hidden h-96 flex flex-col justify-center">
+                    <div className="basis-1/2 p-4 relative z-20 overflow-hidden md:h-96 flex flex-col justify-center">
                         <Image 
                             alt="web development technology logos"
                             src={"/new/logo-grid.svg"}
@@ -44,7 +44,7 @@ export default function Home(props) {
                 <section className="mt-36">
                     <h3 className="text-xl text-neutral-600">Open-Source</h3>
                     <h2 className="mt-4 text-5xl font-bold text-neutral-200">Code and contributions</h2>
-                    <div className="mt-12 grid grid-cols-3 gap-8 h-80">
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <CardGradient
                             url={"/articles/holofoils"}
                             alt={"holofoil cards using css and javascript"}
@@ -73,7 +73,7 @@ export default function Home(props) {
                 </section>
 
                 <section className="mt-40">
-                    <div className="flex justify-between items-end">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
                         <div>
                             <h3 className="text-xl text-neutral-600">Professional Work</h3>
                             <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
@@ -84,7 +84,6 @@ export default function Home(props) {
                             <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
                             <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>
                         </button>
-
                     </div>
                     <div className="mt-16">
                         { projects.map((project) => (
@@ -104,13 +103,13 @@ export default function Home(props) {
                 <section className="mt-40">
                     <div className="relative z-10 overflow-hidden min-h-[400px] flex flex-col justify-center rounded-2xl border border-neutral-800 bg-template-card">
                         <span className="noise z-0 absolute pointer-events-none inset-0 opacity-[0.15]"></span>
-                        <div className="relative w-full h-full p-16 flex justify-between items-center">
-                            <div className="pl-4">
+                        <div className="relative w-full h-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
+                            <div className="md:pl-4">
                                 <h3 className="text-xl text-neutral-600">Education</h3>
                                 <h2 className="mt-4 text-5xl font-bold text-neutral-200">Always.</h2>
                                 <h2 className="mt-2 text-5xl font-bold text-neutral-200">Learning.</h2>
                             </div>
-                            <div className="w-[400px] relative z-10">
+                            <div className="w-full md:w-[400px] relative z-10">
                                 { courses.map((course, index) => (
                                     <div key={course.id} className="first:mt-0 mt-4 rounded-xl border border-white/10 bg-neutral-300/5 hover:bg-neutral-400/10 hover:cursor-pointer flex justify-start items-center gap-4 p-2 relative">
                                         <div className="w-10 h-10 rounded-lg bg-neutral-950/50 border border-neutral-800 p-2 flex justify-center items-center">
@@ -127,7 +126,7 @@ export default function Home(props) {
                 </section>
 
                 {/* TECH LOGOS */}
-                <section className="mt-40 px-8">
+                <section className="hidden md:block mt-40 px-8">
                     <div className="flex flex-wrap gap-8 md:gap-2 place-items-center justify-between">
                         {SVG_LOGOS.map((logo) => (
                             <Image key={logo.id} src={logo.svg} width={logo.width/1.5} height={logo.height/1.5} alt="logo" className="opacity-80" />
