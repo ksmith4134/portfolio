@@ -4,6 +4,7 @@ import { SVG_LOGOS } from "@/components/Theme";
 import { projects } from "@/data/projects2";
 import { courses } from "@/data/courses";
 import { SiUdemy } from "react-icons/si"
+import { FiArrowRight } from "react-icons/fi";
 
 import HolofoilBento from "@/components/widgets/hologram/BentoCard/HolofoilBento";
 import RoundedButton from "@/components/ui/roundedButton";
@@ -48,15 +49,15 @@ export default function Home(props) {
                             url={"/articles/holofoils"}
                             alt={"holofoil cards using css and javascript"}
                             title={"Holofoil<br />Cards"}
-                            image={"/new/holofoil-graphic.svg"}
-                            imageWidth={307}
-                            imageHeight={162}
+                            image={"/new/holofoil-graphic-2.png"}
+                            imageWidth={256}
+                            imageHeight={133}
                         />
                         <CardGradient
                             url={"/articles/dynamic-content"}
                             alt={"how to do dynamic content modeling with a headless cms"}
                             title={"Dynamic Content Modeling"}
-                            image={"/new/dynamic-content-2.svg"}
+                            image={"/new/dynamic-content-2.png"}
                             imageWidth={256}
                             imageHeight={133}
                         />
@@ -64,7 +65,7 @@ export default function Home(props) {
                             url={"/articles/spotify"}
                             alt={"how to make a custom music player using spotify api"}
                             title={"Spotify Custom<br />Web Player"}
-                            image={"/new/music-graphic-2.svg"}
+                            image={"/new/music-graphic-2.png"}
                             imageWidth={256}
                             imageHeight={133}
                         />

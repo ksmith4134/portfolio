@@ -16,10 +16,11 @@ export default function CardGradient(props) {
     return (
         <Link href={url}>
             <div className="h-full relative z-0 overflow-hidden flex flex-col items-start justify-between border-glow bg-neutral-950 bg-template-card px-6 pt-8 pb-6 border border-neutral-800 rounded-2xl">
-                <span className="noise absolute pointer-events-none inset-0 opacity-[0.1]"></span>
+                <span className="noise absolute pointer-events-none inset-0 opacity-[0.08]"></span>
                 <Image
                     alt={alt}
                     src={image}
+                    quality={100}
                     width={imageWidth}
                     height={imageHeight}
                     className="mt-4"
