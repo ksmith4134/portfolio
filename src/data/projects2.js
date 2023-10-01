@@ -1,10 +1,11 @@
 export const projects = [
     {
         id: 0,
+        seeAll: true,
         status: 'Live', // Live, In Development, Discontinued
         thumbnail: '',
         title: 'Arnot Orthopedics',
-        type: 'Patient Education and Resources',
+        type: 'Patient Resources Website',
         description: 'A medical resources website that allows patients to easily learn about their condition and available treatments by using an interactive skeleton diagram. A headless CMS allows doctors to easily create dynamic content on the fly.',
         contributions: ["code", "design", "copy"], // code, design, copy
         website: "https://www.arnotortho.com",
@@ -19,10 +20,11 @@ export const projects = [
     },
     {
         id: 1,
+        seeAll: true,
         status: 'Live',
         thumbnail: '',
         title: 'NY State Education Dept',
-        type: 'Teacher Training and Certification',
+        type: 'Teacher Certification Web App',
         description: 'A curriculum of video-based courses and certification quizzes that help train teachers to conduct state assessments for students with severe cognitive disabilities. Developed custom Auth API endpoints for the Strapi headless CMS.',
         contributions: ["code", "design"],
         website: "https://www.dlmnysaatraining.com/",
@@ -32,6 +34,7 @@ export const projects = [
     },
     {
         id: 2,
+        seeAll: true,
         status: 'Live',
         thumbnail: '',
         title: 'Kodak Moments',
@@ -52,6 +55,7 @@ export const projects = [
     },
     {
         id: 3,
+        seeAll: false,
         status: 'Discontinued',
         thumbnail: '',
         title: 'Pasture Stand',
@@ -63,4 +67,18 @@ export const projects = [
             { id: 0, logo: '', label: '', }
         ],
     },
+    {
+        id: 4,
+        seeAll: false,
+        status: 'Live',
+        thumbnail: '',
+        title: 'Dove Co-Pack',
+        type: 'Homepage Design Concept',
+        description: '',
+        contributions: ["design", "copy"],
+        website: "https://xd.adobe.com/view/4eb54dbf-4b9c-4c0c-8d5f-b8c937cb9f85-1be6/",
+        tech: [
+            { id: 0, logo: '', label: '', }
+        ],
+    }
 ]

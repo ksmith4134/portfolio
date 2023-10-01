@@ -1,12 +1,11 @@
 import Image from "next/image";
+import { useState } from "react";
 
 import { SVG_LOGOS } from "@/components/Theme";
 import { projects } from "@/data/projects2";
 import { courses } from "@/data/courses";
 import { SiUdemy } from "react-icons/si"
-import { FiArrowRight } from "react-icons/fi";
 
-import HolofoilBento from "@/components/widgets/hologram/BentoCard/HolofoilBento";
 import RoundedButton from "@/components/ui/roundedButton";
 import CardGradient from "@/components/ui/cardGradient";
 import Link from "next/link";
@@ -17,6 +16,16 @@ export default function Home(props) {
     const {
         
     } = props
+
+    const [ showProjects, setShowProjects ] = useState(projects.filter((item) => item.seeAll))
+    const [ seeAll, setSeeAll ] = useState(false)
+
+    function handleClick(bool){
+        setSeeAll(bool)
+        bool === true ? 
+            setShowProjects(projects) : 
+            setShowProjects(projects.filter((item) => item.seeAll))
+    }
 
     return (
         <main className="relative max-w-screen min-h-screen">
@@ -78,7 +87,7 @@ export default function Home(props) {
                             <h3 className="text-xl text-neutral-600">Professional Work</h3>
                             <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
                         </div>
-                        <button className="relative z-20 overflow-hidden w-fit rounded-full px-8 py-2.5 border border-neutral-600">
+                        <button className="relative z-20 overflow-hidden w-fit rounded-full px-8 py-2.5 border border-neutral-600 hover:bg-neutral-900" onClick={() => handleClick(!seeAll)}>
                             <p className="relative z-20 text-neutral-300 text-sm">See All</p>
                             <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
                             <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
@@ -86,8 +95,8 @@ export default function Home(props) {
                         </button>
                     </div>
                     <div className="mt-16">
-                        { projects.map((project) => (
-                            <div key={project.id} className="py-7 border-b-2 last:border-b-0 border-neutral-800 group">
+                        { showProjects.map((project) => (
+                            <div key={project.id} className="py-7 border-b last:border-b-0 border-neutral-800 group">
                                 <Link 
                                     href={project.website}
                                     target="_blank"
@@ -105,19 +114,19 @@ export default function Home(props) {
                         <span className="noise z-0 absolute pointer-events-none inset-0 opacity-[0.15]"></span>
                         <div className="relative w-full h-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
                             <div className="md:pl-4">
-                                <h3 className="text-xl text-neutral-600">Education</h3>
-                                <h2 className="mt-4 text-5xl font-bold text-neutral-200">Always.</h2>
-                                <h2 className="mt-2 text-5xl font-bold text-neutral-200">Learning.</h2>
+                                <h3 className="text-center md:text-left -ml-2 md:ml-0 text-xl text-neutral-600">Education</h3>
+                                <h2 className="mt-4 text-center md:text-left  text-5xl font-bold text-neutral-200">Always.</h2>
+                                <h2 className="mt-2 text-center md:text-left  text-5xl font-bold text-neutral-200">Learning.</h2>
                             </div>
                             <div className="w-full md:w-[400px] relative z-10">
                                 { courses.map((course, index) => (
-                                    <div key={course.id} className="first:mt-0 mt-4 rounded-xl border border-white/10 bg-neutral-300/5 hover:bg-neutral-400/10 hover:cursor-pointer flex justify-start items-center gap-4 p-2 relative">
+                                    <a key={course.id} href={course.certificateURL} download className="first:mt-0 mt-4 rounded-xl border border-white/10 bg-neutral-400/5 hover:bg-neutral-400/10 hover:cursor-pointer flex justify-start items-center gap-4 p-2 relative">
                                         <div className="w-10 h-10 rounded-lg bg-neutral-950/50 border border-neutral-800 p-2 flex justify-center items-center">
                                             <SiUdemy className="text-neutral-200 text-lg" />
                                         </div>
                                         <p className="text-sm text-white font-extralight">{course.title}</p>
                                         <div className={`${courses.length === index + 1 && 'hidden'} h-4 absolute border-l border-white/20 top-[57px] left-7`}></div>
-                                    </div>
+                                    </a>
                                 ))}
                             </div>
                         </div>

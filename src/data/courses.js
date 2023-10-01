@@ -15,12 +15,12 @@ export const courses = [
         id: 2,
         logo: 'udemy',
         title: 'React Front to Back',
-        certificateURL: '',
+        certificateURL: '/pdf/react-certificate.pdf',
     },
     {
         id: 3,
         logo: 'udemy',
         title: 'Modern JavaScript 2023',
-        certificateURL: '',
+        certificateURL: '/pdf/javascript-certificate.pdf',
     },
 ]

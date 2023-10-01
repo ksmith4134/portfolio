@@ -14,9 +14,12 @@ export default function Holofoils({jsxCode, cssCode}) {
             <article className="max-w-2xl mx-auto">
 
                 <Link href={'/'}>
-                    <button className="inline-flex items-center gap-2 text-neutral-300 px-3 py-2 rounded-md border border-neutral-600/20 bg-gradient-to-t from-neutral-400/10 hover:from-neutral-400/10 group">
-                        <FaArrowLeft className="text-xs group-hover:-translate-x-1 transition duration-200 ease-in-out" />
-                        <p className="text-sm">Back</p>
+                    <button className="relative z-20 overflow-hidden w-fit inline-flex items-center gap-2 rounded-full px-6 py-2.5 border border-neutral-600/50 group">
+                        <FaArrowLeft className="relative z-20 text-neutral-300 text-xs group-hover:-translate-x-1 transition duration-200 ease-in-out" />
+                        <p className="relative z-20 text-neutral-300 text-sm">Back</p>
+                        <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
+                        <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
+                        <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>
                     </button>
                 </Link>
                 <h1 className="mt-12 text-white font-bold text-4xl tracking-wide">Holofoils</h1>
@@ -36,10 +39,17 @@ export default function Holofoils({jsxCode, cssCode}) {
                             </span>
                         </a>.
                     </p>
-                    <p>Follow the directions below to start using these holofoil cards in your own React or NEXT.js project. Customize the cards using your own images, component props, and custom styling. Get started below...</p>
+                    <p>Follow the directions below to start using holofoil cards in your own React or NEXT.js project. Customize the cards using your own images, component props, and custom styling. Checkout these examples and get started below.</p>
+                    <h2>Gallery</h2>
                 </div>
 
-                <div className="mt-12 prose prose-invert max-w-none">
+                <div className="mt-8 flex flex-wrap justify-between items-center gap-4 not-prose isolate">
+                    <HologramPinkFloyd width={210} height={210} opacity={1} />
+                    <HologramBitcoin width={210} height={210} opacity={0.8} />
+                    <HologramReact width={210} height={210} opacity={1} />
+                </div>
+                
+                <div className="mt-16 prose prose-invert max-w-none">
                     <h2>Steps</h2>
                     <ol>
                         <li>Create a file called, <code>HolofoilTemplate.jsx</code> in your /components folder.</li>
@@ -107,12 +117,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                         <li>Fix the CSS properties causing clunky pitch (x-axis) and yaw (y-axis) rotation animations in the Mozilla browser.</li>
                     </ul>
 
-                    <h2>Gallery</h2>
-                    <div className="mt-4 flex flex-wrap justify-between items-center gap-4 not-prose isolate">
-                        <HologramPinkFloyd width={210} height={210} opacity={1} />
-                        <HologramBitcoin width={210} height={210} opacity={0.8} />
-                        <HologramReact width={210} height={210} opacity={1} />
-                    </div>
+                    
 
                 </div>
 

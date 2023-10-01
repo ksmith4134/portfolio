@@ -15,7 +15,7 @@ export default function CardGradient(props) {
 
     return (
         <Link href={url}>
-            <div className="h-80 relative z-0 overflow-hidden flex flex-col items-center md:items-start justify-between border-glow bg-neutral-950 bg-template-card px-6 pt-8 pb-6 border border-neutral-800 rounded-2xl">
+            <div className="h-80 relative z-0 overflow-hidden flex flex-col items-center md:items-start justify-between border-glow bg-neutral-950 bg-template-card px-6 pt-8 pb-6 border border-neutral-800/50 hover:bg-neutral-900/50 rounded-2xl">
                 <span className="noise absolute pointer-events-none inset-0 opacity-[0.08]"></span>
                 <Image
                     alt={alt}
