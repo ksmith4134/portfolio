@@ -65,11 +65,11 @@ export default function Home(props) {
                             />
                         </Link>
                         <Link href={"/articles/holofoils"}>
-                            <HolofoilBento opacity={0.4}>
+                            <HolofoilBento opacity={1}>
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
-                                    image={"/new/planet-3d.svg"}
+                                    image={"/new/planet-3f.svg"}
                                     imageWidth={249}
                                     imageHeight={130}
                                     holofoil={true}
