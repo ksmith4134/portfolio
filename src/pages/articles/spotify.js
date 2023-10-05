@@ -11,9 +11,9 @@ export default function Spotify() {
             <article className="max-w-2xl mx-auto">
 
                 <Link href={'/'}>
-                    <button className="inline-flex items-center gap-2 text-neutral-300 px-3 py-2 rounded-md border border-neutral-600/20 bg-gradient-to-t from-neutral-400/10 hover:from-neutral-400/10 group">
-                        <FaArrowLeft className="text-xs group-hover:-translate-x-1 transition duration-200 ease-in-out" />
-                        <p className="text-sm">Back</p>
+                    <button className="relative z-20 w-fit inline-flex items-center gap-2 group">
+                        <FaArrowLeft className="relative z-20 text-neutral-300 text-xs group-hover:-translate-x-1 transition duration-200 ease-in-out" />
+                        <p className="relative z-20 text-neutral-300 text-sm">Home</p>
                     </button>
                 </Link>
                 <h1 className="mt-12 text-white font-bold text-4xl tracking-wide">Spotify Web Player</h1>

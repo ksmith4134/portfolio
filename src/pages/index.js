@@ -9,6 +9,7 @@ import { SiUdemy } from "react-icons/si"
 import RoundedButton from "@/components/ui/roundedButton";
 import CardGradient from "@/components/ui/cardGradient";
 import Link from "next/link";
+import HolofoilBento from "@/components/widgets/hologram/BentoCard/HolofoilBento";
 
 
 export default function Home(props) {
@@ -31,7 +32,7 @@ export default function Home(props) {
         <main className="relative max-w-screen min-h-screen">
             <div className="max-w-5xl mx-auto px-8 slide-enter-content">
 
-                <section className="mt-8 flex flex-col md:flex-row justify-start items-center gap-8">
+                <section className="mt-8 md:mt-16 flex flex-col md:flex-row justify-start items-center gap-8">
                     <div className="mt-8 md:mt-0 basis-1/2">
                         <RoundedButton label={"web developer"} />
                         <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
@@ -43,10 +44,10 @@ export default function Home(props) {
                             src={"/new/logo-grid.svg"}
                             width={452}
                             height={286}
-                            className=""
+                            className="mix-blend-overlay relative z-20"
                         />
-                        <span className="noise absolute z-10 pointer-events-none inset-0 opacity-[0.08]"></span>
-                        <span className="absolute z-0 w-full h-full bg-gradient-svg top-0 left-0"></span>
+                        <span className="mix-blend-overlay bg-gradient-svg absolute z-0 w-full h-full top-0 left-0"></span>
+                        <span className="mix-blend-overlay noise absolute z-10 pointer-events-none inset-0 opacity-[0.08]"></span>
                     </div>
                 </section>
 
@@ -55,28 +56,33 @@ export default function Home(props) {
                     <h2 className="mt-4 text-5xl font-bold text-neutral-200">Code and contributions</h2>
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <CardGradient
-                            url={"/articles/holofoils"}
-                            alt={"holofoil cards using css and javascript"}
-                            title={"Holofoil<br />Cards"}
-                            image={"/new/holofoil-graphic-2.png"}
-                            imageWidth={256}
-                            imageHeight={133}
-                        />
-                        <CardGradient
                             url={"/articles/dynamic-content"}
                             alt={"how to do dynamic content modeling with a headless cms"}
                             title={"Dynamic Content Modeling"}
-                            image={"/new/dynamic-content-2.png"}
-                            imageWidth={256}
-                            imageHeight={133}
+                            image={"/new/dynamic-content-12.svg"}
+                            imageWidth={249}
+                            imageHeight={130}
                         />
+                        <Link href={"/articles/holofoils"}>
+                            <HolofoilBento opacity={0.4}>
+                                <CardGradient
+                                    url={"/articles/holofoils"}
+                                    alt={"holofoil cards using css and javascript"}
+                                    title={"Holofoil<br />Cards"}
+                                    image={"/new/planet-3d.svg"}
+                                    imageWidth={249}
+                                    imageHeight={130}
+                                    holofoil={true}
+                                />
+                            </HolofoilBento>
+                        </Link>
                         <CardGradient
                             url={"/articles/spotify"}
                             alt={"how to make a custom music player using spotify api"}
                             title={"Spotify Custom<br />Web Player"}
-                            image={"/new/music-graphic-2.png"}
-                            imageWidth={256}
-                            imageHeight={133}
+                            image={"/new/music-graphic-5.svg"}
+                            imageWidth={249}
+                            imageHeight={130}
                         />
                     </div>
                 </section>

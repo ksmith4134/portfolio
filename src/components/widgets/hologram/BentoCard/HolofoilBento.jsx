@@ -8,11 +8,11 @@ export default function HolofoilBento(props) {
         width = '100%',
         height = '100%',
         perspective = 600,
-        radius = 20,
+        radius = 16,
         foregroundImage = '/animations/holofoils/PinkFloyd-2.jpg',
         opacity = 0.2,
-        rotateX = 20,
-        rotateY = 15,
+        rotateX = 12,
+        rotateY = 16,
         shimmerRate = 30, // 30 is a good default value
         children,
     } = props

@@ -85,7 +85,7 @@
     transition-property: opacity;
     clip-path: inset(0 0 1px 0 round var(--radius));
     --step: 5%;
-    --pattern: url('../../../../../public/animations/holofoils/holofoil-1.jpg') center / var(--foil-size);
+    --pattern: url('../../../../../public/animations/holofoils/cosmosfoil-2.png') center / var(--foil-size);
     --rainbow: 
         repeating-linear-gradient( 
             0deg, 

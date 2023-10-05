@@ -14,12 +14,9 @@ export default function Holofoils({jsxCode, cssCode}) {
             <article className="max-w-2xl mx-auto">
 
                 <Link href={'/'}>
-                    <button className="relative z-20 overflow-hidden w-fit inline-flex items-center gap-2 rounded-full px-6 py-2.5 border border-neutral-600/50 group">
+                    <button className="relative z-20 w-fit inline-flex items-center gap-2 group">
                         <FaArrowLeft className="relative z-20 text-neutral-300 text-xs group-hover:-translate-x-1 transition duration-200 ease-in-out" />
-                        <p className="relative z-20 text-neutral-300 text-sm">Back</p>
-                        <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
-                        <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
-                        <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>
+                        <p className="relative z-20 text-neutral-300 text-sm">Home</p>
                     </button>
                 </Link>
                 <h1 className="mt-12 text-white font-bold text-4xl tracking-wide">Holofoils</h1>
