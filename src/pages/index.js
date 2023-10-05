@@ -55,18 +55,18 @@ export default function Home(props) {
                     <h3 className="text-xl text-neutral-600">Open-Source</h3>
                     <h2 className="mt-4 text-5xl font-bold text-neutral-200">Code and contributions</h2>
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <CardGradient
-                            url={"/articles/dynamic-content"}
-                            alt={"how to do dynamic content modeling with a headless cms"}
-                            title={"Dynamic Content Modeling"}
-                            image={"/new/dynamic-content-12.svg"}
-                            imageWidth={249}
-                            imageHeight={130}
-                        />
+                        <Link href={"/articles/dynamic-content"}>
+                            <CardGradient
+                                alt={"how to do dynamic content modeling with a headless cms"}
+                                title={"Dynamic Content Modeling"}
+                                image={"/new/dynamic-content-12.svg"}
+                                imageWidth={249}
+                                imageHeight={130}
+                            />
+                        </Link>
                         <Link href={"/articles/holofoils"}>
                             <HolofoilBento opacity={0.4}>
                                 <CardGradient
-                                    url={"/articles/holofoils"}
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
                                     image={"/new/planet-3d.svg"}
@@ -76,14 +76,15 @@ export default function Home(props) {
                                 />
                             </HolofoilBento>
                         </Link>
-                        <CardGradient
-                            url={"/articles/spotify"}
-                            alt={"how to make a custom music player using spotify api"}
-                            title={"Spotify Custom<br />Web Player"}
-                            image={"/new/music-graphic-5.svg"}
-                            imageWidth={249}
-                            imageHeight={130}
-                        />
+                        <Link href={"/articles/spotify"}>
+                            <CardGradient
+                                alt={"how to make a custom music player using spotify api"}
+                                title={"Spotify Custom<br />Web Player"}
+                                image={"/new/music-graphic-6.svg"}
+                                imageWidth={249}
+                                imageHeight={130}
+                            />
+                        </Link>
                     </div>
                 </section>
 
