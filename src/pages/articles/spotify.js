@@ -18,8 +18,8 @@ export default function Spotify() {
                 </Link>
                 <h1 className="mt-12 text-white font-bold text-4xl tracking-wide">Spotify Web Player</h1>
                 <h5 className="mt-2 text-neutral-600 text-md font-normal">NEXT.js Component</h5>
-                <p className="mt-8 prose prose-invert max-w-none">Follow the directions below to implemet a custom Spotify song player into your NEXT.js web app. A small side-project also provides code to implement a custom-color sound-bar that animates while a song is playing.</p>
-                <p className="mt-4 prose prose-invert max-w-none"><strong>Check back soon! In active development...</strong></p>
+                {/* <p className="mt-8 prose prose-invert max-w-none">Follow the directions below to implemet a custom Spotify song player into your NEXT.js web app. A small side-project also provides code to implement a custom-color sound-bar that animates while a song is playing.</p> */}
+                <p className="mt-8 prose prose-invert max-w-none">Check back soon! In active development.</p>
 
                 <div className="mt-8">
                     <MusicPlayer />

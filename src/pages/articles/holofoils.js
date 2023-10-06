@@ -1,17 +1,67 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import RoundedButton from "@/components/ui/roundedButton";
 import HologramBitcoin from "@/components/widgets/hologram/Bitcoin/HologramBitcoin";
 import HologramReact from "@/components/widgets/hologram/React/HologramReact";
 import HologramPinkFloyd from "@/components/widgets/hologram/PinkFloyd/HologramPinkFloyd";
 import { FaGithub, FaArrowLeft } from 'react-icons/fa'
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import HolofoilTemplate from "@/components/widgets/hologram/HolofoilTemplate";
 
 export default function Holofoils({jsxCode, cssCode}) {
 
+    const sqDimensions = 300;
+    const opacity = 0.6;
+
+    const holofoils = [
+        { 
+            id: 0, 
+            caption: "Bitcoin", 
+            component: <HologramBitcoin width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
+        },
+        { 
+            id: 1, 
+            caption: "Pink Floyd", 
+            component: <HologramPinkFloyd width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
+        },
+        { 
+            id: 2, 
+            caption: "React.js", 
+            component: <HologramReact width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
+        },
+    ];
+
+
+    const [ sliderPosition, setSliderPosition ] = useState({ transform: "translateX(0)"})
+    const [ selected, setSelected ] = useState(0)
+
+    const handleClick = (step) => {
+        if(step === -1){
+            if(selected === 0){
+                setSelected(holofoils.length -1);
+            } else {
+                setSelected(selected + step);
+            }
+        }
+
+        if(step === 1){
+            if(selected === holofoils.length-1){
+                setSelected(0);
+            } else {
+                setSelected(selected + step);
+            }
+        }
+    }
+
+    useEffect(() => {
+        setSliderPosition({ transform: `translateX(${selected * -100}%)`})
+    }, [selected])
+
 
     return (
-        <div className='relative z-30 max-w-screen min-h-screen pt-12 pb-20 w-full'>
-            <article className="max-w-2xl mx-auto">
+        <div className='relative z-30 max-w-screen min-h-screen py-12 w-full'>
+            <article className="max-w-2xl mx-auto slide-enter-content">
 
                 <Link href={'/'}>
                     <button className="relative z-20 w-fit inline-flex items-center gap-2 group">
@@ -36,17 +86,29 @@ export default function Holofoils({jsxCode, cssCode}) {
                             </span>
                         </a>.
                     </p>
-                    <p>Follow the directions below to start using holofoil cards in your own React or NEXT.js project. Customize the cards using your own images, component props, and custom styling. Checkout these examples and get started below.</p>
-                    <h2>Gallery</h2>
-                </div>
+                    <p>Follow the directions below to start using holofoil cards in your own React or NEXT.js project. Customize the cards using your own images, component props, and custom styling. Checkout the gallery of examples below and continue reading to see the code.</p>
 
-                <div className="mt-8 flex flex-wrap justify-between items-center gap-4 not-prose isolate">
-                    <HologramPinkFloyd width={210} height={210} opacity={1} />
-                    <HologramBitcoin width={210} height={210} opacity={0.8} />
-                    <HologramReact width={210} height={210} opacity={1} />
-                </div>
-                
-                <div className="mt-16 prose prose-invert max-w-none">
+                    <div className="mt-12 not-prose flex justify-between items-center border border-neutral-800 rounded-3xl p-8 group transition-opacity duration-1000 ease-in-out">
+                        <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out text-white/20 hover:text-white/40 mr-2" onClick={() => handleClick(-1)}>
+                            <BsChevronLeft className="text-4xl" />
+                        </button>
+                        <div className="not-prose w-full h-full p-4 overflow-x-hidden flex justify-center items-center">
+                            <div className="flex">
+                                {holofoils.map((item) => (
+                                    <div key={item.id} className="w-full h-full flex flex-col justify-center items-center gap-6 text-sm flex-shrink-0 flex-grow-0 transition-transform duration-500" style={sliderPosition}>
+                                        <div>{item.component}</div>
+                                        <div className={`opacity-0 ${selected === item.id && 'opacity-100'} transtion-opacity duration-1000 delay-500 ease-in-out `}>
+                                            <RoundedButton label={item.caption} />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out text-white/20 hover:text-white/40 ml-2" onClick={() => handleClick(1)}>
+                            <BsChevronRight className="text-4xl" />
+                        </button>
+                    </div>
+
                     <h2>Steps</h2>
                     <ol>
                         <li>Create a file called, <code>HolofoilTemplate.jsx</code> in your /components folder.</li>
@@ -114,12 +176,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                         <li>Fix the CSS properties causing clunky pitch (x-axis) and yaw (y-axis) rotation animations in the Mozilla browser.</li>
                     </ul>
 
-                    
-
                 </div>
-
-
-
             </article>
         </div>
     );

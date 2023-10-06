@@ -32,7 +32,7 @@ export default function Home(props) {
         <main className="relative max-w-screen min-h-screen">
             <div className="max-w-5xl mx-auto px-8 slide-enter-content">
 
-                <section className="mt-8 md:mt-16 flex flex-col md:flex-row justify-start items-center gap-8">
+                <section className="mt-8 md:mt-12 flex flex-col md:flex-row justify-start items-center gap-8">
                     <div className="mt-8 md:mt-0 basis-1/2">
                         <RoundedButton label={"web developer"} />
                         <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
@@ -51,7 +51,7 @@ export default function Home(props) {
                     </div>
                 </section>
 
-                <section className="mt-36">
+                <section className="mt-40">
                     <h3 className="text-xl text-neutral-600">Open-Source</h3>
                     <h2 className="mt-4 text-5xl font-bold text-neutral-200">Code and contributions</h2>
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -65,7 +65,7 @@ export default function Home(props) {
                             />
                         </Link>
                         <Link href={"/articles/holofoils"}>
-                            <HolofoilBento opacity={1}>
+                            <HolofoilBento opacity={0}>
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
@@ -103,7 +103,7 @@ export default function Home(props) {
                     </div>
                     <div className="mt-16">
                         { showProjects.map((project) => (
-                            <div key={project.id} className="py-7 border-b last:border-b-0 border-neutral-800 group">
+                            <div key={project.id} className="pt-7 pb-7 last:pb-0 border-b last:border-b-0 border-neutral-800 group">
                                 <Link 
                                     href={project.website}
                                     target="_blank"
@@ -148,13 +148,7 @@ export default function Home(props) {
                             <Image key={logo.id} src={logo.svg} width={logo.width/1.5} height={logo.height/1.5} alt="logo" className="opacity-80" />
                         ))}
                     </div>
-                </section>
-
-                {/* FOOTER */}
-                <footer className="pt-10 flex flex-col items-center justify-center gap-4 pb-4">
-                    <div className="w-12 border-b border-neutral-800"></div>
-                    <p className="text-neutral-600 text-sm">&copy; 2023 Kevin Smith</p>
-                </footer>
+                </section>                
 
             </div>    
         </main>

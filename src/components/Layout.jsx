@@ -1,5 +1,6 @@
 import { Inter, Merriweather, Roboto_Mono } from 'next/font/google'
 import Header from './nav/header'
+import Footer from './nav/footer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const robotoMono = Roboto_Mono({ weight: '400', subsets: ['latin'], variable: '--font-roboto-mono' })
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
             {/* <div className="w-full h-full absolute top-48 gradient rotate-180"></div> */}
             {/* <Header /> */}
             { children }
+            <Footer />
         </div>
     )
 }
