@@ -11,7 +11,7 @@ import HolofoilTemplate from "@/components/widgets/hologram/HolofoilTemplate";
 
 export default function Holofoils({jsxCode, cssCode}) {
 
-    const sqDimensions = 300;
+    const sqDimensions = 260;
     const opacity = 0.6;
 
     const holofoils = [
@@ -61,7 +61,7 @@ export default function Holofoils({jsxCode, cssCode}) {
 
     return (
         <div className='relative z-30 max-w-screen min-h-screen py-12 w-full'>
-            <article className="max-w-2xl mx-auto slide-enter-content">
+            <article className="max-w-2xl mx-auto px-4 md:px-0 slide-enter-content">
 
                 <Link href={'/'}>
                     <button className="relative z-20 w-fit inline-flex items-center gap-2 group">
@@ -88,7 +88,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                     </p>
                     <p>Follow the directions below to start using holofoil cards in your own React or NEXT.js project. Customize the cards using your own images, component props, and custom styling. Checkout the gallery of examples below and continue reading to see the code.</p>
 
-                    <div className="mt-12 not-prose flex justify-between items-center border border-neutral-800 rounded-3xl p-8 group transition-opacity duration-1000 ease-in-out">
+                    <div className="mt-12 not-prose flex justify-between items-center border border-neutral-800 rounded-3xl p-4 md:p-8 group transition-opacity duration-1000 ease-in-out">
                         <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out text-white/20 hover:text-white/40 mr-2" onClick={() => handleClick(-1)}>
                             <BsChevronLeft className="text-4xl" />
                         </button>
@@ -111,8 +111,8 @@ export default function Holofoils({jsxCode, cssCode}) {
 
                     <h2>Steps</h2>
                     <ol>
-                        <li>Create a file called, <code>HolofoilTemplate.jsx</code> in your /components folder.</li>
-                        <li>Copy the code below and paste it into the new component file. Note, if using VS Code, press Shift+Alt+F for Windows or Cmd+k+f for Mac.</li>
+                        <li>Create a file called, <code>HolofoilTemplate.jsx</code> in the /components folder.</li>
+                        <li>Copy the code below and paste it into the new component file. Note, if using VS Code, press Shift+Alt+F for Windows (Cmd+k+f for Mac) to quickly fix any formatting issues.</li>
                         <figure className="mt-4 w-full not-prose">
                             <div className="flex justify-between items-center gap-2">
                                 <h2 className="text-neutral-300 text-sm font-mono px-4 py-3 bg-neutral-900 w-full italic">/src/components/HolofoilTemplate.jsx</h2>
@@ -121,7 +121,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                                 <pre className="break-normal" dangerouslySetInnerHTML={{ __html: jsxCode }} />
                             </div>
                         </figure>
-                        <li>Add a main, foreground image to your public folder. Add the <strong>absolute</strong> url string to the <code>foregroundImage</code> prop of the HolofoilTemplate.jsx component. There is a code comment in the desctructured props pointing to the correct place to put the url.</li>
+                        <li>Add a main, foreground image to the public folder. Add the <strong>absolute</strong> url string to the <code>foregroundImage</code> prop of the HolofoilTemplate.jsx component. There is a code comment in the desctructured props pointing to the correct place to put the url.</li>
                         <figure className="flex flex-col items-center">
                             <Image 
                                 alt=""
@@ -134,7 +134,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                             <figcaption>Horsehead Nebula, Courtesy of ESA Hubble</figcaption>
                         </figure>
                         <li>In the same folder as the component, create a second file called, <code>HolofoilTemplate.module.css</code></li>
-                        <li>Copy the code below and paste it into the new component file. Note, if using VS Code, press Shift+Alt+F for Windows or Cmd+k+f for Mac.</li>
+                        <li>Copy the code below and paste it into the new component file.</li>
                         <figure className="mt-4 w-full not-prose">
                             <div className="flex justify-between items-center gap-2">
                                 <h2 className="text-neutral-300 text-sm font-mono px-4 py-3 bg-neutral-900 w-full italic">/src/components/HolofoilTemplate.module.css</h2>
@@ -143,7 +143,7 @@ export default function Holofoils({jsxCode, cssCode}) {
                                 <pre className="break-normal" dangerouslySetInnerHTML={{ __html: cssCode }} />
                             </div>
                         </figure>
-                        <li>Add a background image to your public folder. <em>Note: A good background image typically consists of a random or repeating white pattern on a black background.</em></li>
+                        <li>Add a background image to the public folder. <em>Note: A good background image typically consists of a random or repeating white pattern on a black background.</em></li>
                         <figure className="flex flex-col items-center">
                             <Image 
                                 alt=""
@@ -160,8 +160,8 @@ export default function Holofoils({jsxCode, cssCode}) {
                         <figure className="flex flex-col items-center not-prose">
                             <HolofoilTemplate 
                                 foregroundImage={'/animations/holofoils/horsehead-nebula.jpg'} 
-                                width={400} 
-                                height={480} 
+                                width={360} 
+                                height={432} 
                                 opacity={0.4} 
                                 rotateX={16} 
                                 rotateY={12} 
