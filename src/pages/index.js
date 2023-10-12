@@ -69,7 +69,7 @@ export default function Home(props) {
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
-                                    image={"/new/planet-3f.svg"}
+                                    image={"/new/planet-3i.svg"}
                                     imageWidth={249}
                                     imageHeight={130}
                                     holofoil={true}
@@ -94,8 +94,8 @@ export default function Home(props) {
                             <h3 className="text-xl text-neutral-600">Professional Work</h3>
                             <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
                         </div>
-                        <button className="relative z-20 overflow-hidden w-fit rounded-full px-8 py-2.5 border border-neutral-600 hover:bg-neutral-900" onClick={() => handleClick(!seeAll)}>
-                            <p className="relative z-20 text-neutral-300 text-sm">See All</p>
+                        <button className="relative z-20 overflow-hidden w-36 rounded-full px-8 py-3 border border-neutral-600 hover:bg-neutral-900" onClick={() => handleClick(!seeAll)}>
+                            <p className="relative z-20 text-neutral-300 text-sm">{ seeAll ? 'See Less' : 'See More' }</p>
                             <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
                             <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
                             <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>

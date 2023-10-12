@@ -17,13 +17,13 @@ export default function Holofoils({jsxCode, cssCode}) {
     const holofoils = [
         { 
             id: 0, 
-            caption: "Bitcoin", 
-            component: <HologramBitcoin width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
+            caption: "Pink Floyd Playbutton", 
+            component: <HologramPinkFloyd width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
         },
         { 
             id: 1, 
-            caption: "Pink Floyd", 
-            component: <HologramPinkFloyd width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
+            caption: "Bitcoin", 
+            component: <HologramBitcoin width={sqDimensions} height={sqDimensions} opacity={opacity} /> 
         },
         { 
             id: 2, 
