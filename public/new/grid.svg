@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="452.001" height="286" viewBox="0 0 452.001 286">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.974" cy="0.041" r="1.342" gradientTransform="matrix(-0.693, 0.721, -0.194, -0.187, 1.656, -0.654)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#2b2b2b"/>
+    </radialGradient>
+  </defs>
+  <g id="grid" transform="translate(-2675 -1269)">
+    <path id="Subtraction_12" data-name="Subtraction 12" d="M-5309.079,6776h-1v-18.64H-5392V6776h-1v-18.64h-84.929V6776h-1v-18.64h-81.059V6776h-1v-18.64h-80.985V6776h-1v-18.64H-5659v-1h16.025v-80H-5659v-1h16.025v-80H-5659v-1h16.025v-87.019h-15.558v-1h15.558V6490h1v16.339h80.985V6490h1v16.339h81.059V6490h1v16.339H-5393V6490h1v16.339h81.922V6490h1v16.339h83.093V6490h1v16.339H-5207v1h-17.987v87.019H-5207v1h-17.987v80H-5207v1h-17.987v80H-5207v1h-17.987V6776h-1v-18.64h-83.093V6776Zm0-99.642v80h83.093v-80Zm-82.92,0v80h81.922v-80Zm-85.929,0v80H-5393v-80Zm-82.059,0v80h81.059v-80Zm-81.985,0v80h80.985v-80Zm332.893-81v80h83.093v-80Zm-82.92,0v80h81.922v-80Zm-85.929,0v80H-5393v-80Zm-82.059,0v80h81.059v-80Zm-81.985,0v80h80.985v-80Zm332.893-88.019v87.019h83.093v-87.019Zm-82.92,0v87.019h81.922v-87.019Zm-85.929,0v87.019H-5393v-87.019Zm-82.059,0v87.019h81.059v-87.019Zm-81.985,0v87.019h80.985v-87.019Z" transform="translate(8334.001 -5221)" opacity="0.17" fill="url(#radial-gradient)"/>
+  </g>
+</svg>

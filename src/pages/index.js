@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SVG_LOGOS } from "@/components/Theme";
 import { projects } from "@/data/projects2";
 import { courses } from "@/data/courses";
-import { SiUdemy } from "react-icons/si"
+import { SiUdemy, SiTailwindcss, SiReact } from "react-icons/si"
 
 import RoundedButton from "@/components/ui/roundedButton";
 import CardGradient from "@/components/ui/cardGradient";
@@ -32,16 +32,43 @@ export default function Home(props) {
         <main className="relative max-w-screen min-h-screen">
             <div className="max-w-5xl mx-auto px-8 slide-enter-content">
 
+                {/* top section with separate blocks */}
+                {/* <section className="mt-8 md:mt-12 flex flex-col md:flex-row justify-start items-center gap-8">
+                    <div className="mt-8 md:mt-0 basis-1/2">
+                        <RoundedButton label={"web developer"} />
+                        <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
+                        <p className="mt-6 md:max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling.</p>
+                    </div>
+                    <div className="w-fit relative z-0 overflow-hidden md:h-96 flex flex-col justify-center">
+                        <Image 
+                            alt="web development technology logos"
+                            src={"/new/grid.svg"}
+                            width={452}
+                            height={286}
+                            className="mix-blend-overlay"
+                        />
+                        <div className="absolute z-10 w-16 aspect-square left-[107px] top-[78px] group">
+                            <div className="relative w-full h-full flex justify-center items-center">
+                                <Image src={"/new/top-left.svg"} fill alt="test" className="" />
+                                <SiReact className="absolute z-20 w-9 h-9 text-white/40 group-hover:text-[#61DAFB] transition-colors duration-500 ease-in-out" />
+                            </div>
+                        </div>
+                        
+                        <span className="bg-gradient-svg absolute -z-10 w-full h-full top-0 left-0"></span>
+                        <span className="noise absolute -z-20 pointer-events-none inset-0 opacity-[0.1]"></span>
+                    </div>
+                </section> */}
+
                 <section className="mt-8 md:mt-12 flex flex-col md:flex-row justify-start items-center gap-8">
                     <div className="mt-8 md:mt-0 basis-1/2">
                         <RoundedButton label={"web developer"} />
                         <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
                         <p className="mt-6 md:max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling.</p>
                     </div>
-                    <div className="basis-1/2 p-4 relative z-20 overflow-hidden md:h-96 flex flex-col justify-center">
+                    <div className="w-fit relative z-20 overflow-hidden md:h-96 flex flex-col justify-center">
                         <Image 
                             alt="web development technology logos"
-                            src={"/new/logo-grid.svg"}
+                            src={"/new/logo-grid-2.svg"}
                             width={452}
                             height={286}
                             className="mix-blend-overlay relative z-20"
@@ -65,7 +92,7 @@ export default function Home(props) {
                             />
                         </Link>
                         <Link href={"/articles/holofoils"}>
-                            <HolofoilBento opacity={0}>
+                            <HolofoilBento opacity={0.4}>
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
