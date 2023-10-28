@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import { SVG_LOGOS } from "@/components/Theme";
+import { SVG_LOGOS, TECH } from "@/components/Theme";
 import { projects } from "@/data/projects2";
 import { courses } from "@/data/courses";
 import { SiUdemy } from "react-icons/si"
+import { BsArrowRightShort } from "react-icons/bs"
 
 import CardGradient from "@/components/ui/cardGradient";
 import Link from "next/link";
@@ -14,31 +15,44 @@ import LogoGridSvg from "@/components/svg/LogoGridSvg";
 
 export default function Home(props) {
 
-    const {
-        
-    } = props
+    const { } = props
 
+    // #region TEXT SLIDER
+    const [ sliderPosition, setSliderPosition ] = useState({ transform: "translateY(0)"})
+    const [ selected, setSelected ] = useState(0)
+    const [ techName, setTechName ] = useState([
+        { label: "everything", color: "text-neutral-500" },
+        { label: "", color: "" },
+    ])    
+
+    const showTechName = (name) => {
+        if(name === "default"){
+            setSelected(0)
+        } else {
+            let newTechName = [];
+            newTechName.push(techName[0]);
+            newTechName.push(TECH[name])
+            setTechName(newTechName)    
+            setSelected(1)
+        }
+    }
+
+    useEffect(() => {
+        setSliderPosition({ transform: `translateY(${selected * -100}%)`})
+    }, [selected])
+    // #endregion
+
+    // #region SHOW MORE/FEWER PROJECTS
     const [ showProjects, setShowProjects ] = useState(projects.filter((item) => item.seeAll))
     const [ seeAll, setSeeAll ] = useState(false)
-    const [ techName, setTechName ] = useState("default")
 
-    function handleClick(bool){
+    function handleShowProjects(bool){
         setSeeAll(bool)
         bool === true ? 
             setShowProjects(projects) : 
             setShowProjects(projects.filter((item) => item.seeAll))
     }
-
-    const TECH = {
-        "default": {label: "everything", color: "text-neutral-500"},
-        "javascript": {label: "JavaScript", color: "text-amber-300"},
-        "node": {label: "Node.js", color: "text-green-700"},
-        "react": {label: "React.js", color: "text-sky-400"},
-        "sql": {label: "MySQL, MongoDB", color: "text-orange-400"},
-        "redux": {label: "Redux.js", color: "text-purple-600"},
-        "tailwind": {label: "Tailwind CSS", color: "text-cyan-600"},
-        "next": {label: "NEXT.js", color: "text-white"},
-    }
+    // #endregion
 
 
     return (
@@ -46,16 +60,25 @@ export default function Home(props) {
             <div className="max-w-5xl mx-auto px-8 slide-enter-content">
 
                 <section className="mt-8 md:mt-0 md:min-h-screen flex flex-col md:flex-row justify-start items-center gap-8">
-                    <div className="mt-8 md:mt-0 basis-1/2 text-center md:text-left max-w-lg">
-                        <h3 className="text-md text-neutral-600">
-                            Web developing&nbsp;
-                            <span className={`${techName?.color}`}>{techName?.label}</span>
-                        </h3>
+                    <div className="mt-8 md:mt-0 basis-1/2 max-w-lg">
+                        <div className="text-md h-6 overflow-hidden inline-flex">
+                            <h3 className="text-neutral-600">Web developing&nbsp;</h3>
+                            <div className={`flex flex-col h-full transition-transform duration-500`} style={sliderPosition}>
+                                {techName.map(item => (
+                                    <h3 key={item.label} className={`${item.color}`}>{item.label}</h3>
+                                ))}
+                            </div>
+                        </div>
                         <h1 className="mt-6 text-6xl text-white font-extrabold">Kevin Smith</h1>
-                        <p className="mt-6 md:max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling. Hover to see more...</p>
+                        <p className="mt-6 md:max-w-sm text-white font-light leading-7">
+                            My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling.&nbsp;
+                            <span className="hidden md:inline-flex">Hover over icons&nbsp;</span>
+                            <span className="inline-flex md:hidden">Click icons&nbsp;</span>
+                            <BsArrowRightShort className="text-white text-2xl inline-flex" />
+                        </p>
                     </div>
                     <div className="w-fit relative z-20 overflow-hidden md:h-96 flex flex-col justify-center md:shrink-0">
-                        <LogoGridSvg showTechName={(name) => setTechName(TECH[name])} />
+                        <LogoGridSvg showTechName={showTechName} />
                         <span className="mix-blend-overlay bg-gradient-svg absolute -z-10 w-full h-full top-0 left-0"></span>
                         <span className="mix-blend-overlay noise absolute -z-20 pointer-events-none inset-0 opacity-[0.08]"></span>
                     </div>
@@ -79,7 +102,7 @@ export default function Home(props) {
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
-                                    image={"/new/planet-3t.svg"}
+                                    image={"/new/planet-4.svg"}
                                     imageWidth={249}
                                     imageHeight={130}
                                     holofoil={true}
@@ -104,7 +127,7 @@ export default function Home(props) {
                             <h3 className="text-xl text-neutral-600">Professional Work</h3>
                             <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
                         </div>
-                        <button className="relative z-20 overflow-hidden w-36 rounded-full px-8 py-3 border border-neutral-600 hover:bg-neutral-900" onClick={() => handleClick(!seeAll)}>
+                        <button className="relative z-20 overflow-hidden w-36 rounded-full px-8 py-3 border border-neutral-600 hover:bg-neutral-900" onClick={() => handleShowProjects(!seeAll)}>
                             <p className="relative z-20 text-neutral-300 text-sm">{ seeAll ? 'See Less' : 'See More' }</p>
                             <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
                             <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>

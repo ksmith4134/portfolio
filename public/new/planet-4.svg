@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="249" height="130" viewBox="0 0 249 130">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.557" y1="0.011" x2="0.564" y2="1.017" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#1a1a1a" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.5" cy="0.5" r="0.674" gradientTransform="translate(0 0.296) scale(1 0.408)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.078"/>
+      <stop offset="1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="planet-4" transform="translate(-3085 -1182)">
+    <path id="border" d="M243,132H10a8.009,8.009,0,0,1-8-8V10a8.009,8.009,0,0,1,8-8H243a8.009,8.009,0,0,1,8,8V124A8.009,8.009,0,0,1,243,132ZM10,3.008a7.008,7.008,0,0,0-7,7V123.992a7.008,7.008,0,0,0,7,7H243a7.008,7.008,0,0,0,7-7V10.008a7.008,7.008,0,0,0-7-7Z" transform="translate(3083 1180)" fill="url(#linear-gradient)"/>
+    <circle id="Ellipse_171" data-name="Ellipse 171" cx="52" cy="52" r="52" transform="translate(3158 1195)" fill="url(#radial-gradient)"/>
+    <rect id="Rectangle_331" data-name="Rectangle 331" width="249" height="130" rx="8" transform="translate(3085 1182)" fill="url(#radial-gradient-2)"/>
+  </g>
+</svg>
