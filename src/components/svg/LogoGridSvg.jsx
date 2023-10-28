@@ -6,11 +6,11 @@ export default function LogoGridSvg(props) {
 
     const tech = {
         "javascript": {label: "JavaScript", color: "text-amber-300"},
-        "node": {label: "Node.js", color: "text-green-800"},
+        "node": {label: "Node.js", color: "text-green-700"},
         "react": {label: "React.js", color: "text-sky-400"},
-        "sql": {label: "SQL", color: "text-orange-400"},
+        "sql": {label: "MySQL, MongoDB", color: "text-orange-400"},
         "redux": {label: "Redux.js", color: "text-purple-600"},
-        "tailwind": {label: "Tailwind", color: "text-cyan-600"},
+        "tailwind": {label: "Tailwind CSS", color: "text-cyan-600"},
         "next": {label: "NEXT.js", color: "text-white"},
     }
 
@@ -22,7 +22,7 @@ export default function LogoGridSvg(props) {
             height={286}
             viewBox="0 0 452.001 286"
         >
-            <g id="javascript" className="group" onMouseEnter={() => showTechName(tech["javascript"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="javascript" className="group" onMouseEnter={() => showTechName("javascript")} onMouseLeave={() => showTechName("default")}>
                 <g 
                     id="bottom-left"
                     transform="translate(109.161 196)"
@@ -74,7 +74,7 @@ export default function LogoGridSvg(props) {
                 />
             </g>
 
-            <g id="node" className="group" onMouseEnter={() => showTechName(tech["node"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="node" className="group" onMouseEnter={() => showTechName("node")} onMouseLeave={() => showTechName("default")}>
                 <g transform="translate(278.161 196)">
                     <rect
                         width={63}
@@ -131,7 +131,7 @@ export default function LogoGridSvg(props) {
                 />
             </g>
 
-            <g id="react" className="group" onMouseEnter={() => showTechName(tech["react"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="react" className="group" onMouseEnter={() => showTechName("react")} onMouseLeave={() => showTechName("default")}>
                 <g transform="translate(109.161 31)">
                     <rect
                         width={63}
@@ -218,7 +218,7 @@ export default function LogoGridSvg(props) {
                 </g>
             </g>
 
-            <g id="sql" className="group" onMouseEnter={() => showTechName(tech["sql"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="sql" className="group" onMouseEnter={() => showTechName("sql")} onMouseLeave={() => showTechName("default")}>
                 <g transform="translate(360.161 114)">
                 <rect
                     width={63}
@@ -275,7 +275,7 @@ export default function LogoGridSvg(props) {
                 />
             </g>
 
-            <g id="redux" className="group" onMouseEnter={() => showTechName(tech["redux"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="redux" className="group" onMouseEnter={() => showTechName("redux")} onMouseLeave={() => showTechName("default")}>
                 <g transform="translate(27.161 114)">
                 <rect
                     width={63}
@@ -332,7 +332,7 @@ export default function LogoGridSvg(props) {
                 />
             </g>
             
-            <g id="tailwind" className="group" onMouseEnter={() => showTechName(tech["tailwind"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="tailwind" className="group" onMouseEnter={() => showTechName("tailwind")} onMouseLeave={() => showTechName("default")}>
                 <g transform="translate(278.161 31)">
                 <rect
                     width={63}
@@ -393,7 +393,7 @@ export default function LogoGridSvg(props) {
             </g>
             </g>
             
-            <g id="next" className="group" onMouseEnter={() => showTechName(tech["next"])} onMouseLeave={() => showTechName({label: "everything", color: "text-neutral-500"})}>
+            <g id="next" className="group" onMouseEnter={() => showTechName("next")} onMouseLeave={() => showTechName("default")}>
                 <g transform="translate(193.161 114)">
                 <rect
                     width={63}

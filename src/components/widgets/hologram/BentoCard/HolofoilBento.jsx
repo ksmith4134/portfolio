@@ -98,6 +98,7 @@ export default function HolofoilBento(props) {
                 onMouseMove={rotateToMouse}
             >
                 <div className={styles.card}>
+
                     <div className={styles.imageContainer}>
                         <Image 
                             alt="hologram foil" 
@@ -109,8 +110,13 @@ export default function HolofoilBento(props) {
                         /> 
                         { children }
                     </div>
+
                     <div className={styles.cursourHighlight}></div>
                     <div className={styles.foil}></div>
+
+                    <div className={`absolute h-full w-full top-[64px] left-0 flex justify-center`}>
+                        <Image src={'/new/planet-no-stars.svg'} width={249} height={80} alt="planet" className="rotate-[0deg]" />
+                    </div>
                 </div>
             </div>
         </div>

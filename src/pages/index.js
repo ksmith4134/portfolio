@@ -20,13 +20,24 @@ export default function Home(props) {
 
     const [ showProjects, setShowProjects ] = useState(projects.filter((item) => item.seeAll))
     const [ seeAll, setSeeAll ] = useState(false)
-    const [ techName, setTechName ] = useState({label: "everything", color: "text-neutral-500"})
+    const [ techName, setTechName ] = useState("default")
 
     function handleClick(bool){
         setSeeAll(bool)
         bool === true ? 
             setShowProjects(projects) : 
             setShowProjects(projects.filter((item) => item.seeAll))
+    }
+
+    const TECH = {
+        "default": {label: "everything", color: "text-neutral-500"},
+        "javascript": {label: "JavaScript", color: "text-amber-300"},
+        "node": {label: "Node.js", color: "text-green-700"},
+        "react": {label: "React.js", color: "text-sky-400"},
+        "sql": {label: "MySQL, MongoDB", color: "text-orange-400"},
+        "redux": {label: "Redux.js", color: "text-purple-600"},
+        "tailwind": {label: "Tailwind CSS", color: "text-cyan-600"},
+        "next": {label: "NEXT.js", color: "text-white"},
     }
 
 
@@ -44,7 +55,7 @@ export default function Home(props) {
                         <p className="mt-6 md:max-w-sm text-white font-light leading-7">My daily programming stack includes JavaScript frameworks like NEXT, React, and Node, along with Tailwind and CSS3 for styling. Hover to see more...</p>
                     </div>
                     <div className="w-fit relative z-20 overflow-hidden md:h-96 flex flex-col justify-center md:shrink-0">
-                        <LogoGridSvg showTechName={(name) => setTechName(name)} />
+                        <LogoGridSvg showTechName={(name) => setTechName(TECH[name])} />
                         <span className="mix-blend-overlay bg-gradient-svg absolute -z-10 w-full h-full top-0 left-0"></span>
                         <span className="mix-blend-overlay noise absolute -z-20 pointer-events-none inset-0 opacity-[0.08]"></span>
                     </div>
@@ -64,11 +75,11 @@ export default function Home(props) {
                             />
                         </Link>
                         <Link href={"/articles/holofoils"}>
-                            <HolofoilBento opacity={0.4}>
+                            <HolofoilBento opacity={0}>
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
-                                    image={"/new/planet-3i.svg"}
+                                    image={"/new/planet-3t.svg"}
                                     imageWidth={249}
                                     imageHeight={130}
                                     holofoil={true}
