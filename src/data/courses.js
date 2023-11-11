@@ -7,20 +7,20 @@ export const courses = [
     // },
     {
         id: 1,
-        logo: 'udemy',
+        logo: 'award',
         title: 'Node.js API Masterclass',
-        certificateURL: '',
+        certificateURL: 'https://www.udemy.com/certificate/UC-1cb2ff50-1e09-4746-8a19-f5f022e92462/',
     },
     {
         id: 2,
-        logo: 'udemy',
+        logo: 'award',
         title: 'React Front to Back',
-        certificateURL: '/pdf/react-certificate.pdf',
+        certificateURL: 'https://www.udemy.com/certificate/UC-14729c20-a43a-4884-8d53-a811cd647e35/',
     },
     {
         id: 3,
-        logo: 'udemy',
+        logo: 'award',
         title: 'Modern JavaScript 2023',
-        certificateURL: '/pdf/javascript-certificate.pdf',
+        certificateURL: 'https://www.udemy.com/certificate/UC-c0ac32a7-c89c-4a4b-ac59-9d29eae9f7bc/',
     },
 ]

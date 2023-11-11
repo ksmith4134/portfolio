@@ -19,16 +19,15 @@ import {
 
 
 
-export const TECH = {
-    "default": {label: "everything", color: "text-neutral-500"},
-    "javascript": {label: "JavaScript", color: "text-amber-300"},
-    "node": {label: "Node.js", color: "text-green-700"},
-    "react": {label: "React.js", color: "text-sky-400"},
-    "sql": {label: "MySQL", color: "text-orange-400"},
-    "redux": {label: "Redux.js", color: "text-purple-600"},
-    "tailwind": {label: "Tailwind CSS", color: "text-cyan-600"},
-    "next": {label: "NEXT.js", color: "text-white"},
-}
+export const TECH = [
+    {id: "react", label: "React.js", color: "text-sky-400"},
+    {id: "next", label: "NEXT.js", color: "text-white"},
+    {id: "tailwind", label: "Tailwind CSS", color: "text-cyan-500"},
+    {id: "sql", label: "MySQL", color: "text-orange-400"},
+    {id: "node", label: "Node.js", color: "text-green-700"},
+    {id: "javascript", label: "JavaScript", color: "text-amber-300"},
+    {id: "redux", label: "Redux.js", color: "text-purple-600"},
+]
 
 export const WEATHER_CONDITIONS = {
     1000: { description: 'Sunny', icon: WiSolarEclipse, },

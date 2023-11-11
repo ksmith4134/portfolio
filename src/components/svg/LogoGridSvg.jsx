@@ -1,18 +1,9 @@
 export default function LogoGridSvg(props) {
 
     const {
-        showTechName,
+        techNameID,
     } = props;
 
-    const tech = {
-        "javascript": {label: "JavaScript", color: "text-amber-300"},
-        "node": {label: "Node.js", color: "text-green-700"},
-        "react": {label: "React.js", color: "text-sky-400"},
-        "sql": {label: "MySQL, MongoDB", color: "text-orange-400"},
-        "redux": {label: "Redux.js", color: "text-purple-600"},
-        "tailwind": {label: "Tailwind CSS", color: "text-cyan-600"},
-        "next": {label: "NEXT.js", color: "text-white"},
-    }
 
     return (
         <svg
@@ -22,7 +13,7 @@ export default function LogoGridSvg(props) {
             height={286}
             viewBox="0 0 452.001 286"
         >
-            <g id="javascript" className="group" onMouseEnter={() => showTechName("javascript")} onMouseLeave={() => showTechName("default")}>
+            <g id="javascript">
                 <g 
                     id="bottom-left"
                     transform="translate(109.161 196)"
@@ -69,12 +60,12 @@ export default function LogoGridSvg(props) {
                 <path
                     fill="#fff"
                     opacity={0.4}
-                    className="group-hover:fill-amber-300 group-hover:opacity-80 transition-all duration-300 ease-in-out"
+                    className={`${techNameID.id === "javascript" && 'fill-amber-300 opacity-80'} transition-all duration-300 ease-in-out`}
                     d="M144.124 232.603a5.3 5.3 0 0 0 4.79 2.953c2.009 0 3.3-1.009 3.3-2.395 0-1.665-1.32-2.255-3.535-3.223l-1.214-.525c-3.5-1.493-5.831-3.363-5.831-7.316-.004-3.642 2.768-6.414 7.107-6.414a7.18 7.18 0 0 1 6.906 3.887l-3.781 2.428a3.3 3.3 0 0 0-3.125-2.083 2.113 2.113 0 0 0-2.321 2.083c0 1.46.9 2.05 2.985 2.953l1.214.517c4.125 1.772 6.455 3.576 6.455 7.627 0 4.371-3.436 6.766-8.046 6.766-4.511 0-7.422-2.149-8.849-4.962Zm-17.157.426c.763 1.353 1.46 2.5 3.125 2.5 1.6 0 2.6-.623 2.6-3.051v-16.516h4.855v16.575c0 5.028-2.944 7.316-7.25 7.316a7.526 7.526 0 0 1-7.284-4.437Z"
                 />
             </g>
 
-            <g id="node" className="group" onMouseEnter={() => showTechName("node")} onMouseLeave={() => showTechName("default")}>
+            <g id="node">
                 <g transform="translate(278.161 196)">
                     <rect
                         width={63}
@@ -125,13 +116,13 @@ export default function LogoGridSvg(props) {
                 </g>
                 <path
                     fill="#fff"
-                    className="group-hover:fill-green-700 group-hover:opacity-80 transition-all duration-300 ease-in-out"
+                    className={`${techNameID.id === "node" && 'fill-green-700 opacity-80'} transition-all duration-300 ease-in-out`}
                     d="M309.461 242.852a2.379 2.379 0 0 1-1.178-.316l-3.746-2.216c-.559-.316-.285-.425-.1-.486a7.381 7.381 0 0 0 1.694-.771.274.274 0 0 1 .279.024l2.878 1.706a.352.352 0 0 0 .346 0l11.218-6.473a.36.36 0 0 0 .17-.3v-12.951a.362.362 0 0 0-.176-.31l-11.215-6.467a.352.352 0 0 0-.346 0l-11.204 6.472a.354.354 0 0 0-.176.31v12.942a.335.335 0 0 0 .176.3l3.071 1.771c1.67.832 2.69-.146 2.69-1.136v-12.777a.321.321 0 0 1 .328-.322h1.423a.325.325 0 0 1 .328.322v12.783c0 2.223-1.215 3.5-3.322 3.5a4.769 4.769 0 0 1-2.581-.7l-2.939-1.7a2.361 2.361 0 0 1-1.178-2.047v-12.941a2.369 2.369 0 0 1 1.178-2.046l11.204-6.474a2.459 2.459 0 0 1 2.356 0l11.213 6.48a2.361 2.361 0 0 1 1.178 2.046v12.941a2.376 2.376 0 0 1-1.178 2.048l-11.213 6.472a2.362 2.362 0 0 1-1.178.316Zm9.054-12.759c0-2.423-1.64-3.067-5.083-3.522-3.486-.462-3.838-.7-3.838-1.512 0-.674.3-1.573 2.878-1.573 2.3 0 3.152.5 3.5 2.053a.325.325 0 0 0 .316.255h1.464a.317.317 0 0 0 .237-.1.338.338 0 0 0 .085-.249c-.225-2.678-2-3.923-5.6-3.923-3.2 0-5.107 1.348-5.107 3.613 0 2.453 1.9 3.133 4.967 3.437 3.674.358 3.959.9 3.959 1.621 0 1.251-1.008 1.785-3.37 1.785-2.97 0-3.619-.747-3.838-2.223a.321.321 0 0 0-.322-.273h-1.451a.32.32 0 0 0-.322.322c0 1.889 1.026 4.142 5.939 4.142 3.546-.006 5.587-1.409 5.587-3.85Z"
                     opacity={0.4}
                 />
             </g>
 
-            <g id="react" className="group" onMouseEnter={() => showTechName("react")} onMouseLeave={() => showTechName("default")}>
+            <g id="react">
                 <g transform="translate(109.161 31)">
                     <rect
                         width={63}
@@ -185,14 +176,14 @@ export default function LogoGridSvg(props) {
                     strokeWidth={1.8}
                     opacity={0.4}
                     transform="translate(123.714 44.81)"
-                    className="group-hover:stroke-sky-400 group-hover:opacity-80"
+                    className={`${techNameID.id === "react" && 'stroke-sky-400 opacity-80'}`}
                 >
                     <circle
                         cx={3.259}
                         cy={3.259}
                         r={3.259}
                         fill="#fff"
-                        className="group-hover:fill-sky-400 group-hover:opacity-80"
+                        className={`${techNameID.id === "react" && 'fill-sky-400 opacity-80'}`}
                         data-name="Ellipse 2"
                         transform="translate(13.574 14.485)"
                     />
@@ -218,7 +209,7 @@ export default function LogoGridSvg(props) {
                 </g>
             </g>
 
-            <g id="sql" className="group" onMouseEnter={() => showTechName("sql")} onMouseLeave={() => showTechName("default")}>
+            <g id="sql">
                 <g transform="translate(360.161 114)">
                 <rect
                     width={63}
@@ -269,13 +260,13 @@ export default function LogoGridSvg(props) {
                 </g>
                 <path
                     fill="#fff"
-                    className="group-hover:fill-orange-400 group-hover:opacity-80 transition-all duration-300 ease-in-out"
+                    className={`${techNameID.id === "sql" && 'fill-orange-400 opacity-80'} transition-all duration-300 ease-in-out`}
                     d="M404.492 134.954v2.621c0 2.31-5.753 4.194-12.843 4.194s-12.843-1.885-12.843-4.194v-2.621c0-2.31 5.753-4.194 12.843-4.194s12.843 1.884 12.843 4.194Zm0 5.9v5.9c0 2.31-5.753 4.194-12.843 4.194s-12.843-1.888-12.843-4.2v-5.9c2.759 1.9 7.809 2.785 12.843 2.785s10.083-.882 12.843-2.782Zm0 9.173v5.9c0 2.31-5.753 4.194-12.843 4.194s-12.843-1.89-12.843-4.199v-5.9c2.759 1.9 7.809 2.785 12.843 2.785s10.083-.882 12.843-2.783Z"
                     opacity={0.4}
                 />
             </g>
 
-            <g id="redux" className="group" onMouseEnter={() => showTechName("redux")} onMouseLeave={() => showTechName("default")}>
+            <g id="redux">
                 <g transform="translate(27.161 114)">
                 <rect
                     width={63}
@@ -326,13 +317,13 @@ export default function LogoGridSvg(props) {
                 </g>
                 <path
                     fill="#fff"
-                    className="group-hover:fill-purple-600 group-hover:opacity-80 transition-all duration-300 ease-in-out"
+                    className={`${techNameID.id === "redux" && 'fill-purple-600 opacity-80'} transition-all duration-300 ease-in-out`}
                     d="M64.895 152.11a2.332 2.332 0 0 0 2.1-2.458 2.419 2.419 0 0 0-2.393-2.309h-.085a2.4 2.4 0 0 0-2.304 2.481 2.558 2.558 0 0 0 .692 1.616 15.455 15.455 0 0 1-7.01 6.715 11.5 11.5 0 0 1-6.927 1.3 6.039 6.039 0 0 1-4.366-2.519 6.261 6.261 0 0 1-.357-6.633 9.9 9.9 0 0 1 2.941-3.423 13.955 13.955 0 0 1-.591-2.156c-6.215 4.449-5.583 10.535-3.694 13.412 1.407 2.1 4.283 3.441 7.432 3.441a10.9 10.9 0 0 0 2.582-.272 16.425 16.425 0 0 0 11.966-9.152Zm7.5-5.249a17.326 17.326 0 0 0-13.5-5.92h-.715a2.259 2.259 0 0 0-2.1-1.26h-.063a2.349 2.349 0 0 0-2.308 2.456 2.419 2.419 0 0 0 2.393 2.309h.1a2.369 2.369 0 0 0 2.1-1.47h.778a16.258 16.258 0 0 1 9.091 2.791 11.508 11.508 0 0 1 4.539 5.457 5.8 5.8 0 0 1-.063 5.04 6.24 6.24 0 0 1-5.878 3.527 10.959 10.959 0 0 1-4.157-.9c-.5.418-1.344 1.111-1.953 1.531a13.479 13.479 0 0 0 5.52 1.321 9.373 9.373 0 0 0 8.292-4.534c1.258-2.519 1.155-6.759-2.058-10.391Zm-21.7 6a2.416 2.416 0 0 0 2.393 2.309h.084a2.393 2.393 0 0 0-.063-4.785h-.085a.9.9 0 0 0-.315.041 15.68 15.68 0 0 1-2.2-9.487 11.4 11.4 0 0 1 2.518-6.634 7.461 7.461 0 0 1 5.239-2.391c4.534-.085 6.424 5.564 6.57 7.81l2.1.629c-.483-6.885-4.764-10.5-8.858-10.5-3.842 0-7.388 2.792-8.817 6.887-1.952 5.459-.671 10.706 1.722 14.905a1.857 1.857 0 0 0-.293 1.216Z"
                     opacity={0.4}
                 />
             </g>
             
-            <g id="tailwind" className="group" onMouseEnter={() => showTechName("tailwind")} onMouseLeave={() => showTechName("default")}>
+            <g id="tailwind">
                 <g transform="translate(278.161 31)">
                 <rect
                     width={63}
@@ -381,7 +372,7 @@ export default function LogoGridSvg(props) {
                     transform="rotate(-180 31.42 31.5)"
                 />
                 </g>
-                <g fill="#fff" opacity={0.4} className="group-hover:fill-cyan-600 group-hover:opacity-80 transition-all duration-300 ease-in-out">
+                <g fill="#fff" opacity={0.4} className={`${techNameID.id === "tailwind" && 'fill-cyan-600 opacity-80'} transition-all duration-300 ease-in-out`}>
                     <path
                         d="M308.962 52.999c-5.562.177-7.215 4.15-7.593 6.3a5.446 5.446 0 0 1 4.339-2.548c2.669 0 4.7 2.979 5.94 3.909a9.389 9.389 0 0 0 8.506 1.412c3.168-.964 4.638-4.328 4.959-5.923-1.533 2.083-3.857 3.335-6.733 1.86-1.979-1.015-3.46-5.199-9.418-5.01Z"
                         data-name="Path 20"
@@ -393,7 +384,7 @@ export default function LogoGridSvg(props) {
             </g>
             </g>
             
-            <g id="next" className="group" onMouseEnter={() => showTechName("next")} onMouseLeave={() => showTechName("default")}>
+            <g id="next">
                 <g transform="translate(193.161 114)">
                 <rect
                     width={63}
@@ -442,7 +433,7 @@ export default function LogoGridSvg(props) {
                     transform="translate(-.16)"
                 />
                 </g>
-                <g opacity={0.4} className="group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                <g opacity={0.4} className={`${techNameID.id === "next" && 'opacity-100'} transition-all duration-300 ease-in-out`}>
                     <path
                         fill="url(#l)"
                         d="M0 0h3.942v23.651H0z"

@@ -29,7 +29,7 @@ export default function DynamicContent(props) {
                     <p>This article will explain the general principles used to implement a front-end with a headless CMS so that page components, and the content within them, can be re-arranged and updated on the fly, without ever having to do a software release.</p>
                     <h2>Background</h2>
                     <p>The orthopedic department at Arnot Health, a major hospital system in southern NY, needs to be able to create unique patient resource pages for each condition they treat – from joint replacements and tendon tears to various dislocations and fractures.</p>
-                    <p>The headless CMS, Storblok, was chosen to accomplish this. A headless CMS provides the physicians at Arnot Health with:</p>
+                    <p>The headless CMS, Storyblok, was chosen to accomplish this. A headless CMS provides the physicians at Arnot Health with:</p>
                         <ol>
                             <li>A drag-and-drop interface to create, update, or delete pages and content</li>
                             <li>Unique combinations of custom components to display content</li>

@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { SVG_LOGOS, TECH } from "@/components/Theme";
 import { projects } from "@/data/projects2";
 import { courses } from "@/data/courses";
-import { SiUdemy } from "react-icons/si"
-import { BsArrowRightShort } from "react-icons/bs"
+import { FaAward } from "react-icons/fa6"
+import { BsArrowRightShort, BsTrophyFill } from "react-icons/bs"
 
 import CardGradient from "@/components/ui/cardGradient";
 import Link from "next/link";
@@ -18,27 +18,20 @@ export default function Home(props) {
     const { } = props
 
     // #region TEXT SLIDER
-    const [ sliderPosition, setSliderPosition ] = useState({ transform: "translateY(0)"})
+    const [ sliderPosition, setSliderPosition ] = useState({ transform: "translateY(0)" })
     const [ selected, setSelected ] = useState(0)
-    const [ techName, setTechName ] = useState([
-        { label: "everything", color: "text-neutral-500" },
-        { label: "", color: "" },
-    ])    
 
-    const showTechName = (name) => {
-        if(name === "default"){
-            setSelected(0)
-        } else {
-            let newTechName = [];
-            newTechName.push(techName[0]);
-            newTechName.push(TECH[name])
-            setTechName(newTechName)    
-            setSelected(1)
-        }
-    }
 
     useEffect(() => {
-        setSliderPosition({ transform: `translateY(${selected * -100}%)`})
+        setTimeout(() => {
+            if(selected === TECH.length-1){
+                setSliderPosition({ transform: "translateY(0%)" })
+                setSelected(0)
+            } else {
+                setSliderPosition({ transform: `translateY(${(selected+1) * -100}%)` })
+                setSelected(selected+1)
+            }
+        }, 3000);
     }, [selected])
     // #endregion
 
@@ -64,7 +57,7 @@ export default function Home(props) {
                         <div className="text-md h-6 overflow-hidden inline-flex">
                             <h3 className="text-neutral-600">Web developing&nbsp;</h3>
                             <div className={`flex flex-col h-full transition-transform duration-500`} style={sliderPosition}>
-                                {techName.map(item => (
+                                {TECH.map(item => (
                                     <h3 key={item.label} className={`${item.color}`}>{item.label}</h3>
                                 ))}
                             </div>
@@ -78,7 +71,7 @@ export default function Home(props) {
                         </p>
                     </div>
                     <div className="w-fit relative z-20 overflow-hidden md:h-96 flex flex-col justify-center md:shrink-0">
-                        <LogoGridSvg showTechName={showTechName} />
+                        <LogoGridSvg techNameID={TECH[selected]} />
                         <span className="mix-blend-overlay bg-gradient-svg absolute -z-10 w-full h-full top-0 left-0"></span>
                         <span className="mix-blend-overlay noise absolute -z-20 pointer-events-none inset-0 opacity-[0.08]"></span>
                     </div>
@@ -98,7 +91,7 @@ export default function Home(props) {
                             />
                         </Link>
                         <Link href={"/articles/holofoils"}>
-                            <HolofoilBento opacity={0}>
+                            <HolofoilBento opacity={0} foregroundImage={'/animations/holofoils/dark-neutral-background.jpg'}>
                                 <CardGradient
                                     alt={"holofoil cards using css and javascript"}
                                     title={"Holofoil<br />Cards"}
@@ -160,12 +153,12 @@ export default function Home(props) {
                             </div>
                             <div className="w-full md:w-[400px] relative z-10">
                                 { courses.map((course, index) => (
-                                    <a key={course.id} href={course.certificateURL} download className="first:mt-0 mt-4 rounded-xl border border-white/10 bg-neutral-400/5 hover:bg-neutral-400/10 hover:cursor-pointer flex justify-start items-center gap-4 p-2 relative">
+                                    <a key={course.id} href={course.certificateURL} target="_blank" className="first:mt-0 mt-4 rounded-xl border border-white/10 bg-neutral-400/5 hover:bg-neutral-400/10 hover:cursor-pointer flex justify-start items-center gap-4 p-2 relative group">
                                         <div className="w-10 h-10 rounded-lg bg-neutral-950/50 border border-neutral-800 p-2 flex justify-center items-center">
-                                            <SiUdemy className="text-neutral-200 text-lg" />
+                                            <BsTrophyFill className="text-neutral-200 text-lg opacity-70 group-hover:opacity-100" />
                                         </div>
                                         <p className="text-sm text-white font-extralight">{course.title}</p>
-                                        <div className={`${courses.length === index + 1 && 'hidden'} h-4 absolute border-l border-white/20 top-[57px] left-7`}></div>
+                                        <div className={`${courses.length === index + 1 && 'hidden'} h-4 absolute border-l border-white/10 top-[57px] left-7`}></div>
                                     </a>
                                 ))}
                             </div>
