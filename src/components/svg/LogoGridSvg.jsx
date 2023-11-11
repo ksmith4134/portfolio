@@ -9,8 +9,7 @@ export default function LogoGridSvg(props) {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width={452.001}
-            height={286}
+            className="w-full h-full"
             viewBox="0 0 452.001 286"
         >
             <g id="javascript">
