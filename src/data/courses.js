@@ -1,10 +1,10 @@
 export const courses = [
-    // {
-    //     id: 0,
-    //     logo: 'udemy',
-    //     title: 'Data Structures & Algorithms',
-    //     certificateURL: '',
-    // },
+    {
+        id: 0,
+        logo: 'udemy',
+        title: 'Data Structures & Algorithms',
+        certificateURL: 'https://www.udemy.com/certificate/UC-d3b46ddc-fe3e-4f4c-991b-978213653d20/',
+    },
     {
         id: 1,
         logo: 'award',

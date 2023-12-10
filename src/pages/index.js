@@ -111,21 +111,11 @@ export default function Home(props) {
                 </section>
 
                 <section className="mt-40">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-                        <div>
-                            <h3 className="text-xl text-neutral-600">Professional Work</h3>
-                            <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
-                        </div>
-                        <button className="relative z-20 overflow-hidden w-36 rounded-full px-8 py-3 border border-neutral-600 hover:bg-neutral-900" onClick={() => handleShowProjects(!seeAll)}>
-                            <p className="relative z-20 text-neutral-300 text-sm">{ seeAll ? 'See Less' : 'See More' }</p>
-                            <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
-                            <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
-                            <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>
-                        </button>
-                    </div>
-                    <div className="mt-16">
+                    <h3 className="text-xl text-neutral-600">Professional Work</h3>
+                    <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
+                    <div className="mt-20">
                         { showProjects.map((project) => (
-                            <div key={project.id} className="pt-7 pb-7 last:pb-0 border-b last:border-b-0 border-neutral-800 group">
+                            <div key={project.id} className="first:pt-0 pt-7 pb-7 last:pb-0 border-b last:border-b-0 border-neutral-800 group">
                                 <Link 
                                     href={project.website}
                                     target="_blank"
@@ -136,6 +126,12 @@ export default function Home(props) {
                             </div>
                         ))}
                     </div>
+                    <button className="mt-20 relative z-20 overflow-hidden w-36 rounded-md px-8 py-3 border border-neutral-600/50 hover:bg-neutral-900" onClick={() => handleShowProjects(!seeAll)}>
+                            <p className="relative z-20 text-neutral-300 text-sm">{ seeAll ? 'See Less' : 'See More' }</p>
+                            <span className="absolute z-10 w-full h-full bg-gradient-button-text top-0 left-0"></span>
+                            <span className="absolute z-0 w-full h-full bg-gradient-button top-0 left-0"></span>
+                            <span className="noise absolute z-0 pointer-events-none inset-0 opacity-[0.08]"></span>
+                        </button>
                 </section>
 
                 <section className="mt-40">
