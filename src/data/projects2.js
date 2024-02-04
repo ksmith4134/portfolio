@@ -4,8 +4,8 @@ export const projects = [
         seeAll: true,
         status: 'Live', // Live, In Development, Discontinued
         thumbnail: '',
-        title: 'Arnot Orthopedics',
-        type: 'Patient Resources Website',
+        title: 'Arnot Ogden Orthopedics',
+        type: 'Patient Resources Web App',
         description: 'A medical resources website that allows patients to easily learn about their condition and available treatments by using an interactive skeleton diagram. A headless CMS allows doctors to easily create dynamic content on the fly.',
         contributions: ["code", "design", "copy"], // code, design, copy
         website: "https://www.arnotortho.com",
@@ -51,6 +51,24 @@ export const projects = [
             { id: 6, logo: '', label: 'Kodak APIs', },
             { id: 7, logo: '', label: 'Storybook', },
             { id: 7, logo: '', label: 'Vitest, Testing Library', },
+        ],
+    },
+    {
+        id: 2,
+        seeAll: false,
+        status: 'Live',
+        thumbnail: '',
+        title: 'Revered Campaigns',
+        type: 'Web Development Agency Website',
+        description: 'Developed a marketing website for a web development agency specializing in healthcare websites. Used React Server Components and Server Actions to handle the Contact Form validation and submission.',
+        contributions: ["code", "design", "copy"],
+        website: "https://www.reveredcampaigns.com",
+        tech: [
+            { id: 0, logo: 'NEXT', label: 'NEXT.js', },
+            { id: 1, logo: 'react', label: 'React', },
+            { id: 5, logo: 'javascript', label: 'JavaScript', },
+            { id: 2, logo: 'tailwind', label: 'Tailwind', },
+            { id: 3, logo: 'nodejs', label: 'Node.js', },
         ],
     },
     {

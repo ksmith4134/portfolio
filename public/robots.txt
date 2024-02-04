@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /old/
+
+Sitemap: https://kevinsmith.vercel.app/sitemap.xml

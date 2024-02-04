@@ -32,38 +32,38 @@ export default function Home(props) {
 
     // #region Convert Bitcoin price into USD
     // console.log('bitcoin', bitcoin)
-    let USDollar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    });
+    // let USDollar = new Intl.NumberFormat('en-US', {
+    //     style: 'currency',
+    //     currency: 'USD',
+    // });
 
-    let bitcoinCurrentPrice;
-    let bitcoinPriceChange;
-    let bitcoinChangeSymbol;
-    let bitcoinChangeColor;
+    // let bitcoinCurrentPrice;
+    // let bitcoinPriceChange;
+    // let bitcoinChangeSymbol;
+    // let bitcoinChangeColor;
     
-    if(bitcoin){
-        bitcoinCurrentPrice = bitcoin.current_price ? USDollar.format(bitcoin.current_price) : "Not available"
-        bitcoinPriceChange = bitcoin.price_change_24h ? USDollar.format(bitcoin.price_change_24h) : 0
-        if(bitcoin.price_change_24h >= 0){
-            bitcoinChangeSymbol = 'up'
-            bitcoinChangeColor = 'green'
-        } else {
-            bitcoinChangeSymbol = 'down'
-            bitcoinChangeColor = 'red'
-        }
-    } else {
-        bitcoinCurrentPrice = "Not available"
-        bitcoinPriceChange = 0
-        bitcoinChangeSymbol = 'up'
-        bitcoinChangeColor = 'green'
-    }
+    // if(bitcoin){
+    //     bitcoinCurrentPrice = bitcoin.current_price ? USDollar.format(bitcoin.current_price) : "Not available"
+    //     bitcoinPriceChange = bitcoin.price_change_24h ? USDollar.format(bitcoin.price_change_24h) : 0
+    //     if(bitcoin.price_change_24h >= 0){
+    //         bitcoinChangeSymbol = 'up'
+    //         bitcoinChangeColor = 'green'
+    //     } else {
+    //         bitcoinChangeSymbol = 'down'
+    //         bitcoinChangeColor = 'red'
+    //     }
+    // } else {
+    //     bitcoinCurrentPrice = "Not available"
+    //     bitcoinPriceChange = 0
+    //     bitcoinChangeSymbol = 'up'
+    //     bitcoinChangeColor = 'green'
+    // }
     // #endregion
 
     // #region Weather
     // console.log('weather', weatherData)
-    const tempF = weather.tempF ? weather.tempF : '-'
-    const WeatherIcon = WEATHER_CONDITIONS[weather.condition.code].icon
+    // const tempF = weather.tempF ? weather.tempF : '-'
+    // const WeatherIcon = WEATHER_CONDITIONS[weather.condition.code].icon
     // #endregion
 
     const handleClick = (id) => {
@@ -272,28 +272,28 @@ export default function Home(props) {
 export async function getStaticProps(){
 
     // #region Bitcoin Current Price API
-    const bitcoinResponse = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin')
-    const bitcoinData = await bitcoinResponse.json()
-    const bitcoin = bitcoinData[0]
+    // const bitcoinResponse = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin')
+    // const bitcoinData = await bitcoinResponse.json()
+    // const bitcoin = bitcoinData[0]
     // #endregion
 
     // #region Bitcoin Current Price API
-    const bitcoinChartResponse = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily&precision=2')
-    const bitcoinChartData = await bitcoinChartResponse.json()
-    const bitcoinPriceChart = bitcoinChartData.prices.map(item => item[1])
+    // const bitcoinChartResponse = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30&interval=daily&precision=2')
+    // const bitcoinChartData = await bitcoinChartResponse.json()
+    // const bitcoinPriceChart = bitcoinChartData.prices.map(item => item[1])
     // #endregion
 
     // #region Weather API
-    const weatherResponse = await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=14607&aqi=no`)
-    const weatherData = await weatherResponse.json()
-    const weather = {
-        tempF: weatherData.current.temp_f,
-        tempC: weatherData.current.temp_c,
-        condition: {
-            description: weatherData.current.condition.text,
-            code: weatherData.current.condition.code,
-        }
-    }
+    // const weatherResponse = await fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=14607&aqi=no`)
+    // const weatherData = await weatherResponse.json()
+    // const weather = {
+    //     tempF: weatherData?.current?.temp_f,
+    //     tempC: weatherData?.current?.temp_c,
+    //     condition: {
+    //         description: weatherData.current.condition.text,
+    //         code: weatherData.current.condition.code,
+    //     }
+    // }
     // #endregion
 
     // #region Spotify
@@ -326,10 +326,10 @@ export async function getStaticProps(){
 
     return {
         props: {
-            bitcoin,
-            weather,
-            spotify: null,
-            bitcoinPriceChart,
+            // bitcoin,
+            // weather,
+            // spotify: null,
+            // bitcoinPriceChart,
         },
         revalidate: 14400,
     }

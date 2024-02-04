@@ -20,7 +20,6 @@ export default function Home(props) {
     const [ sliderPosition, setSliderPosition ] = useState({ transform: "translateY(0)" })
     const [ selected, setSelected ] = useState(0)
 
-
     useEffect(() => {
         setTimeout(() => {
             if(selected === TECH.length-1){
@@ -54,7 +53,7 @@ export default function Home(props) {
                 <section className="mt-8 md:mt-0 md:min-h-screen flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                     <div className="mt-4 md:mt-0 basis-1/2 order-2 md:order-1 max-w-lg">
                         <div className="text-md h-6 overflow-y-hidden inline-flex">
-                            <h3 className="text-neutral-600">Web developing&nbsp;</h3>
+                            <h3 className="text-neutral-500">Web developing&nbsp;</h3>
                             <div className={`flex flex-col h-full transition-transform duration-500`} style={sliderPosition}>
                                 {TECH.map(item => (
                                     <h3 key={item.label} className={`${item.color}`}>{item.label}</h3>
@@ -74,7 +73,7 @@ export default function Home(props) {
                 </section>
 
                 <section className="mt-40 md:mt-0">
-                    <h3 className="text-xl text-neutral-600">Open-Source</h3>
+                    <h3 className="text-xl text-neutral-500">Open-Source</h3>
                     <h2 className="mt-4 text-5xl font-bold text-neutral-200">Code and contributions</h2>
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <Link href={"/articles/dynamic-content"}>
@@ -111,7 +110,7 @@ export default function Home(props) {
                 </section>
 
                 <section className="mt-40">
-                    <h3 className="text-xl text-neutral-600">Professional Work</h3>
+                    <h3 className="text-xl text-neutral-500">Professional Work</h3>
                     <h2 className="mt-4 text-5xl font-bold text-neutral-200">Websites and apps</h2>
                     <div className="mt-20">
                         { showProjects.map((project) => (
@@ -121,7 +120,7 @@ export default function Home(props) {
                                     target="_blank"
                                 >
                                     <h4 className="text-neutral-200 text-2xl group-hover:underline group-hover:underline-offset-4 group-hover:decoration-1">{project.title}</h4>
-                                    <h5 className="mt-2 text-neutral-600 font-light">{project.type}</h5>
+                                    <h5 className="mt-2 text-neutral-500 font-light">{project.type}</h5>
                                 </Link>
                             </div>
                         ))}
@@ -139,7 +138,7 @@ export default function Home(props) {
                         <span className="noise z-0 absolute pointer-events-none inset-0 opacity-[0.15]"></span>
                         <div className="relative w-full h-full p-8 md:p-16 flex flex-col md:flex-row justify-between items-center gap-8">
                             <div className="md:pl-4">
-                                <h3 className="text-center md:text-left -ml-2 md:ml-0 text-xl text-neutral-600">Education</h3>
+                                <h3 className="text-center md:text-left -ml-2 md:ml-0 text-xl text-neutral-500">Education</h3>
                                 <h2 className="mt-4 text-center md:text-left  text-5xl font-bold text-neutral-200">Always.</h2>
                                 <h2 className="mt-2 text-center md:text-left  text-5xl font-bold text-neutral-200">Learning.</h2>
                             </div>
